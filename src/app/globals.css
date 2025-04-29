@@ -5,6 +5,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --gjs-primary-color: #007bff;
+  --gjs-secondary-color: #6c757d;
+  --gjs-bg-color: #343a40;
+  --gjs-main-color: #ffffff;
+  --gjs-panel-bg: #222;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,4 +30,78 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+html {
+  font-size: 1vw;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+  touch-action: manipulation;
+  -webkit-user-drag: none;
+  -ms-content-zooming: none;
+  vertical-align: baseline;
+  position: relative;
+}
+
+@media (max-width: 639px) {
+  html {
+    font-size: 4.267vw;
+  }
+}
+
+/* Ẩn thanh cuộn */
+.hidden_scroll {
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+
+.hidden_scroll::-webkit-scrollbar {
+  width: 0 !important;
+  display: none !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+/* Ẩn nút tăng/giảm trên tất cả trình duyệt */
+input[type="number"] {
+  appearance: textfield;
+}
+
+/* Ẩn trên WebKit (Chrome, Safari, Edge) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Ẩn trên Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+#cke_notifications_area_igsa,
+.cke_notifications_area {
+  display: none !important;
+}
+
+.gjs-one-bg {
+  background-color: #0d17d449 !important; /* Thay đổi màu nền */
+}
+.gjs-two-color {
+  color: #fff !important; /* Thay đổi màu chữ */
+}
+
+.gjs-pn-panel.gjs-pn-commands.gjs-one-bg.gjs-two-color {
+  padding: 0;
 }

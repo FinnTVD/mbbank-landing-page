@@ -18,7 +18,22 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "grapesjs": ["/src/modules/grapesjs"],
+      "grapesjs-preset-webpage": ["/src/modules/grapesjs-preset-webpage"],
+      "grapesjs-blocks-basic": ["/src/modules/grapesjs-blocks-basic"],
+      "grapesjs-plugin-forms": ["/src/modules/grapesjs-plugin-forms"],
+      "grapesjs-plugin-export": ["/src/modules/grapesjs-plugin-export"],
+      "grapesjs-component-countdown": ["/src/modules/grapesjs-component-countdown"],
+      "grapesjs-navbar": ["/src/modules/grapesjs-navbar"],
+      "grapesjs-style-bg": ["/src/modules/grapesjs-style-bg"],
+      "grapesjs-tabs": ["/src/modules/grapesjs-tabs"],
+      "grapesjs-tooltip": ["/src/modules/grapesjs-tooltip"],
+      "grapesjs-custom-code": ["/src/modules/grapesjs-custom-code"],
+      "grapesjs-touch": ["/src/modules/grapesjs-touch"],
+      "grapesjs-parser-postcss": ["/src/modules/grapesjs-parser-postcss"],
+      "grapesjs-plugin-ckeditor": ["/src/modules/grapesjs-plugin-ckeditor"],
+      "grapesjs-swiper-slider": ["/src/modules/grapesjs-swiper-slider"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

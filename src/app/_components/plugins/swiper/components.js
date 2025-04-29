@@ -1,0 +1,92 @@
+/* eslint-disable no-undef */
+/* eslint-disable import/no-anonymous-default-export */
+
+export default (editor, opts = {}) => {
+  const dc = editor.DomComponents;
+  const defaultType = dc.getType("default");
+  const defaultView = defaultType.view;
+
+  dc.addType(opts.name, {
+    model: {
+      defaults: {
+        traits: [
+          {
+            type: "checkbox",
+            name: "dynamicProgress",
+            label: "Dynamic Progress",
+            changeProp: 1,
+          },
+          {
+            type: "select",
+            name: "progressType",
+            label: "Progress Type",
+            changeProp: 1,
+            options: [
+              { value: "bullets", name: "Bullets" },
+              { value: "fraction", name: "Fraction" },
+              { value: "progressbar", name: "Progressbar" },
+            ],
+          },
+        ],
+        script: function () {
+          const dynamicProgress = "{[ dynamicProgress ]}";
+          const progressType = "{[ progressType ]}";
+
+          const initLib = function () {
+            new Swiper(".mySwiper", {
+              spaceBetween: 30,
+              centeredSlides: true,
+              autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+              },
+              pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: !!dynamicProgress,
+                type: progressType,
+              },
+              navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              },
+            });
+          };
+
+          if (typeof Swiper == "undefined") {
+            const script = document.createElement("script");
+            const link = document.createElement("link");
+
+            script.onload = initLib;
+            script.src =
+              "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
+
+            link.rel = "stylesheet";
+            link.href =
+              "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css";
+
+            document.head.appendChild(link);
+            document.body.appendChild(script);
+          } else {
+            initLib();
+          }
+        },
+      },
+    },
+
+    isComponent: (el) => {
+      if (el.classList && el.classList.contains("swiper-container")) {
+        return {
+          type: opts.name,
+        };
+      }
+    },
+
+    view: defaultView.extend({
+      init({ model }) {
+        this.listenTo(model, "change:dynamicProgress", this.updateScript);
+        this.listenTo(model, "change:progressType", this.updateScript);
+      },
+    }),
+  });
+};
