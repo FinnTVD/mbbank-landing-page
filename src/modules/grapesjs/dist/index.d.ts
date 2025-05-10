@@ -56,454 +56,12 @@ export interface DomComponentsConfig {
 	 */
 	useFrameDoc?: boolean;
 }
-declare const DataCollectionVariableType = "data-collection-variable";
-declare const DataVariableType: "data-variable";
-export interface DataVariableProps {
-	type: typeof DataVariableType;
-	path: string;
-	defaultValue?: string;
-}
-declare class DataVariable extends Model<DataVariableProps> {
-	em?: EditorModel;
-	defaults(): {
-		type: "data-variable";
-		defaultValue: string;
-		path: string;
-	};
-	constructor(props: DataVariableProps, options: {
-		em?: EditorModel;
-	});
-	getDataValue(): any;
-}
-declare enum DataCollectionStateVariableType {
-	currentIndex = "currentIndex",
-	startIndex = "startIndex",
-	currentItem = "currentItem",
-	endIndex = "endIndex",
-	collectionId = "collectionId",
-	totalItems = "totalItems",
-	remainingItems = "remainingItems"
-}
-export interface DataCollectionState {
-	[DataCollectionStateVariableType.currentIndex]: number;
-	[DataCollectionStateVariableType.startIndex]: number;
-	[DataCollectionStateVariableType.currentItem]: DataVariableProps;
-	[DataCollectionStateVariableType.endIndex]: number;
-	[DataCollectionStateVariableType.collectionId]: string;
-	[DataCollectionStateVariableType.totalItems]: number;
-	[DataCollectionStateVariableType.remainingItems]: number;
-}
-export interface DataCollectionStateMap {
-	[key: string]: DataCollectionState;
-}
-export interface DataCollectionVariableProps {
-	type: typeof DataCollectionVariableType;
-	variableType: DataCollectionStateVariableType;
-	collectionId: string;
-	path?: string;
-}
-export interface DataResolverListenerProps {
-	em: EditorModel;
-	resolver: DataResolver;
-	onUpdate: (value: any) => void;
-}
-declare class DataResolverListener {
-	private listeners;
-	private em;
-	private onUpdate;
-	private model;
-	resolver: DataResolver;
-	constructor(props: DataResolverListenerProps);
-	private onChange;
-	private createListener;
-	listenToResolver(): void;
-	private listenToConditionalVariable;
-	private listenToDataVariable;
-	private listenToDataCollectionVariable;
-	private removeListeners;
-	destroy(): void;
-}
-export interface DataCollectionVariablePropsDefined extends DataCollectionVariableProps {
-	value?: any;
-}
-declare class DataCollectionVariable extends Model<DataCollectionVariablePropsDefined> {
-	em: EditorModel;
-	collectionsStateMap?: DataCollectionStateMap;
-	dataVariable?: DataVariable;
-	resolverListener?: DataResolverListener;
-	defaults(): Partial<DataCollectionVariablePropsDefined>;
-	constructor(props: DataCollectionVariablePropsDefined, options: {
-		em: EditorModel;
-		collectionsStateMap?: DataCollectionStateMap;
-	});
-	hasDynamicValue(): boolean;
-	getDataValue(): any;
-	private updateDataVariable;
-	updateCollectionsStateMap(collectionsStateMap: DataCollectionStateMap): void;
-	destroy(): false | JQueryXHR;
-	toJSON(options?: any): any;
-}
-export interface DataSourceOptions extends CombinedModelConstructorOptions<{
-	em: EditorModel;
-}, DataSource> {
-}
-export declare class DataSource<DRProps extends DataRecordProps = DataRecordProps> extends Model<DataSourceType<DRProps>> {
-	transformers: DataSourceTransformers;
-	/**
-	 * Returns the default properties for the data source.
-	 * These include an empty array of records and an empty object of transformers.
-	 *
-	 * @returns {Object} The default attributes for the data source.
-	 * @name defaults
-	 */
-	defaults(): DataSourceType<DRProps>;
-	/**
-	 * Initializes a new instance of the `DataSource` class.
-	 * It sets up the transformers and initializes the collection of records.
-	 * If the `records` property is not an instance of `DataRecords`, it will be converted into one.
-	 *
-	 * @param {DataSourceProps<DRProps>} props - Properties to initialize the data source.
-	 * @param {DataSourceOptions} opts - Options to initialize the data source.
-	 * @name constructor
-	 */
-	constructor(props: DataSourceProps<DRProps>, opts: DataSourceOptions);
-	/**
-	 * Retrieves the collection of records associated with this data source.
-	 *
-	 * @returns {DataRecords<DRProps>} The collection of data records.
-	 * @name records
-	 */
-	get records(): NonNullable<DataRecords<DRProps>>;
-	/**
-	 * Retrieves the editor model associated with this data source.
-	 *
-	 * @returns {EditorModel} The editor model.
-	 * @name em
-	 */
-	get em(): EditorModel;
-	/**
-	 * Handles the `add` event for records in the data source.
-	 * This method triggers a change event on the newly added record.
-	 *
-	 * @param {DataRecord<DRProps>} dr - The data record that was added.
-	 * @private
-	 * @name onAdd
-	 */
-	onAdd(dr: DataRecord<DRProps>): void;
-	/**
-	 * Adds a new record to the data source.
-	 *
-	 * @param {DRProps} record - The properties of the record to add.
-	 * @param {AddOptions} [opts] - Options to apply when adding the record.
-	 * @returns {DataRecord} The added data record.
-	 * @name addRecord
-	 */
-	addRecord(record: DRProps, opts?: AddOptions): DataRecord<DRProps>;
-	/**
-	 * Retrieves a record from the data source by its ID.
-	 *
-	 * @param {string | number} id - The ID of the record to retrieve.
-	 * @returns {DataRecord<DRProps> | undefined} The data record, or `undefined` if no record is found with the given ID.
-	 * @name getRecord
-	 */
-	getRecord(id: string | number): DataRecord | undefined;
-	/**
-	 * Retrieves all records from the data source.
-	 * Each record is processed with the `getRecord` method to apply any read transformers.
-	 *
-	 * @returns {Array<DataRecord<DRProps> | undefined>} An array of data records.
-	 * @name getRecords
-	 */
-	getRecords(): DataRecord<DataRecordProps>[];
-	/**
-	 * Removes a record from the data source by its ID.
-	 *
-	 * @param {string | number} id - The ID of the record to remove.
-	 * @param {RemoveOptions} [opts] - Options to apply when removing the record.
-	 * @returns {DataRecord<DRProps> | undefined} The removed data record, or `undefined` if no record is found with the given ID.
-	 * @name removeRecord
-	 */
-	removeRecord(id: string | number, opts?: RemoveOptions): DataRecord<DRProps>;
-	/**
-	 * Replaces the existing records in the data source with a new set of records.
-	 *
-	 * @param {Array<DRProps>} records - An array of data record properties to set.
-	 * @returns {Array<DataRecord>} An array of the added data records.
-	 * @name setRecords
-	 */
-	setRecords(records: DRProps[]): void;
-	private handleChanges;
-}
-export declare class DataRecords<T extends DataRecordProps = DataRecordProps> extends Collection<DataRecord<T>> {
-	dataSource: DataSource;
-	constructor(models: DataRecord[] | DataRecordProps[], options: {
-		dataSource: DataSource;
-	});
-}
-export declare class DataRecord<T extends DataRecordProps = DataRecordProps> extends Model<T> {
-	mutable: boolean;
-	constructor(props: T, opts?: {});
-	get cl(): DataRecords;
-	get dataSource(): DataSource;
-	get em(): EditorModel;
-	get index(): number;
-	/**
-	 * Handles changes to the record's attributes.
-	 * This method triggers a change event for each property that has been altered.
-	 *
-	 * @private
-	 * @name handleChange
-	 */
-	handleChange(): void;
-	/**
-	 * Get the path of the record.
-	 * The path is a string that represents the location of the record within the data source.
-	 * Optionally, include a property name to create a more specific path.
-	 *
-	 * @param {String} [prop] - Optional property name to include in the path.
-	 * @param {Object} [opts] - Options for path generation.
-	 * @param {Boolean} [opts.useIndex] - Whether to use the index of the record in the path.
-	 * @returns {String} - The path of the record.
-	 * @name getPath
-	 * @example
-	 * const pathRecord = record.getPath();
-	 * // e.g., 'SOURCE_ID.record1'
-	 * const pathRecord2 = record.getPath('myProp');
-	 * // e.g., 'SOURCE_ID.record1.myProp'
-	 */
-	getPath(prop?: string, opts?: {
-		useIndex?: boolean;
-	}): string;
-	/**
-	 * Get both ID-based and index-based paths of the record.
-	 * Returns an array containing the paths using both ID and index.
-	 *
-	 * @param {String} [prop] - Optional property name to include in the paths.
-	 * @returns {Array<String>} - An array of paths.
-	 * @name getPaths
-	 * @example
-	 * const paths = record.getPaths();
-	 * // e.g., ['SOURCE_ID.record1', 'SOURCE_ID.0']
-	 */
-	getPaths(prop?: string): string[];
-	/**
-	 * Trigger a change event for the record.
-	 * Optionally, include a property name to trigger a change event for a specific property.
-	 *
-	 * @param {String} [prop] - Optional property name to trigger a change event for a specific property.
-	 * @name triggerChange
-	 */
-	triggerChange(prop?: string): void;
-	/**
-	 * Set a property on the record, optionally using transformers.
-	 * If transformers are defined for the record, they will be applied to the value before setting it.
-	 *
-	 * @param {String|Object} attributeName - The name of the attribute to set, or an object of key-value pairs.
-	 * @param {any} [value] - The value to set for the attribute.
-	 * @param {Object} [options] - Options to apply when setting the attribute.
-	 * @param {Boolean} [options.avoidTransformers] - If true, transformers will not be applied.
-	 * @returns {DataRecord} - The instance of the DataRecord.
-	 * @name set
-	 * @example
-	 * record.set('name', 'newValue');
-	 * // Sets 'name' property to 'newValue'
-	 */
-	set<A extends _StringKey<T>>(attributeName: DeepPartialDot<T> | A, value?: SetOptions | T[A] | undefined, options?: SetOptions | undefined): this;
-}
-export type ConditionProps = ExpressionProps | LogicGroupProps | boolean;
-export interface DataConditionEvaluatorProps {
-	condition: ConditionProps;
-}
-declare class DataConditionEvaluator extends Model<DataConditionEvaluatorProps> {
-	private em;
-	constructor(props: DataConditionEvaluatorProps, opts: {
-		em: EditorModel;
-	});
-	evaluate(): boolean;
-	/**
-	 * Factory method for creating operators based on the data type.
-	 */
-	private getOperator;
-	getDependentDataVariables(): DataVariableProps[];
-	private extractDataVariables;
-	private isLogicGroup;
-	private isExpression;
-	private isOperatorInEnum;
-	toJSON(options?: any): any;
-}
-declare enum BooleanOperation {
-	and = "and",
-	or = "or",
-	xor = "xor"
-}
-declare enum NumberOperation {
-	greaterThan = ">",
-	lessThan = "<",
-	greaterThanOrEqual = ">=",
-	lessThanOrEqual = "<=",
-	equals = "=",
-	notEquals = "!="
-}
-declare enum StringOperation {
-	contains = "contains",
-	startsWith = "startsWith",
-	endsWith = "endsWith",
-	matchesRegex = "matchesRegex",
-	equalsIgnoreCase = "equalsIgnoreCase",
-	trimEquals = "trimEquals"
-}
-declare enum AnyTypeOperation {
-	equals = "equals",
-	isTruthy = "isTruthy",
-	isFalsy = "isFalsy",
-	isDefined = "isDefined",
-	isNull = "isNull",
-	isUndefined = "isUndefined",
-	isArray = "isArray",
-	isObject = "isObject",
-	isString = "isString",
-	isNumber = "isNumber",
-	isBoolean = "isBoolean",
-	isDefaultValue = "isDefaultValue"
-}
-declare const DataConditionType = "data-condition";
-export interface ExpressionProps {
-	left: any;
-	operator: AnyTypeOperation | StringOperation | NumberOperation;
-	right: any;
-}
-export interface LogicGroupProps {
-	logicalOperator: BooleanOperation;
-	statements: ConditionProps[];
-}
-export interface DataConditionProps {
-	type: typeof DataConditionType;
-	condition: ConditionProps;
-	ifTrue: any;
-	ifFalse: any;
-}
-export interface DataConditionPropsDefined extends Omit<DataConditionProps, "condition"> {
-	condition: DataConditionEvaluator;
-}
-declare class DataCondition extends Model<DataConditionPropsDefined> {
-	private em;
-	private resolverListeners;
-	private _onValueChange?;
-	constructor(props: {
-		condition: ConditionProps;
-		ifTrue: any;
-		ifFalse: any;
-	}, opts: {
-		em: EditorModel;
-		onValueChange?: () => void;
-	});
-	private get conditionEvaluator();
-	getCondition(): ConditionProps;
-	getIfTrue(): any;
-	getIfFalse(): any;
-	isTrue(): boolean;
-	getDataValue(skipDynamicValueResolution?: boolean): any;
-	set onValueChange(newFunction: () => void);
-	setCondition(newCondition: ConditionProps): void;
-	setIfTrue(newIfTrue: any): void;
-	setIfFalse(newIfFalse: any): void;
-	private listenToDataVariables;
-	getDependentDataVariables(): DataVariableProps[];
-	private cleanupListeners;
-	toJSON(): {
-		type: string;
-		condition: DataConditionEvaluator;
-		ifTrue: any;
-		ifFalse: any;
-	};
-}
-export type DataResolver = DataVariable | DataCondition | DataCollectionVariable;
-export interface DataRecordProps extends ObjectAny {
-	/**
-	 * Record id.
-	 */
-	id: string;
-	/**
-	 * Specifies if the record is mutable. Defaults to `true`.
-	 */
-	mutable?: boolean;
-	[key: string]: any;
-}
-export interface BaseDataSource {
-	/**
-	 * DataSource id.
-	 */
-	id: string;
-	/**
-	 * DataSource validation and transformation factories.
-	 */
-	transformers?: DataSourceTransformers;
-	/**
-	 * If true will store the data source in the GrapesJS project.json file.
-	 */
-	skipFromStorage?: boolean;
-}
-export interface DataSourceType<DR extends DataRecordProps> extends BaseDataSource {
-	records: DataRecords<DR>;
-}
-export interface DataSourceProps<DR extends DataRecordProps> extends BaseDataSource {
-	records?: DataRecords<DR> | DataRecord<DR>[] | DR[];
-}
-export interface DataSourceTransformers {
-	onRecordSetValue?: (args: {
-		id: string | number;
-		key: string;
-		value: any;
-	}) => any;
-}
-declare enum DataSourcesEvents {
-	/**
-	 * @event `data:add` Added new data source.
-	 * @example
-	 * editor.on('data:add', (dataSource) => { ... });
-	 */
-	add = "data:add",
-	addBefore = "data:add:before",
-	/**
-	 * @event `data:remove` Data source removed.
-	 * @example
-	 * editor.on('data:remove', (dataSource) => { ... });
-	 */
-	remove = "data:remove",
-	removeBefore = "data:remove:before",
-	/**
-	 * @event `data:update` Data source updated.
-	 * @example
-	 * editor.on('data:update', (dataSource, changes) => { ... });
-	 */
-	update = "data:update",
-	/**
-	 * @event `data:path` Data record path update.
-	 * @example
-	 * editor.on('data:path:SOURCE_ID:RECORD_ID:PROP_NAME', ({ dataSource, dataRecord, path }) => { ... });
-	 */
-	path = "data:path",
-	/**
-	 * @event `data` Catch-all event for all the events mentioned above.
-	 * @example
-	 * editor.on('data', ({ event, model, ... }) => { ... });
-	 */
-	all = "data"
-}
-/**{END_EVENTS}*/
-export type DotSeparatedKeys<T> = T extends object ? {
-	[K in keyof T]: K extends string ? T[K] extends object ? `${K}` | `${K}.${DotSeparatedKeys<T[K]>}` : `${K}` : never;
-}[keyof T] : never;
-export type DeepPartialDot<T> = {
-	[P in DotSeparatedKeys<T>]?: P extends `${infer K}.${infer Rest}` ? K extends keyof T ? Rest extends DotSeparatedKeys<T[K]> ? DeepPartialDot<T[K]>[Rest] : never : never : P extends keyof T ? T[P] : never;
-};
 export interface DynamicWatchersOptions {
 	skipWatcherUpdates?: boolean;
 	fromDataSource?: boolean;
 }
 export interface ComponentResolverWatcherOptions {
 	em: EditorModel;
-	collectionsStateMap?: DataCollectionStateMap;
 }
 declare class ModuleModel<TModule extends IBaseModule<any> = Module, T extends ObjectHash = any, S = SetOptions, E = any> extends Model<T, S, E> {
 	private _module;
@@ -1744,6 +1302,7 @@ export declare class Canvas extends ModuleModel<CanvasModule> {
 export type DraggerPosition = Position & {
 	end?: boolean;
 };
+export type PositionXY = keyof Omit<DraggerPosition, "end">;
 export type Guide = {
 	x: number;
 	y: number;
@@ -1812,6 +1371,14 @@ export interface DraggerOptions {
 	 */
 	snapOffset?: number;
 	/**
+	 * Snapping value for the x-y axis. If you pass a value of 0, the snapping will be disabled for that axis.
+	 * @example { snapGuides: { x: 10, y: 5 } }
+	 */
+	snapGuides?: {
+		x?: number;
+		y?: number;
+	};
+	/**
 	 * Document on which listen to pointer events.
 	 */
 	doc?: Document;
@@ -1834,7 +1401,6 @@ declare class Dragger {
 	el?: HTMLElement;
 	guidesStatic: Guide[];
 	guidesTarget: Guide[];
-	lockedAxis?: any;
 	docs: Document[];
 	trgX?: Guide;
 	trgY?: Guide;
@@ -1864,12 +1430,17 @@ declare class Dragger {
 	 * Check if the delta hits some guide
 	 */
 	snapGuides(delta: DraggerPosition): {
-		newDelta: DraggerPosition;
+		newDelta: {
+			x: number;
+			y: number;
+			end?: boolean;
+		};
 		trgX: Guide | undefined;
 		trgY: Guide | undefined;
 	};
-	isPointIn(src: number, trg: number, { offset }?: {
+	isPointIn(src: number, trg: number, { offset, axis }?: {
 		offset?: number;
+		axis?: PositionXY;
 	}): boolean;
 	setGuideLock(guide: Guide, value: any): Guide;
 	/**
@@ -3043,6 +2614,23 @@ export interface CanvasConfig {
 	 * @default false
 	 */
 	scrollableCanvas?: boolean;
+	/**
+	 * Custom renderer function for canvas content.
+	 * This allows replacing the default HTML rendering with custom frameworks like React.
+	 * @example
+	 * customRenderer: ({ editor, frame, window, frameView }) => {
+	 *   // Mount React on the frame body
+	 *   const root = frame.getComponent();
+	 *   const reactRoot = createRoot(window.document.body);
+	 *   reactRoot.render(<React.StrictMode><RenderChildren components={[root]}/></React.StrictMode>);
+	 * }
+	 */
+	customRenderer?: (options: {
+		editor: Editor;
+		frame: Frame;
+		window: Window;
+		frameView: FrameView;
+	}) => ComponentView;
 }
 export declare class CanvasSpots extends ModuleCollection<CanvasSpot> {
 	refreshDbn: Debounced;
@@ -3348,7 +2936,7 @@ declare class CanvasModule extends Module<CanvasConfig> {
 	getMouseRelativeCanvas(ev: MouseEvent | {
 		clientX: number;
 		clientY: number;
-	}, opts: any): {
+	}, opts?: Record<string, unknown>): {
 		y: number;
 		x: number;
 	};
@@ -5052,6 +4640,24 @@ declare enum ComponentsEvents {
 	 */
 	render = "component:render",
 	/**
+	 * @event `component:resize` Component resized. This event is triggered when the component is resized in the canvas.
+	 * @example
+	 * editor.on('component:resize', ({ component, type }) => {
+	 *  // type can be 'start', 'move', or 'end'
+	 * });
+	 */
+	resize = "component:resize",
+	/**
+	 * @event `component:resize:init` Component resize init. This event allows you to control the resizer options dinamically.
+	 * @example
+	 * editor.on('component:resize:init', (opts) => {
+	 *  if (opts.component.is('someType')) {
+	 *   opts.resizable = true; // Update resizable options
+	 *  }
+	 * });
+	 */
+	resizeInit = "component:resize:init",
+	/**
 	 * @event `symbol:main:add` Added new main symbol.
 	 * @example
 	 * editor.on('symbol:main:add', ({ component }) => { ... });
@@ -5857,12 +5463,12 @@ declare class ComponentDataResolverWatchers {
 	private onPropertyUpdate;
 	private onAttributeUpdate;
 	bindComponent(component: Component): void;
-	updateCollectionStateMap(collectionsStateMap: DataCollectionStateMap): void;
 	addProps(props: ObjectAny, options?: DynamicWatchersOptions): {
 		[k: string]: any;
 	};
 	removeAttributes(attributes: string[]): void;
 	private updateSymbolOverride;
+	onCollectionsStateMapUpdate(): void;
 	getDynamicPropsDefs(): ObjectAny;
 	getDynamicAttributesDefs(): ObjectAny;
 	getPropsDefsOrValues(props: ObjectAny): {
@@ -5872,6 +5478,76 @@ declare class ComponentDataResolverWatchers {
 		[x: string]: any;
 	};
 	destroy(): void;
+}
+declare const DataVariableType: "data-variable";
+export interface DataVariableProps {
+	type?: typeof DataVariableType;
+	path?: string;
+	defaultValue?: string;
+	collectionId?: string;
+	variableType?: DataCollectionStateType;
+}
+export interface DataVariableOptions {
+	em: EditorModel;
+	collectionsStateMap: DataCollectionStateMap;
+}
+declare class DataVariable extends Model<DataVariableProps> {
+	private em;
+	private collectionsStateMap;
+	defaults(): DataVariableProps;
+	constructor(props: DataVariableProps, options: DataVariableOptions);
+	get path(): string;
+	get defaultValue(): string;
+	get collectionId(): string | undefined;
+	get variableType(): DataCollectionStateType | undefined;
+	resolvesFromCollection(): boolean;
+	updateCollectionsStateMap(collectionsStateMap: DataCollectionStateMap): void;
+	getResolverPath(): string | false;
+	toJSON(options?: any): DataVariableProps & {
+		type: typeof DataVariableType;
+	};
+	getDataValue(): any;
+	static resolveDataSourceVariable(props: {
+		path?: string;
+		defaultValue?: string;
+	}, opts: {
+		em: EditorModel;
+	}): any;
+	static resolveDataResolver(props: {
+		path?: string;
+		defaultValue?: string;
+		collectionId?: string;
+		variableType?: DataCollectionStateType;
+	}, opts: DataVariableOptions): any;
+	private resolveCollectionVariable;
+	static resolveCollectionVariable(dataResolverProps: {
+		collectionId?: string;
+		variableType?: DataCollectionStateType;
+		path?: string;
+		defaultValue?: string;
+	}, opts: DataVariableOptions): unknown;
+	private static resolveCurrentItem;
+}
+declare enum DataCollectionStateType {
+	currentIndex = "currentIndex",
+	startIndex = "startIndex",
+	currentItem = "currentItem",
+	endIndex = "endIndex",
+	collectionId = "collectionId",
+	totalItems = "totalItems",
+	remainingItems = "remainingItems"
+}
+export interface DataCollectionState {
+	[DataCollectionStateType.currentIndex]: number;
+	[DataCollectionStateType.startIndex]: number;
+	[DataCollectionStateType.currentItem]: DataVariableProps;
+	[DataCollectionStateType.endIndex]: number;
+	[DataCollectionStateType.collectionId]: string;
+	[DataCollectionStateType.totalItems]: number;
+	[DataCollectionStateType.remainingItems]: number;
+}
+export interface DataCollectionStateMap {
+	[key: string]: DataCollectionState;
 }
 export interface IComponent extends ExtractMethods<Component> {
 }
@@ -5987,10 +5663,14 @@ export declare class Component extends StyleableModel<ComponentProperties> {
 	 * @private
 	 * @ts-ignore */
 	collection: Components;
-	collectionStateListeners: string[];
 	dataResolverWatchers: ComponentDataResolverWatchers;
+	collectionsStateMap: DataCollectionStateMap;
 	constructor(props: ComponentProperties | undefined, opt: ComponentOptions);
 	set<A extends string>(keyOrAttributes: A | Partial<ComponentProperties>, valueOrOptions?: ComponentProperties[A] | ComponentSetOptions, optionsOrUndefined?: ComponentSetOptions): this;
+	onCollectionsStateMapUpdate(collectionsStateMap: DataCollectionStateMap): void;
+	syncComponentsCollectionState(): void;
+	stopSyncComponentCollectionState(): void;
+	syncOnComponentChange(model: Component, collection: Components, opts: any): void;
 	__postAdd(opts?: {
 		recursive?: boolean;
 	}): void;
@@ -6007,6 +5687,7 @@ export declare class Component extends StyleableModel<ComponentProperties> {
 	__upSymbProps(m: any, opts?: SymbolToUpOptions): void;
 	__upSymbCls(m: any, c: any, opts?: {}): void;
 	__upSymbComps(m: Component, c: Components, o: any): void;
+	__onDestroy(): void;
 	/**
 	 * Check component's type
 	 * @param  {string}  type Component type
@@ -7975,6 +7656,10 @@ declare class PluginManager {
 	 */
 	getAll(): Record<string, Plugin<{}>>;
 }
+export interface CommandConfigDefaultOptions {
+	run?: (options: CommandOptions) => CommandOptions;
+	stop?: (options: CommandOptions) => CommandOptions;
+}
 export interface CommandsConfig {
 	/**
 	 * Style prefix
@@ -7992,6 +7677,32 @@ export interface CommandsConfig {
 	 * @default true
 	 */
 	strict?: boolean;
+	/**
+	 * Default options for commands
+	 * These options will be merged with the options passed when the command is run.
+	 * This allows you to define common behavior for commands in one place.
+	 * @default {}
+	 * @example
+	 * defaultOptions: {
+	 *  'core:component-drag': {
+	 *    run: (options: Record<string, unknown>) => ({
+	 *      ...options,
+	 *      skipGuidesRender: true,
+	 *      addStyle({ component, styles, partial }) {
+	 *        component.addStyle(styles, { partial });
+	 *      },
+	 *     }),
+	 *    stop: (options: Record<string, unknown>) => ({
+	 *      ...options,
+	 * *     skipGuidesRender: true,
+	 *      addStyle({ component, styles, partial }) {
+	 *        component.addStyle(styles, { partial });
+	 *      },
+	 *    }),
+	 *  }
+	 * }
+	 */
+	defaultOptions?: Record<string, CommandConfigDefaultOptions>;
 }
 declare class Input extends View {
 	ppfx: string;
@@ -10340,6 +10051,7 @@ declare class BlockManager extends ItemManagerModule<BlockManagerConfig, Blocks>
 	Categories: typeof Categories;
 	storageKey: string;
 	constructor(em: EditorModel);
+	onInit(): void;
 	/**
 	 * Get configuration object
 	 * @name getConfig
@@ -10904,7 +10616,7 @@ declare const ParserHtml: (em?: EditorModel, config?: ParserConfig & {
 	 * // ['test1', 'test2', 'test3']
 	 */
 	parseClass(str: string): string[];
-	parseNodeAttr(node: HTMLElement, result?: ComponentDefinitionDefined): ComponentDefinitionDefined;
+	parseNodeAttr(node: HTMLElement, modelResult?: ComponentDefinitionDefined): ComponentDefinitionDefined;
 	detectNode(node: HTMLElement, opts?: ParseNodeOptions): ComponentDefinitionDefined;
 	parseNode(node: HTMLElement, opts?: ParseNodeOptions): ComponentDefinitionDefined;
 	/**
@@ -12872,6 +12584,351 @@ declare class CommandsModule extends Module<CommandsConfig & {
 	__onStop(id: string, clb: () => void): void;
 	destroy(): void;
 }
+export interface DataSourceOptions extends CombinedModelConstructorOptions<{
+	em: EditorModel;
+}, DataSource> {
+}
+export declare class DataSource<DRProps extends DataRecordProps = DataRecordProps> extends Model<DataSourceType<DRProps>> {
+	transformers: DataSourceTransformers;
+	/**
+	 * Returns the default properties for the data source.
+	 * These include an empty array of records and an empty object of transformers.
+	 *
+	 * @returns {Object} The default attributes for the data source.
+	 * @name defaults
+	 */
+	defaults(): DataSourceType<DRProps>;
+	/**
+	 * Initializes a new instance of the `DataSource` class.
+	 * It sets up the transformers and initializes the collection of records.
+	 * If the `records` property is not an instance of `DataRecords`, it will be converted into one.
+	 *
+	 * @param {DataSourceProps<DRProps>} props - Properties to initialize the data source.
+	 * @param {DataSourceOptions} opts - Options to initialize the data source.
+	 * @name constructor
+	 */
+	constructor(props: DataSourceProps<DRProps>, opts: DataSourceOptions);
+	/**
+	 * Retrieves the collection of records associated with this data source.
+	 *
+	 * @returns {DataRecords<DRProps>} The collection of data records.
+	 * @name records
+	 */
+	get records(): NonNullable<DataRecords<DRProps>>;
+	/**
+	 * Retrieves the editor model associated with this data source.
+	 *
+	 * @returns {EditorModel} The editor model.
+	 * @name em
+	 */
+	get em(): EditorModel;
+	/**
+	 * Handles the `add` event for records in the data source.
+	 * This method triggers a change event on the newly added record.
+	 *
+	 * @param {DataRecord<DRProps>} dr - The data record that was added.
+	 * @private
+	 * @name onAdd
+	 */
+	onAdd(dr: DataRecord<DRProps>): void;
+	/**
+	 * Adds a new record to the data source.
+	 *
+	 * @param {DRProps} record - The properties of the record to add.
+	 * @param {AddOptions} [opts] - Options to apply when adding the record.
+	 * @returns {DataRecord} The added data record.
+	 * @name addRecord
+	 */
+	addRecord(record: DRProps, opts?: AddOptions): DataRecord<DRProps>;
+	/**
+	 * Retrieves a record from the data source by its ID.
+	 *
+	 * @param {string | number} id - The ID of the record to retrieve.
+	 * @returns {DataRecord<DRProps> | undefined} The data record, or `undefined` if no record is found with the given ID.
+	 * @name getRecord
+	 */
+	getRecord(id: string | number): DataRecord | undefined;
+	/**
+	 * Retrieves all records from the data source.
+	 * Each record is processed with the `getRecord` method to apply any read transformers.
+	 *
+	 * @returns {Array<DataRecord<DRProps> | undefined>} An array of data records.
+	 * @name getRecords
+	 */
+	getRecords(): DataRecord<DataRecordProps>[];
+	/**
+	 * Removes a record from the data source by its ID.
+	 *
+	 * @param {string | number} id - The ID of the record to remove.
+	 * @param {RemoveOptions} [opts] - Options to apply when removing the record.
+	 * @returns {DataRecord<DRProps> | undefined} The removed data record, or `undefined` if no record is found with the given ID.
+	 * @name removeRecord
+	 */
+	removeRecord(id: string | number, opts?: RemoveOptions): DataRecord<DRProps>;
+	/**
+	 * Replaces the existing records in the data source with a new set of records.
+	 *
+	 * @param {Array<DRProps>} records - An array of data record properties to set.
+	 * @returns {Array<DataRecord>} An array of the added data records.
+	 * @name setRecords
+	 */
+	setRecords(records: DRProps[]): void;
+	private handleChanges;
+}
+export declare class DataRecords<T extends DataRecordProps = DataRecordProps> extends Collection<DataRecord<T>> {
+	dataSource: DataSource;
+	constructor(models: DataRecord[] | DataRecordProps[], options: {
+		dataSource: DataSource;
+	});
+}
+declare enum AnyTypeOperation {
+	equals = "equals",
+	isTruthy = "isTruthy",
+	isFalsy = "isFalsy",
+	isDefined = "isDefined",
+	isNull = "isNull",
+	isUndefined = "isUndefined",
+	isArray = "isArray",
+	isObject = "isObject",
+	isString = "isString",
+	isNumber = "isNumber",
+	isBoolean = "isBoolean",
+	isDefaultValue = "isDefaultValue"
+}
+declare enum BooleanOperation {
+	and = "and",
+	or = "or",
+	xor = "xor"
+}
+declare enum NumberOperation {
+	greaterThan = ">",
+	lessThan = "<",
+	greaterThanOrEqual = ">=",
+	lessThanOrEqual = "<=",
+	equals = "=",
+	notEquals = "!="
+}
+declare enum StringOperation {
+	contains = "contains",
+	startsWith = "startsWith",
+	endsWith = "endsWith",
+	matchesRegex = "matchesRegex",
+	equalsIgnoreCase = "equalsIgnoreCase",
+	trimEquals = "trimEquals"
+}
+export type DataConditionSimpleOperation = AnyTypeOperation | StringOperation | NumberOperation | BooleanOperation;
+export type ConditionProps = ExpressionProps | LogicGroupProps | boolean;
+declare const DataConditionType: "data-condition";
+export interface ExpressionProps {
+	left?: any;
+	operator?: DataConditionSimpleOperation;
+	right?: any;
+}
+export interface LogicGroupProps {
+	logicalOperator: BooleanOperation;
+	statements: ConditionProps[];
+}
+export interface DataConditionProps {
+	type?: typeof DataConditionType;
+	condition: ConditionProps;
+	ifTrue?: any;
+	ifFalse?: any;
+}
+export type DataConditionOptions = {
+	em: EditorModel;
+	onValueChange?: () => void;
+	collectionsStateMap?: DataCollectionStateMap;
+};
+declare class DataCondition extends Model<DataConditionProps> {
+	private em;
+	private collectionsStateMap;
+	private resolverListeners;
+	private _previousEvaluationResult;
+	private _conditionEvaluator;
+	defaults(): {
+		type: "data-condition";
+		condition: {
+			left: string;
+			operator: StringOperation;
+			right: string;
+		};
+		ifTrue: {};
+		ifFalse: {};
+	};
+	constructor(props: DataConditionProps, opts: DataConditionOptions);
+	getCondition(): ConditionProps;
+	getIfTrue(): any;
+	getIfFalse(): any;
+	getOperations(): DataConditionSimpleOperation[];
+	setCondition(condition: ConditionProps): void;
+	setIfTrue(newIfTrue: any): void;
+	setIfFalse(newIfFalse: any): void;
+	isTrue(): boolean;
+	getDataValue(skipDynamicValueResolution?: boolean): any;
+	resolvesFromCollection(): boolean;
+	updateCollectionsStateMap(collectionsStateMap: DataCollectionStateMap): void;
+	private listenToPropsChange;
+	private handleConditionChange;
+	private listenToDataVariables;
+	private setupConditionDataVariableListeners;
+	private setupOutputDataVariableListeners;
+	private setupOutputVariableListener;
+	private addListener;
+	private emitConditionEvaluationChange;
+	private emitOutputValueChange;
+	private cleanupListeners;
+	toJSON(): DataConditionProps;
+}
+export type DataResolver = DataVariable | DataCondition;
+export interface DataRecordProps extends ObjectAny {
+	/**
+	 * Record id.
+	 */
+	id: string;
+	/**
+	 * Specifies if the record is mutable. Defaults to `true`.
+	 */
+	mutable?: boolean;
+	[key: string]: any;
+}
+export interface BaseDataSource {
+	/**
+	 * DataSource id.
+	 */
+	id: string;
+	/**
+	 * DataSource validation and transformation factories.
+	 */
+	transformers?: DataSourceTransformers;
+	/**
+	 * If true will store the data source in the GrapesJS project.json file.
+	 */
+	skipFromStorage?: boolean;
+}
+export interface DataSourceType<DR extends DataRecordProps> extends BaseDataSource {
+	records: DataRecords<DR>;
+}
+export interface DataSourceProps<DR extends DataRecordProps> extends BaseDataSource {
+	records?: DataRecords<DR> | DataRecord<DR>[] | DR[];
+}
+export interface DataSourceTransformers {
+	onRecordSetValue?: (args: {
+		id: string | number;
+		key: string;
+		value: any;
+	}) => any;
+}
+declare enum DataSourcesEvents {
+	/**
+	 * @event `data:add` Added new data source.
+	 * @example
+	 * editor.on('data:add', (dataSource) => { ... });
+	 */
+	add = "data:add",
+	addBefore = "data:add:before",
+	/**
+	 * @event `data:remove` Data source removed.
+	 * @example
+	 * editor.on('data:remove', (dataSource) => { ... });
+	 */
+	remove = "data:remove",
+	removeBefore = "data:remove:before",
+	/**
+	 * @event `data:update` Data source updated.
+	 * @example
+	 * editor.on('data:update', (dataSource, changes) => { ... });
+	 */
+	update = "data:update",
+	/**
+	 * @event `data:path` Data record path update.
+	 * @example
+	 * editor.on('data:path:SOURCE_ID:RECORD_ID:PROP_NAME', ({ dataSource, dataRecord, path }) => { ... });
+	 */
+	path = "data:path",
+	/**
+	 * @event `data` Catch-all event for all the events mentioned above.
+	 * @example
+	 * editor.on('data', ({ event, model, ... }) => { ... });
+	 */
+	all = "data"
+}
+/**{END_EVENTS}*/
+export type DotSeparatedKeys<T> = T extends object ? {
+	[K in keyof T]: K extends string ? T[K] extends object ? `${K}` | `${K}.${DotSeparatedKeys<T[K]>}` : `${K}` : never;
+}[keyof T] : never;
+export type DeepPartialDot<T> = {
+	[P in DotSeparatedKeys<T>]?: P extends `${infer K}.${infer Rest}` ? K extends keyof T ? Rest extends DotSeparatedKeys<T[K]> ? DeepPartialDot<T[K]>[Rest] : never : never : P extends keyof T ? T[P] : never;
+};
+export declare class DataRecord<T extends DataRecordProps = DataRecordProps> extends Model<T> {
+	mutable: boolean;
+	constructor(props: T, opts?: {});
+	get cl(): DataRecords;
+	get dataSource(): DataSource;
+	get em(): EditorModel;
+	get index(): number;
+	/**
+	 * Handles changes to the record's attributes.
+	 * This method triggers a change event for each property that has been altered.
+	 *
+	 * @private
+	 * @name handleChange
+	 */
+	handleChange(): void;
+	/**
+	 * Get the path of the record.
+	 * The path is a string that represents the location of the record within the data source.
+	 * Optionally, include a property name to create a more specific path.
+	 *
+	 * @param {String} [prop] - Optional property name to include in the path.
+	 * @param {Object} [opts] - Options for path generation.
+	 * @param {Boolean} [opts.useIndex] - Whether to use the index of the record in the path.
+	 * @returns {String} - The path of the record.
+	 * @name getPath
+	 * @example
+	 * const pathRecord = record.getPath();
+	 * // e.g., 'SOURCE_ID.record1'
+	 * const pathRecord2 = record.getPath('myProp');
+	 * // e.g., 'SOURCE_ID.record1.myProp'
+	 */
+	getPath(prop?: string, opts?: {
+		useIndex?: boolean;
+	}): string;
+	/**
+	 * Get both ID-based and index-based paths of the record.
+	 * Returns an array containing the paths using both ID and index.
+	 *
+	 * @param {String} [prop] - Optional property name to include in the paths.
+	 * @returns {Array<String>} - An array of paths.
+	 * @name getPaths
+	 * @example
+	 * const paths = record.getPaths();
+	 * // e.g., ['SOURCE_ID.record1', 'SOURCE_ID.0']
+	 */
+	getPaths(prop?: string): string[];
+	/**
+	 * Trigger a change event for the record.
+	 * Optionally, include a property name to trigger a change event for a specific property.
+	 *
+	 * @param {String} [prop] - Optional property name to trigger a change event for a specific property.
+	 * @name triggerChange
+	 */
+	triggerChange(prop?: string): void;
+	/**
+	 * Set a property on the record, optionally using transformers.
+	 * If transformers are defined for the record, they will be applied to the value before setting it.
+	 *
+	 * @param {String|Object} attributeName - The name of the attribute to set, or an object of key-value pairs.
+	 * @param {any} [value] - The value to set for the attribute.
+	 * @param {Object} [options] - Options to apply when setting the attribute.
+	 * @param {Boolean} [options.avoidTransformers] - If true, transformers will not be applied.
+	 * @returns {DataRecord} - The instance of the DataRecord.
+	 * @name set
+	 * @example
+	 * record.set('name', 'newValue');
+	 * // Sets 'name' property to 'newValue'
+	 */
+	set<A extends _StringKey<T>>(attributeName: DeepPartialDot<T> | A, value?: SetOptions | T[A] | undefined, options?: SetOptions | undefined): this;
+}
 export declare class DataSources extends Collection<DataSource> {
 	em: EditorModel;
 	constructor(models: DataSource[] | DataSourceProps<DataRecordProps>[], em: EditorModel);
@@ -13084,6 +13141,7 @@ declare class EditorModel extends Model {
 	get version(): string;
 	get isHeadless(): boolean;
 	get isShallow(): boolean;
+	initModules(): void;
 	/**
 	 * Get configurations
 	 * @param  {string} [prop] Property name
@@ -13468,6 +13526,26 @@ export declare class Selectors extends Collection<Selector> {
 	}): string;
 	getFullName<T extends FullNameOptions>(opts?: T): T["array"] extends true ? string[] : string;
 }
+export interface DataResolverListenerProps {
+	em: EditorModel;
+	resolver: DataResolver;
+	onUpdate: (value: any) => void;
+}
+declare class DataResolverListener {
+	private listeners;
+	private em;
+	private onUpdate;
+	private model;
+	resolver: DataResolver;
+	constructor(props: DataResolverListenerProps);
+	private onChange;
+	private createListener;
+	listenToResolver(): void;
+	private listenToConditionalVariable;
+	private listenToDataVariable;
+	private removeListeners;
+	destroy(): void;
+}
 declare class CssRuleView extends View<CssRule> {
 	config: any;
 	constructor(o?: any);
@@ -13791,6 +13869,16 @@ export interface HTMLParserOptions extends OptionAsDocument {
 	preParser?: (input: string, opts: {
 		editor: Editor;
 	}) => string;
+	/**
+	 * Configures whether `data-gjs-*` attributes should be automatically converted from hyphenated to camelCase.
+	 *
+	 * When `true`:
+	 * - Hyphenated `data-gjs-*` attributes (e.g., `data-gjs-my-component`) are transformed into camelCase (`data-gjs-myComponent`).
+	 * - If `defaults` contains the camelCase version and not the original attribute, the camelCase will be used; otherwise, the original name is kept.
+	 *
+	 * @default false
+	 */
+	convertDataGjsAttributesHyphens?: boolean;
 }
 export interface ParserConfig {
 	/**
@@ -13906,6 +13994,7 @@ export type PrevToNewIdMap = Record<string, string>;
 export interface IModule<TConfig extends ModuleConfig = ModuleConfig> extends IBaseModule<TConfig> {
 	destroy(): void;
 	postLoad(key: any): any;
+	onInit(): void;
 	onLoad?(): void;
 	name: string;
 	postRender?(view: any): void;
@@ -13946,6 +14035,7 @@ declare abstract class Module<T extends ModuleConfig = ModuleConfig> implements 
 	};
 	render(opts?: any): HTMLElement | JQuery<HTMLElement> | void;
 	postLoad(key: any): void;
+	onInit(): void;
 	get name(): string;
 	getConfig<P extends keyof T | undefined = undefined, R = P extends keyof T ? T[P] : T>(name?: P): R & {
 		pStylePrefix?: string;
@@ -14475,6 +14565,220 @@ export declare class Editor implements IBaseModule<EditorConfig> {
 	 */
 	html: typeof html;
 }
+export interface ComponentDragProps {
+	editor: Editor;
+	em?: EditorModel;
+	guides?: ComponentDragGuide[];
+	guidesContainer?: HTMLElement;
+	guidesEl?: HTMLElement;
+	guidesStatic?: ComponentDragGuide[];
+	guidesTarget?: ComponentDragGuide[];
+	isTran?: boolean;
+	opts: ComponentDragOpts;
+	target: Component;
+	elGuideInfoX?: HTMLElement;
+	elGuideInfoY?: HTMLElement;
+	elGuideInfoContentX?: HTMLElement;
+	elGuideInfoContentY?: HTMLElement;
+	dragger?: Dragger;
+	getEventOpts: () => ComponentDragEventProps;
+	stop: () => void;
+	setupGuides: () => void;
+	getGuidesContainer: () => HTMLElement;
+	getGuidesStatic: () => ComponentDragGuide[];
+	getGuidesTarget: () => ComponentDragGuide[];
+	updateGuides: (guides?: ComponentDragGuide[]) => void;
+	getGuidePosUpdate: (item: ComponentDragGuide, rect: ComponentOrigRect) => {
+		x?: number;
+		y?: number;
+	};
+	renderGuide: (item: {
+		active?: boolean;
+		guide?: HTMLElement;
+		x?: number;
+		y?: number;
+	}) => HTMLElement;
+	getElementPos: (el: HTMLElement) => ComponentOrigRect;
+	getElementGuides: (el: HTMLElement) => ComponentDragGuide[];
+	getTranslate: (transform: string, axis?: string) => number;
+	setTranslate: (transform: string, axis: string, value: string) => string;
+	getPosition: DraggerOptions["getPosition"];
+	setPosition: (data: any) => void;
+	_getDragData: () => {
+		target: Component;
+		parent?: Component;
+		index?: number;
+	};
+	onStart: DraggerOptions["onStart"];
+	onDrag: DraggerOptions["onDrag"];
+	onEnd: DraggerOptions["onEnd"];
+	hideGuidesInfo: () => void;
+	renderGuideInfo: (guides?: ComponentDragGuide[]) => void;
+	renderSingleGuideInfo: (guideMatched: ComponentDragGuideMatched) => void;
+	getGuidesMatched: (guides?: ComponentDragGuide[]) => ComponentDragGuideMatched[];
+	toggleDrag: (enable?: boolean) => void;
+}
+export interface ComponentDragOpts {
+	target: Component;
+	center?: number;
+	debug?: boolean;
+	dragger?: DraggerOptions;
+	event?: Event;
+	guidesInfo?: number;
+	mode?: "absolute" | "translate";
+	skipGuidesRender?: boolean;
+	addStyle?: (data: {
+		component?: Component;
+		styles?: Record<string, unknown>;
+		partial?: boolean;
+	}) => void;
+	onStart?: (data: any) => Editor;
+	onDrag?: (data: any) => Editor;
+	onEnd?: (ev: Event, opt: any, data: any) => void;
+}
+/**
+ * Represents the properties of the drag events.
+ */
+export interface ComponentDragEventProps {
+	/**
+	 * The mode of the drag (absolute or translate).
+	 */
+	mode: ComponentDragOpts["mode"];
+	/**
+	 * The component being dragged.
+	 * @deprecated Use `component` instead.
+	 */
+	target: Component;
+	/**
+	 * The component being dragged.
+	 */
+	component: Component;
+	/**
+	 * The guides of the component being dragged.
+	 * @deprecated Use `guidesMatched` instead.
+	 */
+	guidesTarget: ComponentDragGuide[];
+	/**
+	 * All the guides except the ones of the component being dragged.
+	 * @deprecated Use `guidesMatched` instead.
+	 */
+	guidesStatic: ComponentDragGuide[];
+	/**
+	 * The guides that are being matched.
+	 */
+	guidesMatched: ComponentDragGuideMatched[];
+	/**
+	 * The options used for the drag event.
+	 */
+	command: ComponentDragProps & CommandAbstract<ComponentDragOpts>;
+}
+/**
+ * Represents a guide used during component dragging.
+ */
+export interface ComponentDragGuide {
+	/**
+	 * The type of the guide (e.g., 't', 'b', 'l', 'r', 'x', 'y').
+	 */
+	type: string;
+	/**
+	 * The vertical position of the guide.
+	 */
+	y: number;
+	/**
+	 * The horizontal position of the guide.
+	 */
+	x: number;
+	/**
+	 * The component associated with the guide.
+	 */
+	component: Component;
+	/**
+	 * The view of the component associated with the guide.
+	 */
+	componentView: ComponentView;
+	/**
+	 * The HTML element associated with the guide.
+	 * @deprecated Use `componentEl` instead.
+	 */
+	origin: HTMLElement;
+	/**
+	 * The HTML element associated with the guide.
+	 */
+	componentEl: HTMLElement;
+	/**
+	 * The rectangle (position and dimensions) of the guide's element.
+	 * @deprecated Use `componentElRect` instead.
+	 */
+	originRect: ComponentOrigRect;
+	/**
+	 * The rectangle (position and dimensions) of the guide's element.
+	 */
+	componentElRect: ComponentOrigRect;
+	/**
+	 * The HTML element representing the guide.
+	 * @deprecated Use `guideEl` instead.
+	 */
+	guide?: HTMLElement;
+	/**
+	 * The HTML element representing the guide.
+	 */
+	guideEl?: HTMLElement;
+	/**
+	 * Indicates whether the guide is active.
+	 * @todo The `active` property is not set in the code, but the value is changing.
+	 */
+	active?: boolean;
+}
+/**
+ * Represents a matched guide during component dragging.
+ */
+export interface ComponentDragGuideMatched {
+	/**
+	 * The static guides used for matching.
+	 */
+	guidesStatic: ComponentDragGuide[];
+	/**
+	 * The origin component guide.
+	 */
+	guide: ComponentDragGuide;
+	/**
+	 * The matched component guide.
+	 */
+	matched: ComponentDragGuide;
+	/**
+	 * The primary position of the guide (either x or y depending on the axis).
+	 */
+	posFirst: number;
+	/**
+	 * The secondary position of the guide (the opposite axis of posFirst).
+	 */
+	posSecond: number;
+	/**
+	 * The distance between the two matched guides in pixels.
+	 */
+	size: number;
+	/**
+	 * The raw distance between the two matched guides in pixels.
+	 */
+	sizeRaw: number;
+	/**
+	 * The HTML element representing the guide info (line between the guides).
+	 */
+	elGuideInfo: HTMLElement;
+	/**
+	 * The container element for the guide info (text content of the line).
+	 */
+	elGuideInfoCnt: HTMLElement;
+}
+export type ComponentRect = {
+	left: number;
+	width: number;
+	top: number;
+	height: number;
+};
+export type ComponentOrigRect = ComponentRect & {
+	rect: ComponentRect;
+};
 export declare class PropertyRadio extends PropertySelect {
 	defaults(): any;
 }

@@ -853,7 +853,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//     Backbone.
 
   // Set up Backbone appropriately for the environment. Start with AMD.
   if (true) {
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(5706), __webpack_require__(6411), exports], __WEBPACK_AMD_DEFINE_RESULT__ = (function(_, $, exports) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(5706), __webpack_require__(7774), exports], __WEBPACK_AMD_DEFINE_RESULT__ = (function(_, $, exports) {
       // Export global even in AMD case in case this script is loaded with
       // others that may still expect a global Backbone.
       root.Backbone = factory(root, exports, _, $);
@@ -15313,13 +15313,13 @@ if (!CodeMirror.mimeModes.hasOwnProperty("text/html"))
 
 /***/ }),
 
-/***/ 3023:
+/***/ 7058:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1749);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9156);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -15371,14 +15371,14 @@ var ModuleModel = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 2820:
+/***/ 179:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__),
 /* harmony export */   F: () => (/* binding */ CanvasSpotBuiltInTypes)
 /* harmony export */ });
-/* harmony import */ var _abstract__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3023);
+/* harmony import */ var _abstract__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7058);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -15524,7 +15524,7 @@ var CanvasSpot = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 8351:
+/***/ 1738:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -15609,7 +15609,7 @@ var CommandsEvents;
 
 /***/ }),
 
-/***/ 371:
+/***/ 9484:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -15626,7 +15626,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 6301:
+/***/ 9516:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -15634,8 +15634,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var underscore__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5706);
-/* harmony import */ var _utils_Dragger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5633);
-/* harmony import */ var _utils_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2097);
+/* harmony import */ var _utils_Dragger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9966);
+/* harmony import */ var _utils_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6294);
 
 
 
@@ -15710,7 +15710,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 5301:
+/***/ 9946:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -15718,8 +15718,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
 /* harmony export */   defineCommand: () => (/* binding */ defineCommand)
 /* harmony export */ });
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1749);
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8351);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9156);
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1738);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -15888,7 +15888,7 @@ var CommandAbstract = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 8542:
+/***/ 7801:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -15933,7 +15933,7 @@ var command = {
 
 /***/ }),
 
-/***/ 1319:
+/***/ 4864:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -15941,7 +15941,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var underscore__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5706);
-/* harmony import */ var _utils_Dragger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5633);
+/* harmony import */ var _utils_Dragger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9966);
+/* harmony import */ var _utils_mixins__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1166);
 var __assign = (undefined && undefined.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -15955,21 +15956,23 @@ var __assign = (undefined && undefined.__assign) || function () {
 };
 
 
+
 var evName = 'dmode';
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-    run: function (editor, sender, opts) {
+    run: function (editor, _sender, opts) {
         var _this = this;
+        var _a, _b;
         if (opts === void 0) { opts = {}; }
         (0,underscore__WEBPACK_IMPORTED_MODULE_0__.bindAll)(this, 'setPosition', 'onStart', 'onDrag', 'onEnd', 'getPosition', 'getGuidesStatic', 'renderGuide', 'getGuidesTarget');
-        var target = opts.target, event = opts.event, mode = opts.mode, _a = opts.dragger, dragger = _a === void 0 ? {} : _a;
-        var el = target.getEl();
-        var config = __assign({ doc: el.ownerDocument, onStart: this.onStart, onEnd: this.onEnd, onDrag: this.onDrag, getPosition: this.getPosition, setPosition: this.setPosition, guidesStatic: function () { return _this.guidesStatic; }, guidesTarget: function () { return _this.guidesTarget; } }, dragger);
+        if (!opts.target)
+            throw new Error('Target option is required');
+        var config = __assign({ doc: (_a = opts.target.getEl()) === null || _a === void 0 ? void 0 : _a.ownerDocument, onStart: this.onStart, onEnd: this.onEnd, onDrag: this.onDrag, getPosition: this.getPosition, setPosition: this.setPosition, guidesStatic: function () { var _a; return (_a = _this.guidesStatic) !== null && _a !== void 0 ? _a : []; }, guidesTarget: function () { var _a; return (_a = _this.guidesTarget) !== null && _a !== void 0 ? _a : []; } }, ((_b = opts.dragger) !== null && _b !== void 0 ? _b : {}));
         this.setupGuides();
         this.opts = opts;
         this.editor = editor;
         this.em = editor.getModel();
-        this.target = target;
-        this.isTran = mode == 'translate';
+        this.target = opts.target;
+        this.isTran = opts.mode == 'translate';
         this.guidesContainer = this.getGuidesContainer();
         this.guidesTarget = this.getGuidesTarget();
         this.guidesStatic = this.getGuidesStatic();
@@ -15981,35 +15984,43 @@ var evName = 'dmode';
         else {
             drg.setOptions(config);
         }
-        event && drg.start(event);
-        this.toggleDrag(1);
+        opts.event && drg.start(opts.event);
+        this.toggleDrag(true);
         this.em.trigger("".concat(evName, ":start"), this.getEventOpts());
         return drg;
     },
     getEventOpts: function () {
+        var _a, _b;
+        var guidesActive = (_b = (_a = this.guidesTarget) === null || _a === void 0 ? void 0 : _a.filter(function (item) { return item.active; })) !== null && _b !== void 0 ? _b : [];
         return {
             mode: this.opts.mode,
+            component: this.target,
             target: this.target,
             guidesTarget: this.guidesTarget,
             guidesStatic: this.guidesStatic,
+            guidesMatched: this.getGuidesMatched(guidesActive),
+            command: this,
         };
     },
     stop: function () {
         this.toggleDrag();
     },
     setupGuides: function () {
-        (this.guides || []).forEach(function (item) {
+        var _a;
+        ((_a = this.guides) !== null && _a !== void 0 ? _a : []).forEach(function (item) {
+            var _a;
             var guide = item.guide;
-            guide && guide.parentNode.removeChild(guide);
+            (_a = guide === null || guide === void 0 ? void 0 : guide.parentNode) === null || _a === void 0 ? void 0 : _a.removeChild(guide);
         });
         this.guides = [];
     },
     getGuidesContainer: function () {
         var _this = this;
+        var _a, _b, _c, _d;
         var guidesEl = this.guidesEl;
         if (!guidesEl) {
-            var _a = this, editor = _a.editor, em = _a.em, opts_1 = _a.opts;
-            var pfx = editor.getConfig().stylePrefix;
+            var _e = this, editor = _e.editor, em = _e.em, opts_1 = _e.opts;
+            var pfx = (_a = editor.getConfig().stylePrefix) !== null && _a !== void 0 ? _a : '';
             var elInfoX = document.createElement('div');
             var elInfoY = document.createElement('div');
             var guideContent = "<div class=\"".concat(pfx, "guide-info__line ").concat(pfx, "danger-bg\">\n        <div class=\"").concat(pfx, "guide-info__content ").concat(pfx, "danger-color\"></div>\n      </div>");
@@ -16021,12 +16032,12 @@ var evName = 'dmode';
             elInfoY.innerHTML = guideContent;
             guidesEl.appendChild(elInfoX);
             guidesEl.appendChild(elInfoY);
-            editor.Canvas.getGlobalToolsEl().appendChild(guidesEl);
+            (_b = editor.Canvas.getGlobalToolsEl()) === null || _b === void 0 ? void 0 : _b.appendChild(guidesEl);
             this.guidesEl = guidesEl;
             this.elGuideInfoX = elInfoX;
             this.elGuideInfoY = elInfoY;
-            this.elGuideInfoContentX = elInfoX.querySelector(".".concat(pfx, "guide-info__content"));
-            this.elGuideInfoContentY = elInfoY.querySelector(".".concat(pfx, "guide-info__content"));
+            this.elGuideInfoContentX = (_c = elInfoX.querySelector(".".concat(pfx, "guide-info__content"))) !== null && _c !== void 0 ? _c : undefined;
+            this.elGuideInfoContentY = (_d = elInfoY.querySelector(".".concat(pfx, "guide-info__content"))) !== null && _d !== void 0 ? _d : undefined;
             em.on('canvas:update frame:scroll', (0,underscore__WEBPACK_IMPORTED_MODULE_0__.debounce)(function () {
                 var _a;
                 _this.updateGuides();
@@ -16039,7 +16050,9 @@ var evName = 'dmode';
         var _this = this;
         var result = [];
         var el = this.target.getEl();
-        var _a = el.parentNode, parentNode = _a === void 0 ? {} : _a;
+        var parentNode = el === null || el === void 0 ? void 0 : el.parentElement;
+        if (!parentNode)
+            return [];
         (0,underscore__WEBPACK_IMPORTED_MODULE_0__.each)(parentNode.children, function (item) { return (result = result.concat(el !== item ? _this.getElementGuides(item) : [])); });
         return result.concat(this.getElementGuides(parentNode));
     },
@@ -16048,14 +16061,18 @@ var evName = 'dmode';
     },
     updateGuides: function (guides) {
         var _this = this;
+        var _a;
         var lastEl;
         var lastPos;
-        (guides || this.guides).forEach(function (item) {
+        var guidesToUpdate = (_a = guides !== null && guides !== void 0 ? guides : this.guides) !== null && _a !== void 0 ? _a : [];
+        guidesToUpdate.forEach(function (item) {
             var origin = item.origin;
             var pos = lastEl === origin ? lastPos : _this.getElementPos(origin);
             lastEl = origin;
             lastPos = pos;
-            (0,underscore__WEBPACK_IMPORTED_MODULE_0__.each)(_this.getGuidePosUpdate(item, pos), function (val, key) { return (item[key] = val); });
+            (0,underscore__WEBPACK_IMPORTED_MODULE_0__.each)(_this.getGuidePosUpdate(item, pos), function (val, key) {
+                item[key] = val;
+            });
             item.originRect = pos;
         });
     },
@@ -16085,22 +16102,23 @@ var evName = 'dmode';
         return result;
     },
     renderGuide: function (item) {
-        if (item === void 0) { item = {}; }
-        var el = item.guide || document.createElement('div');
+        var _a, _b;
+        if (this.opts.skipGuidesRender)
+            return;
+        var el = (_a = item.guide) !== null && _a !== void 0 ? _a : document.createElement('div');
         var un = 'px';
         var guideSize = item.active ? 2 : 1;
-        var numEl = el.children[0];
-        el.style = "position: absolute; background-color: ".concat(item.active ? 'green' : 'red', ";");
+        el.style.cssText = "position: absolute; background-color: ".concat(item.active ? 'green' : 'red', ";");
         if (!el.children.length) {
-            numEl = document.createElement('div');
-            numEl.style = 'position: absolute; color: red; padding: 5px; top: 0; left: 0;';
+            var numEl = document.createElement('div');
+            numEl.style.cssText = 'position: absolute; color: red; padding: 5px; top: 0; left: 0;';
             el.appendChild(numEl);
         }
         if (item.y) {
             el.style.width = '100%';
             el.style.height = "".concat(guideSize).concat(un);
             el.style.top = "".concat(item.y).concat(un);
-            el.style.left = 0;
+            el.style.left = '0';
         }
         else {
             el.style.width = "".concat(guideSize).concat(un);
@@ -16108,7 +16126,7 @@ var evName = 'dmode';
             el.style.left = "".concat(item.x).concat(un);
             el.style.top = "0".concat(un);
         }
-        !item.guide && this.guidesContainer.appendChild(el);
+        !item.guide && ((_b = this.guidesContainer) === null || _b === void 0 ? void 0 : _b.appendChild(el));
         return el;
     },
     getElementPos: function (el) {
@@ -16117,18 +16135,24 @@ var evName = 'dmode';
     getElementGuides: function (el) {
         var _this = this;
         var opts = this.opts;
+        var origin = el;
         var originRect = this.getElementPos(el);
+        var component = (0,_utils_mixins__WEBPACK_IMPORTED_MODULE_2__.getComponentModel)(el);
+        var componentView = (0,_utils_mixins__WEBPACK_IMPORTED_MODULE_2__.getComponentView)(el);
         var top = originRect.top, height = originRect.height, left = originRect.left, width = originRect.width;
-        // @ts-ignore
-        var guides = [
+        var guidePoints = [
             { type: 't', y: top }, // Top
             { type: 'b', y: top + height }, // Bottom
             { type: 'l', x: left }, // Left
             { type: 'r', x: left + width }, // Right
             { type: 'x', x: left + width / 2 }, // Mid x
             { type: 'y', y: top + height / 2 }, // Mid y
-        ].map(function (item) { return (__assign(__assign({}, item), { origin: el, originRect: originRect, guide: opts.debug && _this.renderGuide(item) })); });
-        guides.forEach(function (item) { var _a; return (_a = _this.guides) === null || _a === void 0 ? void 0 : _a.push(item); });
+        ];
+        var guides = guidePoints.map(function (guidePoint) {
+            var guide = opts.debug ? _this.renderGuide(guidePoint) : undefined;
+            return __assign(__assign({}, guidePoint), { component: component, componentView: componentView, componentEl: origin, origin: origin, componentElRect: originRect, originRect: originRect, guideEl: guide, guide: guide });
+        });
+        guides.forEach(function (guidePoint) { var _a; return (_a = _this.guides) === null || _a === void 0 ? void 0 : _a.push(guidePoint); });
         return guides;
     },
     getTranslate: function (transform, axis) {
@@ -16160,33 +16184,36 @@ var evName = 'dmode';
     },
     getPosition: function () {
         var _a = this, target = _a.target, isTran = _a.isTran;
-        var _b = target.getStyle(), left = _b.left, top = _b.top, transform = _b.transform;
+        var targetStyle = target.getStyle();
+        var transform = targetStyle.transform;
+        var left = targetStyle.left;
+        var top = targetStyle.top;
         var x = 0;
         var y = 0;
-        if (isTran) {
+        if (isTran && transform) {
             x = this.getTranslate(transform);
             y = this.getTranslate(transform, 'y');
         }
         else {
-            x = parseFloat(left || 0);
-            y = parseFloat(top || 0);
+            x = parseFloat(left !== null && left !== void 0 ? left : '0');
+            y = parseFloat(top !== null && top !== void 0 ? top : '0');
         }
         return { x: x, y: y };
     },
     setPosition: function (_a) {
+        var _b, _c;
         var x = _a.x, y = _a.y, end = _a.end, position = _a.position, width = _a.width, height = _a.height;
-        var _b = this, target = _b.target, isTran = _b.isTran, em = _b.em;
+        var _d = this, target = _d.target, isTran = _d.isTran, em = _d.em, opts = _d.opts;
         var unit = 'px';
         var __p = !end; // Indicate if partial change
-        var left = "".concat(parseInt(x, 10)).concat(unit);
-        var top = "".concat(parseInt(y, 10)).concat(unit);
+        var left = "".concat(parseInt("".concat(x), 10)).concat(unit);
+        var top = "".concat(parseInt("".concat(y), 10)).concat(unit);
         var styleUp = {};
         if (isTran) {
-            var transform = target.getStyle()['transform'] || '';
+            var transform = ((_c = (_b = target.getStyle()) === null || _b === void 0 ? void 0 : _b.transform) !== null && _c !== void 0 ? _c : '');
             transform = this.setTranslate(transform, 'x', left);
             transform = this.setTranslate(transform, 'y', top);
             styleUp = { transform: transform, __p: __p };
-            target.addStyle(styleUp, { avoidStore: !end });
         }
         else {
             var adds_1 = { position: position, width: width, height: height };
@@ -16197,9 +16224,14 @@ var evName = 'dmode';
                     style_1[add] = prop;
             });
             styleUp = style_1;
+        }
+        if (opts.addStyle) {
+            opts.addStyle({ component: target, styles: styleUp, partial: !end });
+        }
+        else {
             target.addStyle(styleUp, { avoidStore: !end });
         }
-        em === null || em === void 0 ? void 0 : em.Styles.__emitCmpStyleUpdate(styleUp, { components: em.getSelected() });
+        em.Styles.__emitCmpStyleUpdate(styleUp, { components: em.getSelected() });
     },
     _getDragData: function () {
         var target = this.target;
@@ -16210,28 +16242,31 @@ var evName = 'dmode';
         };
     },
     onStart: function (event) {
-        var _a = this, target = _a.target, editor = _a.editor, isTran = _a.isTran, opts = _a.opts;
-        var center = opts.center, onStart = opts.onStart;
+        var _a;
+        var _b = this, target = _b.target, editor = _b.editor, isTran = _b.isTran, opts = _b.opts;
         var Canvas = editor.Canvas;
         var style = target.getStyle();
         var position = 'absolute';
         var relPos = [position, 'relative'];
-        onStart && onStart(this._getDragData());
+        (_a = opts.onStart) === null || _a === void 0 ? void 0 : _a.call(opts, this._getDragData());
         if (isTran)
             return;
         if (style.position !== position) {
-            var _b = Canvas.offset(target.getEl()), left = _b.left, top_1 = _b.top, width = _b.width, height = _b.height;
+            var _c = Canvas.offset(target.getEl()), left = _c.left, top_1 = _c.top, width = _c.width, height = _c.height;
             var parent_1 = target.parent();
-            var parentRel = void 0;
+            var parentRel = null;
             // Check for the relative parent
             do {
-                var pStyle = parent_1.getStyle();
-                parentRel = relPos.indexOf(pStyle.position) >= 0 ? parent_1 : null;
-                parent_1 = parent_1.parent();
+                var pStyle = parent_1 === null || parent_1 === void 0 ? void 0 : parent_1.getStyle();
+                var position_1 = pStyle === null || pStyle === void 0 ? void 0 : pStyle.position;
+                if (position_1) {
+                    parentRel = relPos.indexOf(position_1) >= 0 ? parent_1 : null;
+                }
+                parent_1 = parent_1 === null || parent_1 === void 0 ? void 0 : parent_1.parent();
             } while (parent_1 && !parentRel);
             // Center the target to the pointer position (used in Droppable for Blocks)
-            if (center) {
-                var _c = Canvas.getMouseRelativeCanvas(event), x = _c.x, y = _c.y;
+            if (opts.center) {
+                var _d = Canvas.getMouseRelativeCanvas(event), x = _d.x, y = _d.y;
                 left = x;
                 top_1 = y;
             }
@@ -16248,26 +16283,25 @@ var evName = 'dmode';
                 position: position,
             });
         }
+        // Recalculate guides to avoid issues with the new position durin the first drag
+        this.guidesStatic = this.getGuidesStatic();
     },
-    onDrag: function () {
+    onDrag: function (event) {
         var _this = this;
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i] = arguments[_i];
-        }
-        var _a = this, guidesTarget = _a.guidesTarget, opts = _a.opts;
-        var onDrag = opts.onDrag;
+        var _a, _b;
+        var _c = this, guidesTarget = _c.guidesTarget, opts = _c.opts;
         this.updateGuides(guidesTarget);
-        opts.debug && guidesTarget.forEach(function (item) { return _this.renderGuide(item); });
-        opts.guidesInfo && this.renderGuideInfo(guidesTarget.filter(function (item) { return item.active; }));
-        onDrag && onDrag(this._getDragData());
+        opts.debug && (guidesTarget === null || guidesTarget === void 0 ? void 0 : guidesTarget.forEach(function (item) { return _this.renderGuide(item); }));
+        opts.guidesInfo && this.renderGuideInfo((_a = guidesTarget === null || guidesTarget === void 0 ? void 0 : guidesTarget.filter(function (item) { return item.active; })) !== null && _a !== void 0 ? _a : []);
+        (_b = opts.onDrag) === null || _b === void 0 ? void 0 : _b.call(opts, this._getDragData());
+        this.opts.event = event;
+        this.em.trigger("".concat(evName, ":move"), this.getEventOpts());
     },
-    onEnd: function (ev, dragger, opt) {
-        if (opt === void 0) { opt = {}; }
-        var _a = this, editor = _a.editor, opts = _a.opts, id = _a.id;
-        var onEnd = opts.onEnd;
-        onEnd && onEnd(ev, opt, __assign(__assign({ event: ev }, opt), this._getDragData()));
-        editor.stopCommand(id);
+    onEnd: function (ev, _dragger, opt) {
+        var _a;
+        var _b = this, editor = _b.editor, opts = _b.opts, id = _b.id;
+        (_a = opts.onEnd) === null || _a === void 0 ? void 0 : _a.call(opts, ev, opt, __assign(__assign({ event: ev }, opt), this._getDragData()));
+        editor.stopCommand("".concat(id));
         this.hideGuidesInfo();
         this.em.trigger("".concat(evName, ":end"), this.getEventOpts());
     },
@@ -16279,56 +16313,119 @@ var evName = 'dmode';
                 guide.style.display = 'none';
         });
     },
-    /**
-     * Render guides with spacing information
-     */
     renderGuideInfo: function (guides) {
         var _this = this;
         if (guides === void 0) { guides = []; }
-        var guidesStatic = this.guidesStatic;
         this.hideGuidesInfo();
-        guides.forEach(function (item) {
-            var origin = item.origin, x = item.x;
+        var guidesMatched = this.getGuidesMatched(guides);
+        guidesMatched.forEach(function (guideMatched) {
+            if (!_this.opts.skipGuidesRender) {
+                _this.renderSingleGuideInfo(guideMatched);
+            }
+            _this.em.trigger("".concat(evName, ":active"), __assign(__assign({}, _this.getEventOpts()), guideMatched));
+        });
+    },
+    renderSingleGuideInfo: function (guideMatched) {
+        var posFirst = guideMatched.posFirst, posSecond = guideMatched.posSecond, size = guideMatched.size, sizeRaw = guideMatched.sizeRaw, guide = guideMatched.guide, elGuideInfo = guideMatched.elGuideInfo, elGuideInfoCnt = guideMatched.elGuideInfoCnt;
+        var axis = (0,underscore__WEBPACK_IMPORTED_MODULE_0__.isUndefined)(guide.x) ? 'y' : 'x';
+        var isY = axis === 'y';
+        var guideInfoStyle = elGuideInfo.style;
+        guideInfoStyle.display = '';
+        guideInfoStyle[isY ? 'top' : 'left'] = "".concat(posFirst, "px");
+        guideInfoStyle[isY ? 'left' : 'top'] = "".concat(posSecond, "px");
+        guideInfoStyle[isY ? 'width' : 'height'] = "".concat(size, "px");
+        elGuideInfoCnt.innerHTML = "".concat(Math.round(sizeRaw), "px");
+    },
+    getGuidesMatched: function (guides) {
+        var _this = this;
+        if (guides === void 0) { guides = []; }
+        var _a = this.guidesStatic, guidesStatic = _a === void 0 ? [] : _a;
+        return guides
+            .map(function (guide) {
+            var origin = guide.origin, x = guide.x;
             var rectOrigin = _this.getElementPos(origin);
             var axis = (0,underscore__WEBPACK_IMPORTED_MODULE_0__.isUndefined)(x) ? 'y' : 'x';
             var isY = axis === 'y';
+            // Calculate the edges of the element
             var origEdge1 = rectOrigin[isY ? 'left' : 'top'];
             var origEdge1Raw = rectOrigin.rect[isY ? 'left' : 'top'];
             var origEdge2 = isY ? origEdge1 + rectOrigin.width : origEdge1 + rectOrigin.height;
             var origEdge2Raw = isY ? origEdge1Raw + rectOrigin.rect.width : origEdge1Raw + rectOrigin.rect.height;
-            var elGuideInfo = _this["elGuideInfo".concat(axis.toUpperCase())];
-            var elGuideInfoCnt = _this["elGuideInfoContent".concat(axis.toUpperCase())];
-            var guideInfoStyle = elGuideInfo.style;
             // Find the nearest element
-            var res = guidesStatic === null || guidesStatic === void 0 ? void 0 : guidesStatic.filter(function (stat) { return stat.type === item.type; }).map(function (stat) {
-                var _a = stat.originRect, left = _a.left, width = _a.width, top = _a.top, height = _a.height;
+            var guidesMatched = guidesStatic
+                .filter(function (guideStatic) {
+                var _a;
+                // Define complementary guide types
+                var complementaryTypes = {
+                    l: ['r', 'x'], // Left can match with Right or Middle (horizontal)
+                    r: ['l', 'x'], // Right can match with Left or Middle (horizontal)
+                    x: ['l', 'r'], // Middle (horizontal) can match with Left or Right
+                    t: ['b', 'y'], // Top can match with Bottom or Middle (vertical)
+                    b: ['t', 'y'], // Bottom can match with Top or Middle (vertical)
+                    y: ['t', 'b'], // Middle (vertical) can match with Top or Bottom
+                };
+                // Check if the guide type matches or is complementary
+                return guideStatic.type === guide.type || ((_a = complementaryTypes[guide.type]) === null || _a === void 0 ? void 0 : _a.includes(guideStatic.type));
+            })
+                .map(function (guideStatic) {
+                var _a = guideStatic.originRect, left = _a.left, width = _a.width, top = _a.top, height = _a.height;
                 var statEdge1 = isY ? left : top;
                 var statEdge2 = isY ? left + width : top + height;
                 return {
                     gap: statEdge2 < origEdge1 ? origEdge1 - statEdge2 : statEdge1 - origEdge2,
-                    guide: stat,
+                    guide: guideStatic,
                 };
-            }).filter(function (item) { return item.gap > 0; }).sort(function (a, b) { return a.gap - b.gap; }).map(function (item) { return item.guide; })[0];
-            if (res) {
-                var _a = res.originRect, left = _a.left, width = _a.width, top_2 = _a.top, height = _a.height, rect = _a.rect;
+            })
+                .filter(function (item) { return item.gap > 0; })
+                .sort(function (a, b) { return a.gap - b.gap; })
+                .map(function (item) { return item.guide; })
+                // Filter the guides that don't match the position of the dragged element
+                .filter(function (item) {
+                switch (guide.type) {
+                    case 'l':
+                    case 'r':
+                    case 'x':
+                        return Math.abs(item.x - guide.x) < 1;
+                    case 't':
+                    case 'b':
+                    case 'y':
+                        return Math.abs(item.y - guide.y) < 1;
+                    default:
+                        return false;
+                }
+            });
+            // TODO: consider supporting multiple guides
+            var firstGuideMatched = guidesMatched[0];
+            if (firstGuideMatched) {
+                var _a = firstGuideMatched.originRect, left = _a.left, width = _a.width, top_2 = _a.top, height = _a.height, rect = _a.rect;
                 var isEdge1 = isY ? left < rectOrigin.left : top_2 < rectOrigin.top;
                 var statEdge1 = isY ? left : top_2;
                 var statEdge1Raw = isY ? rect.left : rect.top;
                 var statEdge2 = isY ? left + width : top_2 + height;
                 var statEdge2Raw = isY ? rect.left + rect.width : rect.top + rect.height;
-                var posFirst = isY ? item.y : item.x;
+                var posFirst = isY ? guide.y : guide.x;
                 var posSecond = isEdge1 ? statEdge2 : origEdge2;
-                var pos2 = "".concat(posFirst, "px");
                 var size = isEdge1 ? origEdge1 - statEdge2 : statEdge1 - origEdge2;
                 var sizeRaw = isEdge1 ? origEdge1Raw - statEdge2Raw : statEdge1Raw - origEdge2Raw;
-                guideInfoStyle.display = '';
-                guideInfoStyle[isY ? 'top' : 'left'] = pos2;
-                guideInfoStyle[isY ? 'left' : 'top'] = "".concat(posSecond, "px");
-                guideInfoStyle[isY ? 'width' : 'height'] = "".concat(size, "px");
-                elGuideInfoCnt.innerHTML = "".concat(Math.round(sizeRaw), "px");
-                _this.em.trigger("".concat(evName, ":active"), __assign(__assign({}, _this.getEventOpts()), { guide: item, guidesStatic: guidesStatic, matched: res, posFirst: posFirst, posSecond: posSecond, size: size, sizeRaw: sizeRaw, elGuideInfo: elGuideInfo, elGuideInfoCnt: elGuideInfoCnt }));
+                var elGuideInfo = _this["elGuideInfo".concat(axis.toUpperCase())];
+                var elGuideInfoCnt = _this["elGuideInfoContent".concat(axis.toUpperCase())];
+                return {
+                    guide: guide,
+                    guidesStatic: guidesStatic,
+                    matched: firstGuideMatched,
+                    posFirst: posFirst,
+                    posSecond: posSecond,
+                    size: size,
+                    sizeRaw: sizeRaw,
+                    elGuideInfo: elGuideInfo,
+                    elGuideInfoCnt: elGuideInfoCnt,
+                };
             }
-        });
+            else {
+                return null;
+            }
+        })
+            .filter(Boolean);
     },
     toggleDrag: function (enable) {
         var _a = this, ppfx = _a.ppfx, editor = _a.editor;
@@ -16339,12 +16436,17 @@ var evName = 'dmode';
         classes.forEach(function (cls) { return body.classList[methodCls](cls); });
         Canvas[enable ? 'startAutoscroll' : 'stopAutoscroll']();
     },
+    // These properties values are set in the run method, they need to be initialized here to avoid TS errors
+    editor: undefined,
+    em: undefined,
+    opts: undefined,
+    target: undefined,
 });
 
 
 /***/ }),
 
-/***/ 1859:
+/***/ 6134:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -16368,7 +16470,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 3709:
+/***/ 914:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -16396,7 +16498,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 2860:
+/***/ 5547:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -16431,7 +16533,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 4944:
+/***/ 8655:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -16465,7 +16567,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 767:
+/***/ 7640:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -16499,7 +16601,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 2126:
+/***/ 5837:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -16526,14 +16628,14 @@ var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from
 
 /***/ }),
 
-/***/ 4860:
+/***/ 6477:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _utils_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2097);
+/* harmony import */ var _utils_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6294);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
     run: function (editor, sender, opts) {
@@ -16586,7 +16688,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 1085:
+/***/ 1772:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -16678,7 +16780,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 9622:
+/***/ 741:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -16686,10 +16788,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var underscore__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5706);
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6411);
-/* harmony import */ var _utils_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2097);
-/* harmony import */ var _SelectComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4596);
-/* harmony import */ var _SelectPosition__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2983);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7774);
+/* harmony import */ var _utils_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6294);
+/* harmony import */ var _SelectComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9317);
+/* harmony import */ var _SelectPosition__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1406);
 
 
 
@@ -16856,7 +16958,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 8481:
+/***/ 2924:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -16864,7 +16966,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var underscore__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5706);
-/* harmony import */ var _utils_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2097);
+/* harmony import */ var _utils_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6294);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -16936,7 +17038,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 3666:
+/***/ 3963:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -16944,7 +17046,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var underscore__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5706);
-/* harmony import */ var _utils_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2097);
+/* harmony import */ var _utils_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6294);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -16998,7 +17100,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 5838:
+/***/ 1479:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -17037,14 +17139,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 8692:
+/***/ 3473:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6411);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7774);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
     run: function (editor, sender) {
@@ -17126,14 +17228,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 9163:
+/***/ 5054:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6411);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7774);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
     run: function (editor, sender) {
@@ -17199,7 +17301,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 9298:
+/***/ 6979:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -17253,7 +17355,7 @@ function doAdd(ed, clp, parent, addOpts) {
 
 /***/ }),
 
-/***/ 8594:
+/***/ 4457:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -17353,7 +17455,7 @@ var cmdOutline = 'core:component-outline';
 
 /***/ }),
 
-/***/ 7604:
+/***/ 5493:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -17397,7 +17499,7 @@ var __assign = (undefined && undefined.__assign) || function () {
 
 /***/ }),
 
-/***/ 4596:
+/***/ 9317:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -17411,7 +17513,7 @@ __webpack_require__.d(__webpack_exports__, {
 // EXTERNAL MODULE: ../../node_modules/.pnpm/underscore@1.13.1/node_modules/underscore/modules/index-all.js + 160 modules
 var index_all = __webpack_require__(5706);
 // EXTERNAL MODULE: ./src/common/index.ts
-var common = __webpack_require__(1749);
+var common = __webpack_require__(9156);
 ;// CONCATENATED MODULE: ./src/dom_components/model/ToolbarButton.ts
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -17473,7 +17575,7 @@ var Toolbar = /** @class */ (function (_super) {
 Toolbar.prototype.model = model_ToolbarButton;
 
 // EXTERNAL MODULE: ./src/domain_abstract/view/DomainViews.ts
-var DomainViews = __webpack_require__(91);
+var DomainViews = __webpack_require__(8242);
 ;// CONCATENATED MODULE: ./src/dom_components/view/ToolbarButtonView.ts
 var ToolbarButtonView_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -17606,13 +17708,13 @@ var ToolbarView = /** @class */ (function (_super) {
 ToolbarView.prototype.itemView = view_ToolbarButtonView;
 
 // EXTERNAL MODULE: ./src/utils/dom.ts
-var dom = __webpack_require__(2097);
+var dom = __webpack_require__(6294);
 // EXTERNAL MODULE: ./src/utils/mixins.ts
-var mixins = __webpack_require__(9195);
+var mixins = __webpack_require__(1166);
 // EXTERNAL MODULE: ./src/canvas/model/CanvasSpot.ts
-var CanvasSpot = __webpack_require__(2820);
+var CanvasSpot = __webpack_require__(179);
 // EXTERNAL MODULE: ./src/dom_components/types.ts
-var types = __webpack_require__(3172);
+var types = __webpack_require__(2225);
 ;// CONCATENATED MODULE: ./src/commands/view/SelectComponent.ts
 var SelectComponent_assign = (undefined && undefined.__assign) || function () {
     SelectComponent_assign = Object.assign || function(t) {
@@ -17716,7 +17818,7 @@ var showOffsets;
         methods[method](listenToEl, 'scroll', this.onContainerChange);
         em[method]("component:toggled ".concat(eventCmpUpdate, " undo redo"), this.onSelect, this);
         em[method]('change:componentHovered', this.onHovered, this);
-        em[method]('component:resize styleable:change component:input', this.updateGlobalPos, this);
+        em[method]("".concat(types/* ComponentsEvents */.I.resize, " styleable:change component:input"), this.updateGlobalPos, this);
         em[method]("".concat(eventCmpUpdate, ":toolbar"), this._upToolbar, this);
         em[method]('frame:updated', this.onFrameUpdated, this);
         em[method]('canvas:updateTools', this.onFrameUpdated, this);
@@ -17763,7 +17865,7 @@ var showOffsets;
             (_a = component.views) === null || _a === void 0 ? void 0 : _a.forEach(function (view) {
                 var el = view.el;
                 var pos = _this.getElementPos(el);
-                result = { el: el, pos: pos, component: component, view: (0,mixins.getViewEl)(el) };
+                result = { el: el, pos: pos, component: component, view: view };
                 if (el.ownerDocument === _this.currentDoc) {
                     _this.elHovered = result;
                 }
@@ -17792,11 +17894,11 @@ var showOffsets;
         var component = em.getSelected();
         var currentFrame = em.getCurrentFrame();
         var view = component && component.getView(currentFrame === null || currentFrame === void 0 ? void 0 : currentFrame.model);
-        var el = view && view.el;
+        var el = view === null || view === void 0 ? void 0 : view.el;
         var result = {};
         if (el && (0,dom/* isVisible */.zN)(el)) {
             var pos = this.getElementPos(el);
-            result = { el: el, pos: pos, component: component, view: (0,mixins.getViewEl)(el) };
+            result = { el: el, pos: pos, component: component, view: view };
         }
         this.elSelected = result;
         this.updateToolsGlobal();
@@ -17991,10 +18093,17 @@ var showOffsets;
         var spotTypeResize = CanvasSpot/* CanvasSpotBuiltInTypes */.F.Resize;
         var hasCustomResize = canvas.hasCustomSpot(spotTypeResize);
         canvas.removeSpots({ type: spotTypeResize });
-        if (model && resizable) {
+        var initEventOpts = {
+            component: model,
+            hasCustomResize: hasCustomResize,
+            resizable: resizable,
+        };
+        model && em.trigger(types/* ComponentsEvents */.I.resizeInit, initEventOpts);
+        var resizableResult = initEventOpts.resizable;
+        if (model && resizableResult) {
             canvas.addSpot({ type: spotTypeResize, component: model });
             var el = (0,index_all.isElement)(elem) ? elem : model.getEl();
-            var _b = (0,mixins.isObject)(resizable) ? resizable : {}, _c = _b.onStart, onStart_1 = _c === void 0 ? function () { } : _c, _d = _b.onMove, onMove_1 = _d === void 0 ? function () { } : _d, _e = _b.onEnd, onEnd_1 = _e === void 0 ? function () { } : _e, _f = _b.updateTarget, updateTarget_1 = _f === void 0 ? function () { } : _f, resizableOpts = __rest(_b, ["onStart", "onMove", "onEnd", "updateTarget"]);
+            var _b = (0,mixins.isObject)(resizableResult) ? resizableResult : {}, _c = _b.onStart, onStart_1 = _c === void 0 ? function () { } : _c, _d = _b.onMove, onMove_1 = _d === void 0 ? function () { } : _d, _e = _b.onEnd, onEnd_1 = _e === void 0 ? function () { } : _e, _f = _b.updateTarget, updateTarget_1 = _f === void 0 ? function () { } : _f, resizableOpts = __rest(_b, ["onStart", "onMove", "onEnd", "updateTarget"]);
             if (hasCustomResize || !el || this.activeResizer)
                 return;
             var modelToStyle_1;
@@ -18043,16 +18152,16 @@ var showOffsets;
                         config.unitWidth = (0,mixins.getUnitFromValue)(currentWidth);
                     }
                     self_1.activeResizer = true;
-                    editor.trigger('component:resize', SelectComponent_assign(SelectComponent_assign({}, resizeEventOpts_1), { type: 'start' }));
+                    editor.trigger(types/* ComponentsEvents */.I.resize, SelectComponent_assign(SelectComponent_assign({}, resizeEventOpts_1), { type: 'start' }));
                 }, 
                 // Update all positioned elements (eg. component toolbar)
                 onMove: function (ev) {
                     onMove_1(ev);
-                    editor.trigger('component:resize', SelectComponent_assign(SelectComponent_assign({}, resizeEventOpts_1), { type: 'move' }));
+                    editor.trigger(types/* ComponentsEvents */.I.resize, SelectComponent_assign(SelectComponent_assign({}, resizeEventOpts_1), { type: 'move' }));
                 }, onEnd: function (ev, opts) {
                     onEnd_1(ev, opts);
                     toggleBodyClass_1('remove', ev, opts);
-                    editor.trigger('component:resize', SelectComponent_assign(SelectComponent_assign({}, resizeEventOpts_1), { type: 'end' }));
+                    editor.trigger(types/* ComponentsEvents */.I.resize, SelectComponent_assign(SelectComponent_assign({}, resizeEventOpts_1), { type: 'end' }));
                     showOffsets = true;
                     self_1.activeResizer = false;
                 }, updateTarget: function (el, rect, options) {
@@ -18335,16 +18444,16 @@ var showOffsets;
 
 /***/ }),
 
-/***/ 2983:
+/***/ 1406:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6411);
-/* harmony import */ var _utils_sorter_CanvasComponentNode__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6778);
-/* harmony import */ var _utils_sorter_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2128);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7774);
+/* harmony import */ var _utils_sorter_CanvasComponentNode__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1447);
+/* harmony import */ var _utils_sorter_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8433);
 
 
 
@@ -18457,7 +18566,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 9490:
+/***/ 9395:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -18465,8 +18574,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var underscore__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5706);
-/* harmony import */ var _canvas_model_CanvasSpot__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2820);
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6411);
+/* harmony import */ var _canvas_model_CanvasSpot__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(179);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7774);
 var __assign = (undefined && undefined.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -18646,7 +18755,7 @@ var __assign = (undefined && undefined.__assign) || function () {
 
 /***/ }),
 
-/***/ 1396:
+/***/ 7285:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -18654,7 +18763,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var underscore__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5706);
-/* harmony import */ var _utils_mixins__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9195);
+/* harmony import */ var _utils_mixins__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1166);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -18704,7 +18813,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 1749:
+/***/ 9156:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -18785,7 +18894,7 @@ var DEFAULT_BOXRECT = __assign(__assign({}, DEFAULT_COORDS), { width: 0, height:
 
 /***/ }),
 
-/***/ 3172:
+/***/ 2225:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -18854,6 +18963,24 @@ var ComponentsEvents;
      */
     ComponentsEvents["render"] = "component:render";
     /**
+     * @event `component:resize` Component resized. This event is triggered when the component is resized in the canvas.
+     * @example
+     * editor.on('component:resize', ({ component, type }) => {
+     *  // type can be 'start', 'move', or 'end'
+     * });
+     */
+    ComponentsEvents["resize"] = "component:resize";
+    /**
+     * @event `component:resize:init` Component resize init. This event allows you to control the resizer options dinamically.
+     * @example
+     * editor.on('component:resize:init', (opts) => {
+     *  if (opts.component.is('someType')) {
+     *   opts.resizable = true; // Update resizable options
+     *  }
+     * });
+     */
+    ComponentsEvents["resizeInit"] = "component:resize:init";
+    /**
      * @event `symbol:main:add` Added new main symbol.
      * @example
      * editor.on('symbol:main:add', ({ component }) => { ... });
@@ -18907,14 +19034,14 @@ var ComponentsEvents;
 
 /***/ }),
 
-/***/ 91:
+/***/ 8242:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var underscore__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5706);
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1749);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9156);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -19057,14 +19184,14 @@ DomainViews.prototype.itemView = '';
 
 /***/ }),
 
-/***/ 5633:
+/***/ 9966:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var underscore__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5706);
-/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2097);
+/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6294);
 var __assign = (undefined && undefined.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -19088,6 +19215,7 @@ var Dragger = /** @class */ (function () {
     function Dragger(opts) {
         if (opts === void 0) { opts = {}; }
         this.opts = {
+            snapGuides: { x: 5, y: 5 },
             snapOffset: 5,
             scale: 1,
         };
@@ -19172,20 +19300,6 @@ var Dragger = /** @class */ (function () {
             y: currentPos.y - startPointer.y + glDiff.y,
         };
         this.lastScrollDiff = resetPos();
-        var lockedAxis = this.lockedAxis;
-        // @ts-ignore Lock one axis
-        if (ev.shiftKey) {
-            lockedAxis = !lockedAxis && this.detectAxisLock(delta.x, delta.y);
-        }
-        else {
-            lockedAxis = null;
-        }
-        if (lockedAxis === 'x') {
-            delta.x = startPointer.x;
-        }
-        else if (lockedAxis === 'y') {
-            delta.y = startPointer.y;
-        }
         var moveDelta = function (delta) {
             xyArr.forEach(function (co) { return (delta[co] = delta[co] * (0,underscore__WEBPACK_IMPORTED_MODULE_0__.result)(opts, 'scale')); });
             _this.delta = delta;
@@ -19194,7 +19308,6 @@ var Dragger = /** @class */ (function () {
         };
         var deltaPre = __assign({}, delta);
         this.currentPointer = currentPos;
-        this.lockedAxis = lockedAxis;
         this.lastScroll = this.getScrollInfo();
         moveDelta(delta);
         if (this.guidesTarget.length) {
@@ -19209,7 +19322,7 @@ var Dragger = /** @class */ (function () {
      */
     Dragger.prototype.snapGuides = function (delta) {
         var _this = this;
-        var newDelta = delta;
+        var newDelta = __assign({}, delta);
         var _a = this, trgX = _a.trgX, trgY = _a.trgY;
         this.guidesTarget.forEach(function (trg) {
             // Skip the guide if its locked axis already exists
@@ -19220,12 +19333,12 @@ var Dragger = /** @class */ (function () {
                 if ((trg.y && stat.x) || (trg.x && stat.y))
                     return;
                 var isY = trg.y && stat.y;
-                var axs = isY ? 'y' : 'x';
-                var trgPoint = trg[axs];
-                var statPoint = stat[axs];
-                var deltaPoint = delta[axs];
+                var axis = isY ? 'y' : 'x';
+                var trgPoint = trg[axis];
+                var statPoint = stat[axis];
+                var deltaPoint = delta[axis];
                 var trgGuide = isY ? trgY : trgX;
-                if (_this.isPointIn(trgPoint, statPoint)) {
+                if (_this.isPointIn(trgPoint, statPoint, { axis: axis })) {
                     if ((0,underscore__WEBPACK_IMPORTED_MODULE_0__.isUndefined)(trgGuide)) {
                         var trgValue = deltaPoint - (trgPoint - statPoint);
                         _this.setGuideLock(trg, trgValue);
@@ -19235,16 +19348,16 @@ var Dragger = /** @class */ (function () {
         });
         trgX = this.trgX;
         trgY = this.trgY;
-        xyArr.forEach(function (co) {
-            var axis = co.toUpperCase();
+        xyArr.forEach(function (axis) {
+            var axisName = axis.toUpperCase();
             // @ts-ignore
-            var trg = _this["trg".concat(axis)];
-            if (trg && !_this.isPointIn(delta[co], trg.lock)) {
+            var trg = _this["trg".concat(axisName)];
+            if (trg && !_this.isPointIn(delta[axis], trg.lock, { axis: axis })) {
                 _this.setGuideLock(trg, null);
                 trg = null;
             }
             if (trg && !(0,underscore__WEBPACK_IMPORTED_MODULE_0__.isUndefined)(trg.lock)) {
-                newDelta[co] = trg.lock;
+                newDelta[axis] = trg.lock;
             }
         });
         return {
@@ -19254,9 +19367,16 @@ var Dragger = /** @class */ (function () {
         };
     };
     Dragger.prototype.isPointIn = function (src, trg, _a) {
-        var _b = _a === void 0 ? {} : _a, offset = _b.offset;
-        var ofst = offset || this.opts.snapOffset || 0;
-        return (src >= trg && src <= trg + ofst) || (src <= trg && src >= trg - ofst);
+        var _b;
+        var _c = _a === void 0 ? {} : _a, offset = _c.offset, axis = _c.axis;
+        var _d = this.opts, _e = _d.snapGuides, snapGuides = _e === void 0 ? {} : _e, _f = _d.snapOffset, snapOffset = _f === void 0 ? 0 : _f;
+        var axisOffset = axis === 'x' ? snapGuides.x : axis === 'y' ? snapGuides.y : undefined;
+        // If snapGuides.x or snapGuides.y is explicitly 0, disable snapping for that axis
+        var effectiveOffset = axisOffset === 0 ? 0 : ((_b = offset !== null && offset !== void 0 ? offset : axisOffset) !== null && _b !== void 0 ? _b : snapOffset);
+        // If effectiveOffset is 0, snapping is disabled for this axis
+        if (effectiveOffset === 0)
+            return false;
+        return (src >= trg && src <= trg + effectiveOffset) || (src <= trg && src >= trg - effectiveOffset);
     };
     Dragger.prototype.setGuideLock = function (guide, value) {
         var axis = !(0,underscore__WEBPACK_IMPORTED_MODULE_0__.isUndefined)(guide.x) ? 'X' : 'Y';
@@ -19285,7 +19405,6 @@ var Dragger = /** @class */ (function () {
         var x = cancelled ? 0 : delta.x;
         var y = cancelled ? 0 : delta.y;
         this.toggleDrag();
-        this.lockedAxis = null;
         this.move(x, y, true);
         var onEnd = this.opts.onEnd;
         (0,underscore__WEBPACK_IMPORTED_MODULE_0__.isFunction)(onEnd) && onEnd(ev, this, { cancelled: cancelled });
@@ -19403,7 +19522,7 @@ var Dragger = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 6411:
+/***/ 7774:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -20617,7 +20736,7 @@ fn.siblings = function () {
 
 /***/ }),
 
-/***/ 2097:
+/***/ 6294:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -20637,6 +20756,7 @@ fn.siblings = function () {
 /* harmony export */   Xy: () => (/* binding */ getDocumentScroll),
 /* harmony export */   YZ: () => (/* binding */ removeEl),
 /* harmony export */   ZQ: () => (/* binding */ isDoc),
+/* harmony export */   _I: () => (/* binding */ processDataGjsAttributeHyphen),
 /* harmony export */   a_: () => (/* binding */ createEl),
 /* harmony export */   af: () => (/* binding */ appendVNodes),
 /* harmony export */   bG: () => (/* binding */ replaceWith),
@@ -20861,11 +20981,15 @@ var off = function (el, ev, fn, opts) {
         els.forEach(function (el) { return el === null || el === void 0 ? void 0 : el.removeEventListener(ev, fn, opts); });
     });
 };
+var processDataGjsAttributeHyphen = function (str) {
+    var camelCased = str.replace(/-([a-zA-Z0-9])/g, function (_, char) { return char.toUpperCase(); });
+    return camelCased;
+};
 
 
 /***/ }),
 
-/***/ 9195:
+/***/ 1166:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -20908,7 +21032,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   wait: () => (/* binding */ wait)
 /* harmony export */ });
 /* harmony import */ var underscore__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5706);
-/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2097);
+/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6294);
 var __assign = (undefined && undefined.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -21175,13 +21299,13 @@ var buildBase64UrlFromSvg = function (svg) {
 
 /***/ }),
 
-/***/ 3253:
+/***/ 6756:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   h: () => (/* binding */ BaseComponentNode)
 /* harmony export */ });
-/* harmony import */ var _SortableTreeNode__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3161);
+/* harmony import */ var _SortableTreeNode__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3178);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -21413,13 +21537,13 @@ function isDisplayed(element) {
 
 /***/ }),
 
-/***/ 6778:
+/***/ 1447:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _BaseComponentNode__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3253);
+/* harmony import */ var _BaseComponentNode__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6756);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -21478,7 +21602,7 @@ var CanvasComponentNode = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 3161:
+/***/ 3178:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -21557,7 +21681,7 @@ var SortableTreeNode = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 2128:
+/***/ 8433:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -21577,58 +21701,58 @@ var DragDirection;
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
-	"./CanvasClear": 371,
-	"./CanvasClear.ts": 371,
-	"./CanvasMove": 6301,
-	"./CanvasMove.ts": 6301,
-	"./CommandAbstract": 5301,
-	"./CommandAbstract.ts": 5301,
-	"./ComponentDelete": 8542,
-	"./ComponentDelete.ts": 8542,
-	"./ComponentDrag": 1319,
-	"./ComponentDrag.ts": 1319,
-	"./ComponentEnter": 1859,
-	"./ComponentEnter.ts": 1859,
-	"./ComponentExit": 3709,
-	"./ComponentExit.ts": 3709,
-	"./ComponentNext": 2860,
-	"./ComponentNext.ts": 2860,
-	"./ComponentPrev": 4944,
-	"./ComponentPrev.ts": 4944,
-	"./ComponentStyleClear": 767,
-	"./ComponentStyleClear.ts": 767,
-	"./CopyComponent": 2126,
-	"./CopyComponent.ts": 2126,
-	"./ExportTemplate": 4860,
-	"./ExportTemplate.ts": 4860,
-	"./Fullscreen": 1085,
-	"./Fullscreen.ts": 1085,
-	"./MoveComponent": 9622,
-	"./MoveComponent.ts": 9622,
-	"./OpenAssets": 8481,
-	"./OpenAssets.ts": 8481,
-	"./OpenBlocks": 3666,
-	"./OpenBlocks.ts": 3666,
-	"./OpenLayers": 5838,
-	"./OpenLayers.ts": 5838,
-	"./OpenStyleManager": 8692,
-	"./OpenStyleManager.ts": 8692,
-	"./OpenTraitManager": 9163,
-	"./OpenTraitManager.ts": 9163,
-	"./PasteComponent": 9298,
-	"./PasteComponent.ts": 9298,
-	"./Preview": 8594,
-	"./Preview.ts": 8594,
-	"./Resize": 7604,
-	"./Resize.ts": 7604,
-	"./SelectComponent": 4596,
-	"./SelectComponent.ts": 4596,
-	"./SelectPosition": 2983,
-	"./SelectPosition.ts": 2983,
-	"./ShowOffset": 9490,
-	"./ShowOffset.ts": 9490,
-	"./SwitchVisibility": 1396,
-	"./SwitchVisibility.ts": 1396
+	"./CanvasClear": 9484,
+	"./CanvasClear.ts": 9484,
+	"./CanvasMove": 9516,
+	"./CanvasMove.ts": 9516,
+	"./CommandAbstract": 9946,
+	"./CommandAbstract.ts": 9946,
+	"./ComponentDelete": 7801,
+	"./ComponentDelete.ts": 7801,
+	"./ComponentDrag": 4864,
+	"./ComponentDrag.ts": 4864,
+	"./ComponentEnter": 6134,
+	"./ComponentEnter.ts": 6134,
+	"./ComponentExit": 914,
+	"./ComponentExit.ts": 914,
+	"./ComponentNext": 5547,
+	"./ComponentNext.ts": 5547,
+	"./ComponentPrev": 8655,
+	"./ComponentPrev.ts": 8655,
+	"./ComponentStyleClear": 7640,
+	"./ComponentStyleClear.ts": 7640,
+	"./CopyComponent": 5837,
+	"./CopyComponent.ts": 5837,
+	"./ExportTemplate": 6477,
+	"./ExportTemplate.ts": 6477,
+	"./Fullscreen": 1772,
+	"./Fullscreen.ts": 1772,
+	"./MoveComponent": 741,
+	"./MoveComponent.ts": 741,
+	"./OpenAssets": 2924,
+	"./OpenAssets.ts": 2924,
+	"./OpenBlocks": 3963,
+	"./OpenBlocks.ts": 3963,
+	"./OpenLayers": 1479,
+	"./OpenLayers.ts": 1479,
+	"./OpenStyleManager": 3473,
+	"./OpenStyleManager.ts": 3473,
+	"./OpenTraitManager": 5054,
+	"./OpenTraitManager.ts": 5054,
+	"./PasteComponent": 6979,
+	"./PasteComponent.ts": 6979,
+	"./Preview": 4457,
+	"./Preview.ts": 4457,
+	"./Resize": 5493,
+	"./Resize.ts": 5493,
+	"./SelectComponent": 9317,
+	"./SelectComponent.ts": 9317,
+	"./SelectPosition": 1406,
+	"./SelectPosition.ts": 1406,
+	"./ShowOffset": 9395,
+	"./ShowOffset.ts": 9395,
+	"./SwitchVisibility": 7285,
+	"./SwitchVisibility.ts": 7285
 };
 
 
@@ -24753,7 +24877,7 @@ __webpack_require__.d(__webpack_exports__, {
 // EXTERNAL MODULE: ../../node_modules/.pnpm/underscore@1.13.1/node_modules/underscore/modules/index-all.js + 160 modules
 var index_all = __webpack_require__(5706);
 // EXTERNAL MODULE: ./src/utils/mixins.ts
-var mixins = __webpack_require__(9195);
+var mixins = __webpack_require__(1166);
 ;// CONCATENATED MODULE: ./src/utils/html.ts
 
 /**
@@ -24866,7 +24990,7 @@ var config = function () { return ({
 var backbone = __webpack_require__(4193);
 var backbone_default = /*#__PURE__*/__webpack_require__.n(backbone);
 // EXTERNAL MODULE: ./src/utils/cash-dom.ts
-var cash_dom = __webpack_require__(6411);
+var cash_dom = __webpack_require__(7774);
 ;// CONCATENATED MODULE: ./src/utils/extender.ts
 
 /* harmony default export */ const extender = (function (_a) {
@@ -24967,7 +25091,7 @@ var cash_dom = __webpack_require__(6411);
 });
 
 // EXTERNAL MODULE: ./src/common/index.ts
-var common = __webpack_require__(1749);
+var common = __webpack_require__(9156);
 ;// CONCATENATED MODULE: ./src/editor/model/Selected.ts
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -25105,6 +25229,7 @@ var Module = /** @class */ (function () {
     });
     Module.prototype.render = function (opts) { };
     Module.prototype.postLoad = function (key) { };
+    Module.prototype.onInit = function () { };
     Object.defineProperty(Module.prototype, "name", {
         get: function () {
             return this._name;
@@ -25318,7 +25443,7 @@ var config_config_config = function () { return ({
 /* harmony default export */ const canvas_config_config = (config_config_config);
 
 // EXTERNAL MODULE: ./src/abstract/ModuleModel.ts
-var ModuleModel = __webpack_require__(3023);
+var ModuleModel = __webpack_require__(7058);
 ;// CONCATENATED MODULE: ./src/device_manager/config/config.ts
 var device_manager_config_config_config = function () { return ({
     default: '',
@@ -26313,9 +26438,9 @@ var Canvas = /** @class */ (function (_super) {
 /* harmony default export */ const model_Canvas = (Canvas);
 
 // EXTERNAL MODULE: ./src/canvas/model/CanvasSpot.ts
-var CanvasSpot = __webpack_require__(2820);
+var CanvasSpot = __webpack_require__(179);
 // EXTERNAL MODULE: ./src/dom_components/types.ts
-var dom_components_types = __webpack_require__(3172);
+var dom_components_types = __webpack_require__(2225);
 ;// CONCATENATED MODULE: ./src/canvas/model/CanvasSpots.ts
 var CanvasSpots_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -26346,7 +26471,7 @@ var CanvasSpots = /** @class */ (function (_super) {
         _this.on('remove', _this.onRemove);
         var em = _this.em;
         _this.refreshDbn = (0,index_all.debounce)(function () { return _this.refresh(); }, 0);
-        var evToRefreshDbn = "component:resize styleable:change component:input ".concat(dom_components_types/* ComponentsEvents */.I.update, " frame:updated undo redo");
+        var evToRefreshDbn = "".concat(dom_components_types/* ComponentsEvents */.I.resize, " styleable:change component:input ").concat(dom_components_types/* ComponentsEvents */.I.update, " frame:updated undo redo");
         _this.listenTo(em, evToRefreshDbn, function () { return _this.refreshDbn(); });
         return _this;
     }
@@ -26571,7 +26696,7 @@ var ModuleView = /** @class */ (function (_super) {
 /* harmony default export */ const abstract_ModuleView = (ModuleView);
 
 // EXTERNAL MODULE: ./src/utils/dom.ts
-var dom = __webpack_require__(2097);
+var dom = __webpack_require__(6294);
 ;// CONCATENATED MODULE: ./src/abstract/ModuleDomainViews.ts
 var ModuleDomainViews_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -27197,10 +27322,14 @@ var ParserHtml = function (em, config) {
             }
             return result;
         },
-        parseNodeAttr: function (node, result) {
-            var model = result || {};
+        parseNodeAttr: function (node, modelResult) {
+            var _a, _b;
+            var model = modelResult || {};
             var attrs = node.attributes || [];
             var attrsLen = attrs.length;
+            var convertHyphens = !!((_a = config === null || config === void 0 ? void 0 : config.optionsHtml) === null || _a === void 0 ? void 0 : _a.convertDataGjsAttributesHyphens);
+            var defaults = (convertHyphens && !!model.type && (0,index_all.result)((_b = em === null || em === void 0 ? void 0 : em.Components.getType(model.type)) === null || _b === void 0 ? void 0 : _b.model.prototype, 'defaults')) ||
+                {};
             for (var i = 0; i < attrsLen; i++) {
                 var nodeName = attrs[i].nodeName;
                 var nodeValue = attrs[i].nodeValue;
@@ -27215,7 +27344,12 @@ var ParserHtml = function (em, config) {
                 }
                 else if (nodeName.indexOf(this.modelAttrStart) === 0) {
                     var propsResult = this.getPropAttribute(nodeName, nodeValue);
-                    model[propsResult.name] = propsResult.value;
+                    var resolvedName = propsResult.name;
+                    if (convertHyphens && !(resolvedName in defaults)) {
+                        var transformed = (0,dom/* processDataGjsAttributeHyphen */._I)(resolvedName);
+                        resolvedName = transformed in defaults ? transformed : resolvedName;
+                    }
+                    model[resolvedName] = propsResult.value;
                 }
                 else {
                     // @ts-ignore Check for attributes from props (eg. required, disabled)
@@ -27416,9 +27550,9 @@ var ParserHtml = function (em, config) {
                 resHtml = this.parseNode(docEl.body, cf);
             }
             else {
-                var result = this.parseNodes(root, cf);
+                var result_1 = this.parseNodes(root, cf);
                 // I have to keep it otherwise it breaks the DomComponents.addComponent (returns always array)
-                resHtml = result.length === 1 && !cf.returnArray ? result[0] : result;
+                resHtml = result_1.length === 1 && !cf.returnArray ? result_1[0] : result_1;
             }
             res.html = resHtml;
             Parser === null || Parser === void 0 ? void 0 : Parser.__emitEvent(ParserEvents.html, { input: input, output: res, options: options });
@@ -27491,233 +27625,10 @@ var DataSourcesEvents;
     DataSourcesEvents["all"] = "data";
 })(DataSourcesEvents || (DataSourcesEvents = {}));
 
-;// CONCATENATED MODULE: ./src/data_sources/model/DataVariable.ts
-var DataVariable_extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-var DataVariableType = 'data-variable';
-var DataVariable = /** @class */ (function (_super) {
-    DataVariable_extends(DataVariable, _super);
-    function DataVariable(props, options) {
-        var _this = _super.call(this, props, options) || this;
-        _this.em = options.em;
-        return _this;
-    }
-    DataVariable.prototype.defaults = function () {
-        return {
-            type: DataVariableType,
-            defaultValue: '',
-            path: '',
-        };
-    };
-    DataVariable.prototype.getDataValue = function () {
-        var _a;
-        var _b = this.attributes, path = _b.path, defaultValue = _b.defaultValue;
-        return (_a = this.em) === null || _a === void 0 ? void 0 : _a.DataSources.getValue(path, defaultValue);
-    };
-    return DataVariable;
-}(common/* Model */.Kx));
-/* harmony default export */ const model_DataVariable = (DataVariable);
-
 ;// CONCATENATED MODULE: ./src/data_sources/model/data_collection/constants.ts
 var DataCollectionType = 'data-collection';
-var DataCollectionVariableType = 'data-collection-variable';
-var keyCollectionDefinition = 'collectionDef';
-var keyIsCollectionItem = '__is_data_collection_item';
-var keyCollectionsStateMap = '__collections_state_map';
-
-;// CONCATENATED MODULE: ./src/data_sources/model/data_collection/DataCollectionVariable.ts
-var DataCollectionVariable_extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var DataCollectionVariable_assign = (undefined && undefined.__assign) || function () {
-    DataCollectionVariable_assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return DataCollectionVariable_assign.apply(this, arguments);
-};
-
-
-
-
-var DataCollectionVariable = /** @class */ (function (_super) {
-    DataCollectionVariable_extends(DataCollectionVariable, _super);
-    function DataCollectionVariable(props, options) {
-        var _this = _super.call(this, props, options) || this;
-        _this.em = options.em;
-        _this.collectionsStateMap = options.collectionsStateMap;
-        _this.updateDataVariable();
-        return _this;
-    }
-    DataCollectionVariable.prototype.defaults = function () {
-        return {
-            type: DataCollectionVariableType,
-            collectionId: undefined,
-            variableType: undefined,
-            path: undefined,
-            value: undefined,
-        };
-    };
-    DataCollectionVariable.prototype.hasDynamicValue = function () {
-        return !!this.dataVariable;
-    };
-    DataCollectionVariable.prototype.getDataValue = function () {
-        var resolvedValue = this.updateDataVariable().resolvedValue;
-        if ((resolvedValue === null || resolvedValue === void 0 ? void 0 : resolvedValue.type) === DataVariableType) {
-            return this.dataVariable.getDataValue();
-        }
-        return resolvedValue;
-    };
-    DataCollectionVariable.prototype.updateDataVariable = function () {
-        var _this = this;
-        var _a;
-        if (!this.collectionsStateMap)
-            return { resolvedValue: undefined };
-        var resolvedValue = resolveCollectionVariable(this.attributes, this.collectionsStateMap, this.em);
-        var dataVariable;
-        if ((resolvedValue === null || resolvedValue === void 0 ? void 0 : resolvedValue.type) === DataVariableType) {
-            dataVariable = new model_DataVariable(resolvedValue, { em: this.em });
-            this.dataVariable = dataVariable;
-            (_a = this.resolverListener) === null || _a === void 0 ? void 0 : _a.destroy();
-            this.resolverListener = new model_DataResolverListener({
-                em: this.em,
-                resolver: dataVariable,
-                onUpdate: function () {
-                    var _a;
-                    _this.set('value', (_a = _this.dataVariable) === null || _a === void 0 ? void 0 : _a.getDataValue());
-                },
-            });
-        }
-        this.set('value', resolvedValue);
-        return { resolvedValue: resolvedValue, dataVariable: dataVariable };
-    };
-    DataCollectionVariable.prototype.updateCollectionsStateMap = function (collectionsStateMap) {
-        this.collectionsStateMap = collectionsStateMap;
-        this.updateDataVariable();
-    };
-    DataCollectionVariable.prototype.destroy = function () {
-        var _a, _b;
-        (_a = this.resolverListener) === null || _a === void 0 ? void 0 : _a.destroy();
-        (_b = this.dataVariable) === null || _b === void 0 ? void 0 : _b.destroy();
-        return _super.prototype.destroy.call(this);
-    };
-    DataCollectionVariable.prototype.toJSON = function (options) {
-        var json = _super.prototype.toJSON.call(this, options);
-        delete json.value;
-        !json.collectionId && delete json.collectionId;
-        return json;
-    };
-    return DataCollectionVariable;
-}(common/* Model */.Kx));
-/* harmony default export */ const data_collection_DataCollectionVariable = (DataCollectionVariable);
-function resolveCollectionVariable(collectionVariableDefinition, collectionsStateMap, em) {
-    var collectionId = collectionVariableDefinition.collectionId, variableType = collectionVariableDefinition.variableType, path = collectionVariableDefinition.path;
-    if (!collectionsStateMap)
-        return;
-    var collectionItem = collectionsStateMap[collectionId];
-    if (!collectionItem) {
-        return '';
-    }
-    if (!variableType) {
-        em.logError("Missing collection variable type for collection: ".concat(collectionId));
-        return '';
-    }
-    if (variableType === 'currentItem') {
-        return resolveCurrentItem(collectionItem, path, collectionId, em);
-    }
-    return collectionItem[variableType];
-}
-function resolveCurrentItem(collectionItem, path, collectionId, em) {
-    var currentItem = collectionItem.currentItem;
-    if (!currentItem) {
-        em.logError("Current item is missing for collection: ".concat(collectionId));
-        return '';
-    }
-    if (currentItem.type === DataVariableType) {
-        var resolvedPath = currentItem.path ? "".concat(currentItem.path, ".").concat(path) : path;
-        return DataCollectionVariable_assign(DataCollectionVariable_assign({}, currentItem), { path: resolvedPath });
-    }
-    if (path && !currentItem[path]) {
-        em.logError("Path not found in current item: ".concat(path, " for collection: ").concat(collectionId));
-        return '';
-    }
-    return path ? currentItem[path] : currentItem;
-}
-
-;// CONCATENATED MODULE: ./src/data_sources/model/utils.ts
-
-
-
-
-function isDataResolverProps(value) {
-    return (typeof value === 'object' && [DataVariableType, DataCondition_DataConditionType, DataCollectionVariableType].includes(value === null || value === void 0 ? void 0 : value.type));
-}
-function isDataResolver(value) {
-    return value instanceof model_DataVariable || value instanceof DataCondition;
-}
-function isDataVariable(variable) {
-    return (variable === null || variable === void 0 ? void 0 : variable.type) === DataVariableType;
-}
-function isDataCondition(variable) {
-    return (variable === null || variable === void 0 ? void 0 : variable.type) === DataConditionType;
-}
-function evaluateVariable(variable, em) {
-    return isDataVariable(variable) ? new model_DataVariable(variable, { em: em }).getDataValue() : variable;
-}
-function getDataResolverInstance(resolverProps, options) {
-    var type = resolverProps.type;
-    var resolver;
-    switch (type) {
-        case DataVariableType:
-            resolver = new model_DataVariable(resolverProps, options);
-            break;
-        case DataCondition_DataConditionType: {
-            resolver = new DataCondition(resolverProps, options);
-            break;
-        }
-        case DataCollectionVariableType: {
-            resolver = new data_collection_DataCollectionVariable(resolverProps, options);
-            break;
-        }
-        default:
-            throw new Error("Unsupported dynamic type: ".concat(type));
-    }
-    return resolver;
-}
-function getDataResolverInstanceValue(resolverProps, options) {
-    var resolver = getDataResolverInstance(resolverProps, options);
-    return resolver.getDataValue();
-}
+var DataCollectionItemType = 'data-collection-item';
+var keyCollectionDefinition = 'dataResolver';
 
 ;// CONCATENATED MODULE: ./src/data_sources/model/conditional_variables/LogicalGroupEvaluator.ts
 
@@ -27725,12 +27636,12 @@ var LogicalGroupEvaluator = /** @class */ (function () {
     function LogicalGroupEvaluator(operator, statements, opts) {
         this.operator = operator;
         this.statements = statements;
-        this.em = opts.em;
+        this.opts = opts;
     }
     LogicalGroupEvaluator.prototype.evaluate = function () {
         var _this = this;
         var results = this.statements.map(function (statement) {
-            var condition = new DataConditionEvaluator({ condition: statement }, { em: _this.em });
+            var condition = new DataConditionEvaluator({ condition: statement }, _this.opts);
             return condition.evaluate();
         });
         return this.operator.evaluate(results);
@@ -27740,12 +27651,16 @@ var LogicalGroupEvaluator = /** @class */ (function () {
 
 
 ;// CONCATENATED MODULE: ./src/data_sources/model/conditional_variables/operators/BaseOperator.ts
-var Operator = /** @class */ (function () {
-    function Operator(operation, opts) {
-        this.operation = operation;
+
+var SimpleOperator = /** @class */ (function () {
+    function SimpleOperator(operationString, opts) {
+        this.operationString = operationString;
         this.em = opts.em;
     }
-    return Operator;
+    SimpleOperator.prototype.getOperations = function () {
+        return enumToArray(this.operationsEnum);
+    };
+    return SimpleOperator;
 }());
 
 
@@ -27785,11 +27700,13 @@ var AnyTypeOperation;
 var AnyTypeOperator = /** @class */ (function (_super) {
     AnyTypeOperator_extends(AnyTypeOperator, _super);
     function AnyTypeOperator() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.operationsEnum = AnyTypeOperation;
+        return _this;
     }
     AnyTypeOperator.prototype.evaluate = function (left, right) {
         var _a;
-        switch (this.operation) {
+        switch (this.operationString) {
             case 'equals':
                 return left === right;
             case 'isTruthy':
@@ -27815,12 +27732,12 @@ var AnyTypeOperator = /** @class */ (function (_super) {
             case 'isDefaultValue':
                 return left instanceof model_DataVariable && left.get('defaultValue') === right;
             default:
-                (_a = this.em) === null || _a === void 0 ? void 0 : _a.logError("Unsupported generic operation: ".concat(this.operation));
+                (_a = this.em) === null || _a === void 0 ? void 0 : _a.logWarning("Unsupported generic operation: ".concat(this.operationString));
                 return false;
         }
     };
     return AnyTypeOperator;
-}(Operator));
+}(SimpleOperator));
 
 
 ;// CONCATENATED MODULE: ./src/data_sources/model/conditional_variables/operators/BooleanOperator.ts
@@ -27849,12 +27766,14 @@ var BooleanOperation;
 var BooleanOperator = /** @class */ (function (_super) {
     BooleanOperator_extends(BooleanOperator, _super);
     function BooleanOperator() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.operationsEnum = BooleanOperation;
+        return _this;
     }
     BooleanOperator.prototype.evaluate = function (statements) {
         if (!(statements === null || statements === void 0 ? void 0 : statements.length))
             return false;
-        switch (this.operation) {
+        switch (this.operationString) {
             case BooleanOperation.and:
                 return statements.every(Boolean);
             case BooleanOperation.or:
@@ -27862,12 +27781,12 @@ var BooleanOperator = /** @class */ (function (_super) {
             case BooleanOperation.xor:
                 return statements.filter(Boolean).length === 1;
             default:
-                this.em.logError("Unsupported boolean operation: ".concat(this.operation));
+                this.em.logWarning("Unsupported boolean operation: ".concat(this.operationString));
                 return false;
         }
     };
     return BooleanOperator;
-}(Operator));
+}(SimpleOperator));
 
 
 ;// CONCATENATED MODULE: ./src/data_sources/model/conditional_variables/operators/NumberOperator.ts
@@ -27899,10 +27818,14 @@ var NumberOperation;
 var NumberOperator = /** @class */ (function (_super) {
     NumberOperator_extends(NumberOperator, _super);
     function NumberOperator() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.operationsEnum = NumberOperation;
+        return _this;
     }
     NumberOperator.prototype.evaluate = function (left, right) {
-        switch (this.operation) {
+        if (typeof left !== 'number')
+            return false;
+        switch (this.operationString) {
             case NumberOperation.greaterThan:
                 return left > right;
             case NumberOperation.lessThan:
@@ -27916,12 +27839,12 @@ var NumberOperator = /** @class */ (function (_super) {
             case NumberOperation.notEquals:
                 return left !== right;
             default:
-                this.em.logError("Unsupported number operation: ".concat(this.operation));
+                this.em.logWarning("Unsupported number operation: ".concat(this.operationString));
                 return false;
         }
     };
     return NumberOperator;
-}(Operator));
+}(SimpleOperator));
 
 
 ;// CONCATENATED MODULE: ./src/data_sources/model/conditional_variables/operators/StringOperator.ts
@@ -27953,10 +27876,14 @@ var StringOperation;
 var StringOperator = /** @class */ (function (_super) {
     StringOperator_extends(StringOperator, _super);
     function StringOperator() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.operationsEnum = StringOperation;
+        return _this;
     }
     StringOperator.prototype.evaluate = function (left, right) {
-        switch (this.operation) {
+        if (typeof left !== 'string')
+            return false;
+        switch (this.operationString) {
             case StringOperation.contains:
                 return left.includes(right);
             case StringOperation.startsWith:
@@ -27965,19 +27892,19 @@ var StringOperator = /** @class */ (function (_super) {
                 return left.endsWith(right);
             case StringOperation.matchesRegex:
                 if (!right)
-                    this.em.logError('Regex pattern must be provided.');
-                return new RegExp(right).test(left);
+                    this.em.logWarning('Regex pattern must be provided.');
+                return new RegExp(right !== null && right !== void 0 ? right : '').test(left);
             case StringOperation.equalsIgnoreCase:
                 return left.toLowerCase() === right.toLowerCase();
             case StringOperation.trimEquals:
                 return left.trim() === right.trim();
             default:
-                this.em.logError("Unsupported string operation: ".concat(this.operation));
+                this.em.logWarning("Unsupported string operation: ".concat(this.operationString));
                 return false;
         }
     };
     return StringOperator;
-}(Operator));
+}(SimpleOperator));
 
 
 ;// CONCATENATED MODULE: ./src/data_sources/model/conditional_variables/DataConditionEvaluator.ts
@@ -28003,39 +27930,63 @@ var DataConditionEvaluator_extends = (undefined && undefined.__extends) || (func
 
 
 
+
 var DataConditionEvaluator = /** @class */ (function (_super) {
     DataConditionEvaluator_extends(DataConditionEvaluator, _super);
     function DataConditionEvaluator(props, opts) {
+        var _a;
         var _this = _super.call(this, props) || this;
+        _this.collectionsStateMap = {};
         _this.em = opts.em;
+        _this.collectionsStateMap = (_a = opts.collectionsStateMap) !== null && _a !== void 0 ? _a : {};
         return _this;
     }
     DataConditionEvaluator.prototype.evaluate = function () {
-        var em = this.em;
         var condition = this.get('condition');
-        if (typeof condition === 'boolean')
-            return condition;
+        if (!condition || (0,index_all.isBoolean)(condition))
+            return !!condition;
+        var resolvedOperator = this.getOperator();
+        if (!resolvedOperator)
+            return false;
+        return resolvedOperator.evaluate(this.getResolvedLeftValue(), this.getResolvedRightValue());
+    };
+    DataConditionEvaluator.prototype.getDependentDataVariables = function () {
+        var condition = this.get('condition');
+        if (!condition)
+            return [];
+        return this.extractDataVariables(condition);
+    };
+    DataConditionEvaluator.prototype.getOperations = function () {
+        var operator = this.getOperator();
+        if (!operator || operator instanceof LogicalGroupEvaluator)
+            return [];
+        return operator.getOperations();
+    };
+    DataConditionEvaluator.prototype.updateCollectionStateMap = function (collectionsStateMap) {
+        this.collectionsStateMap = collectionsStateMap;
+    };
+    DataConditionEvaluator.prototype.getOperator = function () {
+        var opts = { em: this.em, collectionsStateMap: this.collectionsStateMap };
+        var condition = this.get('condition');
+        if (!condition || (0,index_all.isBoolean)(condition))
+            return;
+        var resolvedOperator;
         if (this.isLogicGroup(condition)) {
             var logicalOperator = condition.logicalOperator, statements = condition.statements;
-            var operator = new BooleanOperator(logicalOperator, { em: em });
-            var logicalGroup = new LogicalGroupEvaluator(operator, statements, { em: em });
-            return logicalGroup.evaluate();
+            var operator = new BooleanOperator(logicalOperator, opts);
+            resolvedOperator = new LogicalGroupEvaluator(operator, statements, opts);
         }
         if (this.isExpression(condition)) {
-            var left = condition.left, operator = condition.operator, right = condition.right;
-            var evaluateLeft = evaluateVariable(left, this.em);
-            var evaluateRight = evaluateVariable(right, this.em);
-            var op = this.getOperator(evaluateLeft, operator);
-            var evaluated = op.evaluate(evaluateLeft, evaluateRight);
-            return evaluated;
+            var left = condition.left, operator = condition.operator;
+            var evaluatedLeft = valueOrResolve(left, opts);
+            resolvedOperator = this.resolveOperator(evaluatedLeft, operator);
         }
-        this.em.logError('Invalid condition type.');
-        return false;
+        return resolvedOperator;
     };
     /**
      * Factory method for creating operators based on the data type.
      */
-    DataConditionEvaluator.prototype.getOperator = function (left, operator) {
+    DataConditionEvaluator.prototype.resolveOperator = function (left, operator) {
         var em = this.em;
         if (this.isOperatorInEnum(operator, AnyTypeOperation)) {
             return new AnyTypeOperator(operator, { em: em });
@@ -28046,13 +27997,7 @@ var DataConditionEvaluator = /** @class */ (function (_super) {
         else if (typeof left === 'string') {
             return new StringOperator(operator, { em: em });
         }
-        throw new Error("Unsupported data type: ".concat(typeof left));
-    };
-    DataConditionEvaluator.prototype.getDependentDataVariables = function () {
-        var condition = this.get('condition');
-        if (!condition)
-            return [];
-        return this.extractDataVariables(condition);
+        return;
     };
     DataConditionEvaluator.prototype.extractDataVariables = function (condition) {
         var _this = this;
@@ -28076,6 +28021,24 @@ var DataConditionEvaluator = /** @class */ (function (_super) {
     };
     DataConditionEvaluator.prototype.isOperatorInEnum = function (operator, enumObject) {
         return Object.values(enumObject).includes(operator);
+    };
+    DataConditionEvaluator.prototype.resolveExpressionSide = function (property) {
+        var condition = this.get('condition');
+        var _a = this, em = _a.em, collectionsStateMap = _a.collectionsStateMap;
+        if (!condition || typeof condition === 'boolean') {
+            return condition;
+        }
+        if (condition && typeof condition === 'object' && property in condition) {
+            var value = condition[property];
+            return valueOrResolve(value, { em: em, collectionsStateMap: collectionsStateMap });
+        }
+        return undefined;
+    };
+    DataConditionEvaluator.prototype.getResolvedLeftValue = function () {
+        return this.resolveExpressionSide('left');
+    };
+    DataConditionEvaluator.prototype.getResolvedRightValue = function () {
+        return this.resolveExpressionSide('right');
     };
     DataConditionEvaluator.prototype.toJSON = function (options) {
         var condition = this.get('condition');
@@ -28105,17 +28068,6 @@ var DataCondition_extends = (undefined && undefined.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var DataCondition_assign = (undefined && undefined.__assign) || function () {
-    DataCondition_assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return DataCondition_assign.apply(this, arguments);
-};
 
 
 
@@ -28123,36 +28075,39 @@ var DataCondition_assign = (undefined && undefined.__assign) || function () {
 
 
 var DataCondition_DataConditionType = 'data-condition';
+var DataConditionEvaluationChangedEvent = 'data-condition-evaluation-changed';
+var DataConditionOutputChangedEvent = 'data-condition-output-changed';
 var DataCondition = /** @class */ (function (_super) {
     DataCondition_extends(DataCondition, _super);
     function DataCondition(props, opts) {
-        var _this = this;
-        if ((0,index_all.isUndefined)(props.condition)) {
-            opts.em.logError('No condition was provided to a conditional component.');
-        }
-        var conditionInstance = new DataConditionEvaluator({ condition: props.condition }, { em: opts.em });
-        _this = _super.call(this, DataCondition_assign(DataCondition_assign({ type: DataCondition_DataConditionType }, props), { condition: conditionInstance })) || this;
+        var _a;
+        var _this = _super.call(this, props, opts) || this;
+        _this.collectionsStateMap = {};
         _this.resolverListeners = [];
+        _this._previousEvaluationResult = null;
         _this.em = opts.em;
+        _this.collectionsStateMap = (_a = opts.collectionsStateMap) !== null && _a !== void 0 ? _a : {};
+        var _b = props.condition, condition = _b === void 0 ? {} : _b;
+        var instance = new DataConditionEvaluator({ condition: condition }, { em: _this.em });
+        _this._conditionEvaluator = instance;
         _this.listenToDataVariables();
-        _this._onValueChange = opts.onValueChange;
-        _this.on('change:condition change:ifTrue change:ifFalse', function () {
-            var _a;
-            _this.listenToDataVariables();
-            (_a = _this._onValueChange) === null || _a === void 0 ? void 0 : _a.call(_this);
-        });
+        _this.listenToPropsChange();
         return _this;
     }
-    Object.defineProperty(DataCondition.prototype, "conditionEvaluator", {
-        get: function () {
-            return this.get('condition');
-        },
-        enumerable: false,
-        configurable: true
-    });
+    DataCondition.prototype.defaults = function () {
+        return {
+            type: DataCondition_DataConditionType,
+            condition: {
+                left: '',
+                operator: StringOperation.equalsIgnoreCase,
+                right: '',
+            },
+            ifTrue: {},
+            ifFalse: {},
+        };
+    };
     DataCondition.prototype.getCondition = function () {
-        var _a;
-        return (_a = this.get('condition')) === null || _a === void 0 ? void 0 : _a.get('condition');
+        return this._conditionEvaluator.get('condition');
     };
     DataCondition.prototype.getIfTrue = function () {
         return this.get('ifTrue');
@@ -28160,29 +28115,13 @@ var DataCondition = /** @class */ (function (_super) {
     DataCondition.prototype.getIfFalse = function () {
         return this.get('ifFalse');
     };
-    DataCondition.prototype.isTrue = function () {
-        return this.conditionEvaluator.evaluate();
+    DataCondition.prototype.getOperations = function () {
+        return this._conditionEvaluator.getOperations();
     };
-    DataCondition.prototype.getDataValue = function (skipDynamicValueResolution) {
-        if (skipDynamicValueResolution === void 0) { skipDynamicValueResolution = false; }
-        var ifTrue = this.get('ifTrue');
-        var ifFalse = this.get('ifFalse');
-        var isConditionTrue = this.isTrue();
-        if (skipDynamicValueResolution) {
-            return isConditionTrue ? ifTrue : ifFalse;
-        }
-        return isConditionTrue ? evaluateVariable(ifTrue, this.em) : evaluateVariable(ifFalse, this.em);
-    };
-    Object.defineProperty(DataCondition.prototype, "onValueChange", {
-        set: function (newFunction) {
-            this._onValueChange = newFunction;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    DataCondition.prototype.setCondition = function (newCondition) {
-        var newConditionInstance = new DataConditionEvaluator({ condition: newCondition }, { em: this.em });
-        this.set('condition', newConditionInstance);
+    DataCondition.prototype.setCondition = function (condition) {
+        this.set('condition', condition);
+        this._conditionEvaluator.set('condition', condition);
+        this.trigger(DataConditionOutputChangedEvent, this.getDataValue());
     };
     DataCondition.prototype.setIfTrue = function (newIfTrue) {
         this.set('ifTrue', newIfTrue);
@@ -28190,46 +28129,98 @@ var DataCondition = /** @class */ (function (_super) {
     DataCondition.prototype.setIfFalse = function (newIfFalse) {
         this.set('ifFalse', newIfFalse);
     };
-    DataCondition.prototype.listenToDataVariables = function () {
+    DataCondition.prototype.isTrue = function () {
+        return this._conditionEvaluator.evaluate();
+    };
+    DataCondition.prototype.getDataValue = function (skipDynamicValueResolution) {
+        if (skipDynamicValueResolution === void 0) { skipDynamicValueResolution = false; }
+        var _a = this, em = _a.em, collectionsStateMap = _a.collectionsStateMap;
+        var options = { em: em, collectionsStateMap: collectionsStateMap };
+        var ifTrue = this.getIfTrue();
+        var ifFalse = this.getIfFalse();
+        var isConditionTrue = this.isTrue();
+        if (skipDynamicValueResolution) {
+            return isConditionTrue ? ifTrue : ifFalse;
+        }
+        return isConditionTrue ? valueOrResolve(ifTrue, options) : valueOrResolve(ifFalse, options);
+    };
+    DataCondition.prototype.resolvesFromCollection = function () {
+        return false;
+    };
+    DataCondition.prototype.updateCollectionsStateMap = function (collectionsStateMap) {
+        this.collectionsStateMap = collectionsStateMap;
+        this._conditionEvaluator.updateCollectionStateMap(collectionsStateMap);
+        this.listenToDataVariables();
+        this.emitConditionEvaluationChange();
+    };
+    DataCondition.prototype.listenToPropsChange = function () {
         var _this = this;
-        var em = this.em;
-        if (!em)
-            return;
-        // Clear previous listeners to avoid memory leaks
-        this.cleanupListeners();
-        var dataVariables = this.getDependentDataVariables();
-        dataVariables.forEach(function (variable) {
-            var listener = new model_DataResolverListener({
-                em: em,
-                resolver: new model_DataVariable(variable, { em: _this.em }),
-                onUpdate: (function () {
-                    var _a;
-                    (_a = _this._onValueChange) === null || _a === void 0 ? void 0 : _a.call(_this);
-                }).bind(_this),
-            });
-            _this.resolverListeners.push(listener);
+        this.on('change:condition', this.handleConditionChange.bind(this));
+        this.on('change:condition change:ifTrue change:ifFalse', function () {
+            _this.listenToDataVariables();
         });
     };
-    DataCondition.prototype.getDependentDataVariables = function () {
-        var dataVariables = this.conditionEvaluator.getDependentDataVariables();
-        var ifTrue = this.get('ifTrue');
-        var ifFalse = this.get('ifFalse');
-        if (isDataVariable(ifTrue))
-            dataVariables.push(ifTrue);
-        if (isDataVariable(ifFalse))
-            dataVariables.push(ifFalse);
-        return dataVariables;
+    DataCondition.prototype.handleConditionChange = function () {
+        this.setCondition(this.get('condition'));
+    };
+    DataCondition.prototype.listenToDataVariables = function () {
+        this.cleanupListeners();
+        this.setupConditionDataVariableListeners();
+        this.setupOutputDataVariableListeners();
+    };
+    DataCondition.prototype.setupConditionDataVariableListeners = function () {
+        var _this = this;
+        this._conditionEvaluator.getDependentDataVariables().forEach(function (variable) {
+            _this.addListener(variable, function () {
+                _this.emitConditionEvaluationChange();
+            });
+        });
+    };
+    DataCondition.prototype.setupOutputDataVariableListeners = function () {
+        var isConditionTrue = this.isTrue();
+        this.setupOutputVariableListener(this.getIfTrue(), isConditionTrue);
+        this.setupOutputVariableListener(this.getIfFalse(), !isConditionTrue);
+    };
+    DataCondition.prototype.setupOutputVariableListener = function (outputVariable, isConditionTrue) {
+        var _this = this;
+        if (isDataVariable(outputVariable)) {
+            this.addListener(outputVariable, function () {
+                if (isConditionTrue) {
+                    _this.trigger(DataConditionOutputChangedEvent, outputVariable);
+                }
+            });
+        }
+    };
+    DataCondition.prototype.addListener = function (variable, onUpdate) {
+        var listener = new model_DataResolverListener({
+            em: this.em,
+            resolver: new model_DataVariable(variable, { em: this.em, collectionsStateMap: this.collectionsStateMap }),
+            onUpdate: onUpdate,
+        });
+        this.resolverListeners.push(listener);
+    };
+    DataCondition.prototype.emitConditionEvaluationChange = function () {
+        var currentEvaluationResult = this.isTrue();
+        if (this._previousEvaluationResult !== currentEvaluationResult) {
+            this._previousEvaluationResult = currentEvaluationResult;
+            this.trigger(DataConditionEvaluationChangedEvent, currentEvaluationResult);
+            this.emitOutputValueChange();
+        }
+    };
+    DataCondition.prototype.emitOutputValueChange = function () {
+        var currentOutputValue = this.getDataValue();
+        this.trigger(DataConditionOutputChangedEvent, currentOutputValue);
     };
     DataCondition.prototype.cleanupListeners = function () {
         this.resolverListeners.forEach(function (listener) { return listener.destroy(); });
         this.resolverListeners = [];
     };
     DataCondition.prototype.toJSON = function () {
-        var ifTrue = this.get('ifTrue');
-        var ifFalse = this.get('ifFalse');
+        var ifTrue = this.getIfTrue();
+        var ifFalse = this.getIfFalse();
         return {
             type: DataCondition_DataConditionType,
-            condition: this.conditionEvaluator,
+            condition: this._conditionEvaluator.toJSON(),
             ifTrue: ifTrue,
             ifFalse: ifFalse,
         };
@@ -28238,343 +28229,9 @@ var DataCondition = /** @class */ (function (_super) {
 }(common/* Model */.Kx));
 
 
-;// CONCATENATED MODULE: ./src/data_sources/model/DataResolverListener.ts
-
-
-
-
-
-
-var DataResolverListener = /** @class */ (function () {
-    function DataResolverListener(props) {
-        var _this = this;
-        this.listeners = [];
-        this.model = new common/* Model */.Kx();
-        this.onChange = function () {
-            var value = _this.resolver.getDataValue();
-            _this.onUpdate(value);
-        };
-        this.em = props.em;
-        this.resolver = props.resolver;
-        this.onUpdate = props.onUpdate;
-        this.listenToResolver();
-    }
-    DataResolverListener.prototype.createListener = function (obj, event, callback) {
-        if (callback === void 0) { callback = this.onChange; }
-        return { obj: obj, event: event, callback: callback };
-    };
-    DataResolverListener.prototype.listenToResolver = function () {
-        var _a = this, resolver = _a.resolver, model = _a.model;
-        this.removeListeners();
-        var listeners = [];
-        var type = resolver.attributes.type;
-        switch (type) {
-            case DataCollectionVariableType:
-                listeners = this.listenToDataCollectionVariable(resolver);
-                break;
-            case DataVariableType:
-                listeners = this.listenToDataVariable(resolver);
-                break;
-            case DataCondition_DataConditionType:
-                listeners = this.listenToConditionalVariable(resolver);
-                break;
-        }
-        listeners.forEach(function (ls) { return model.listenTo(ls.obj, ls.event, ls.callback); });
-        this.listeners = listeners;
-    };
-    DataResolverListener.prototype.listenToConditionalVariable = function (dataVariable) {
-        var _this = this;
-        var em = this.em;
-        var dataListeners = dataVariable.getDependentDataVariables().flatMap(function (dataVariable) {
-            return _this.listenToDataVariable(new model_DataVariable(dataVariable, { em: em }));
-        });
-        return dataListeners;
-    };
-    DataResolverListener.prototype.listenToDataVariable = function (dataVariable) {
-        var _this = this;
-        var em = this.em;
-        var path = dataVariable.attributes.path;
-        var normPath = (0,mixins.stringToPath)(path || '').join('.');
-        var _a = em.DataSources.fromPath(path), ds = _a[0], dr = _a[1];
-        var dataListeners = [];
-        if (ds) {
-            dataListeners.push(this.createListener(ds.records, 'add remove reset'));
-        }
-        if (dr) {
-            dataListeners.push(this.createListener(dr, 'change'));
-        }
-        dataListeners.push(this.createListener(dataVariable, 'change:path', function () {
-            _this.listenToResolver();
-            _this.onChange();
-        }), this.createListener(dataVariable, 'change:defaultValue'), this.createListener(em.DataSources.all, 'add remove reset'), this.createListener(em, "".concat(DataSourcesEvents.path, ":").concat(normPath)));
-        return dataListeners;
-    };
-    DataResolverListener.prototype.listenToDataCollectionVariable = function (dataVariable) {
-        return [this.createListener(dataVariable, 'change:value')];
-    };
-    DataResolverListener.prototype.removeListeners = function () {
-        var _this = this;
-        this.listeners.forEach(function (ls) { return _this.model.stopListening(ls.obj, ls.event, ls.callback); });
-        this.listeners = [];
-    };
-    DataResolverListener.prototype.destroy = function () {
-        this.removeListeners();
-    };
-    return DataResolverListener;
-}());
-/* harmony default export */ const model_DataResolverListener = (DataResolverListener);
-
-;// CONCATENATED MODULE: ./src/domain_abstract/model/StyleableModel.ts
-var StyleableModel_extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var StyleableModel_assign = (undefined && undefined.__assign) || function () {
-    StyleableModel_assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return StyleableModel_assign.apply(this, arguments);
-};
-
-
-
-
-
-
-var parserHtml = model_ParserHtml();
-var getLastStyleValue = function (value) {
-    return (0,index_all.isArray)(value) ? value[value.length - 1] : value;
-};
-var StyleableModel = /** @class */ (function (_super) {
-    StyleableModel_extends(StyleableModel, _super);
-    function StyleableModel(attributes, options) {
-        if (options === void 0) { options = {}; }
-        var _this = _super.call(this, attributes, options) || this;
-        _this.views = [];
-        _this.styleResolverListeners = {};
-        _this.em = options.em;
-        return _this;
-    }
-    /**
-     * Parse style string to an object
-     * @param  {string} str
-     * @returns
-     */
-    StyleableModel.prototype.parseStyle = function (str) {
-        return parserHtml.parseStyle(str);
-    };
-    /**
-     * Trigger style change event with a new object instance
-     * @param {Object} prop
-     * @return {Object}
-     */
-    StyleableModel.prototype.extendStyle = function (prop) {
-        return StyleableModel_assign(StyleableModel_assign({}, this.getStyle('', { skipResolve: true })), prop);
-    };
-    /**
-     * Get style object
-     * @return {Object}
-     */
-    StyleableModel.prototype.getStyle = function (prop, opts) {
-        if (opts === void 0) { opts = {}; }
-        var style = this.get('style') || {};
-        var result = StyleableModel_assign({}, style);
-        if (this.em && !opts.skipResolve) {
-            var resolvedStyle = this.getResolvedStyles(StyleableModel_assign({}, result));
-            // @ts-ignore
-            return prop && (0,index_all.isString)(prop) ? resolvedStyle[prop] : resolvedStyle;
-        }
-        return prop && (0,index_all.isString)(prop) ? result[prop] : result;
-    };
-    /**
-     * Set new style object
-     * @param {Object|string} prop
-     * @param {Object} opts
-     * @return {Object} Applied properties
-     */
-    StyleableModel.prototype.setStyle = function (prop, opts) {
-        var _this = this;
-        if (prop === void 0) { prop = {}; }
-        if (opts === void 0) { opts = {}; }
-        if ((0,index_all.isString)(prop)) {
-            prop = this.parseStyle(prop);
-        }
-        var propOrig = this.getStyle(opts);
-        if (opts.partial || opts.avoidStore) {
-            opts.avoidStore = true;
-            prop.__p = true;
-        }
-        else {
-            delete prop.__p;
-        }
-        var propNew = StyleableModel_assign({}, prop);
-        var newStyle = StyleableModel_assign({}, propNew);
-        (0,index_all.keys)(newStyle).forEach(function (key) {
-            // Remove empty style properties
-            if (newStyle[key] === '') {
-                delete newStyle[key];
-                return;
-            }
-            var styleValue = newStyle[key];
-            if (isDataResolverProps(styleValue)) {
-                var dataResolver = getDataResolverInstance(styleValue, { em: _this.em });
-                if (dataResolver) {
-                    newStyle[key] = dataResolver;
-                    _this.listenToDataResolver(dataResolver, key);
-                }
-            }
-        });
-        this.set('style', newStyle, opts);
-        var diff = (0,mixins.shallowDiff)(propOrig, newStyle);
-        // Delete the property used for partial updates
-        delete diff.__p;
-        (0,index_all.keys)(diff).forEach(function (pr) {
-            var em = _this.em;
-            if (opts.noEvent) {
-                return;
-            }
-            _this.trigger("change:style:".concat(pr));
-            if (em) {
-                em.trigger('styleable:change', _this, pr, opts);
-                em.trigger("styleable:change:".concat(pr), _this, pr, opts);
-            }
-        });
-        return newStyle;
-    };
-    StyleableModel.prototype.listenToDataResolver = function (resolver, styleProp) {
-        var _this = this;
-        var resolverListener = this.styleResolverListeners[styleProp];
-        if (resolverListener) {
-            resolverListener.listenToResolver();
-        }
-        else {
-            this.styleResolverListeners[styleProp] = new model_DataResolverListener({
-                em: this.em,
-                resolver: resolver,
-                onUpdate: function () { return _this.updateView(); },
-            });
-        }
-    };
-    StyleableModel.prototype.getView = function (frame) {
-        var _a = this, views = _a.views, em = _a.em;
-        var frm = frame || (em === null || em === void 0 ? void 0 : em.getCurrentFrameModel());
-        return frm ? views.find(function (v) { return v.frameView === frm.view; }) : views[0];
-    };
-    StyleableModel.prototype.setView = function (view) {
-        var views = this.views;
-        !views.includes(view) && views.push(view);
-    };
-    StyleableModel.prototype.removeView = function (view) {
-        var views = this.views;
-        views.splice(views.indexOf(view), 1);
-    };
-    StyleableModel.prototype.updateView = function () {
-        this.views.forEach(function (view) { return view.updateStyles(); });
-    };
-    StyleableModel.prototype.getResolvedStyles = function (style) {
-        var _this = this;
-        var resultStyle = StyleableModel_assign({}, style);
-        (0,index_all.keys)(resultStyle).forEach(function (key) {
-            var styleValue = resultStyle[key];
-            if (typeof styleValue === 'string' || Array.isArray(styleValue)) {
-                return;
-            }
-            if (isDataResolverProps(styleValue)) {
-                resultStyle[key] = getDataResolverInstanceValue(styleValue, { em: _this.em });
-            }
-            if (isDataResolver(styleValue)) {
-                resultStyle[key] = styleValue.getDataValue();
-            }
-        });
-        return resultStyle;
-    };
-    /**
-     * Add style property
-     * @param {Object|string} prop
-     * @param {string} value
-     * @example
-     * this.addStyle({color: 'red'});
-     * this.addStyle('color', 'blue');
-     */
-    StyleableModel.prototype.addStyle = function (prop, value, opts) {
-        var _a;
-        if (value === void 0) { value = ''; }
-        if (opts === void 0) { opts = {}; }
-        if (typeof prop == 'string') {
-            prop = (_a = {},
-                _a[prop] = value,
-                _a);
-        }
-        else {
-            opts = value || {};
-        }
-        opts.addStyle = prop;
-        prop = this.extendStyle(prop);
-        this.setStyle(prop, opts);
-    };
-    /**
-     * Remove style property
-     * @param {string} prop
-     */
-    StyleableModel.prototype.removeStyle = function (prop) {
-        var style = this.getStyle();
-        delete style[prop];
-        this.setStyle(style);
-    };
-    /**
-     * Returns string of style properties
-     * @param {Object} [opts={}] Options
-     * @return {String}
-     */
-    StyleableModel.prototype.styleToString = function (opts) {
-        if (opts === void 0) { opts = {}; }
-        var result = [];
-        var style = this.getStyle(opts);
-        var imp = opts.important;
-        var _loop_1 = function (prop) {
-            var important = (0,index_all.isArray)(imp) ? imp.indexOf(prop) >= 0 : imp;
-            var firstChars = prop.substring(0, 2);
-            var isPrivate = firstChars === '__';
-            if (isPrivate)
-                return "continue";
-            var value = style[prop];
-            var values = (0,index_all.isArray)(value) ? value : [value];
-            values.forEach(function (val) {
-                var value = "".concat(val).concat(important ? ' !important' : '');
-                value && result.push("".concat(prop, ":").concat(value, ";"));
-            });
-        };
-        for (var prop in style) {
-            _loop_1(prop);
-        }
-        return result.join('');
-    };
-    StyleableModel.prototype.getSelectors = function () {
-        return (this.get('selectors') || this.get('classes'));
-    };
-    StyleableModel.prototype.getSelectorsString = function (opts) {
-        // @ts-ignore
-        return this.selectorsToString ? this.selectorsToString(opts) : this.getSelectors().getFullString();
-    };
-    return StyleableModel;
-}(common/* Model */.Kx));
-/* harmony default export */ const model_StyleableModel = (StyleableModel);
+;// CONCATENATED MODULE: ./src/data_sources/model/conditional_variables/constants.ts
+var DataConditionIfTrueType = 'data-condition-true-content';
+var DataConditionIfFalseType = 'data-condition-false-content';
 
 ;// CONCATENATED MODULE: ./src/dom_components/model/SymbolUtils.ts
 var SymbolUtils_assign = (undefined && undefined.__assign) || function () {
@@ -28742,9 +28399,9 @@ var shouldPropagateProperty = function (props, prop, component) {
         var _a;
         if (prop === 'attributes') {
             var attributes = props['attributes'];
-            return Object.values(attributes).some(function (attr) { return (attr === null || attr === void 0 ? void 0 : attr.type) === DataCollectionVariableType; });
+            return Object.values(attributes).some(function (attr) { return !!(attr === null || attr === void 0 ? void 0 : attr.collectionId); });
         }
-        return ((_a = props[prop]) === null || _a === void 0 ? void 0 : _a.type) === DataCollectionVariableType;
+        return !!((_a = props[prop]) === null || _a === void 0 ? void 0 : _a.collectionId);
     })();
     return !isSymbolOverride(component, prop) || isCollectionVariableDefinition;
 };
@@ -28855,6 +28512,606 @@ var updateSymbolComps = function (symbol, m, c, o) {
     }
     symbol.__changesUp(optUp);
 };
+
+;// CONCATENATED MODULE: ./src/data_sources/utils.ts
+
+
+
+
+
+
+
+function isDataResolverProps(value) {
+    return typeof value === 'object' && [DataVariableType, DataCondition_DataConditionType].includes(value === null || value === void 0 ? void 0 : value.type);
+}
+function isDataResolver(value) {
+    return value instanceof model_DataVariable || value instanceof DataCondition;
+}
+function isDataVariable(variable) {
+    return (variable === null || variable === void 0 ? void 0 : variable.type) === DataVariableType;
+}
+function isDataCondition(variable) {
+    return (variable === null || variable === void 0 ? void 0 : variable.type) === DataConditionType;
+}
+function valueOrResolve(variable, opts) {
+    if (!isDataResolverProps(variable))
+        return variable;
+    if (isDataVariable(variable))
+        model_DataVariable.resolveDataResolver(variable, opts);
+    return getDataResolverInstanceValue(variable, opts);
+}
+function getDataResolverInstance(resolverProps, options) {
+    var _a;
+    var type = resolverProps.type;
+    var resolver;
+    switch (type) {
+        case DataVariableType:
+            resolver = new model_DataVariable(resolverProps, options);
+            break;
+        case DataCondition_DataConditionType: {
+            resolver = new DataCondition(resolverProps, options);
+            break;
+        }
+        default:
+            (_a = options.em) === null || _a === void 0 ? void 0 : _a.logWarning("Unsupported dynamic type: ".concat(type));
+            return;
+    }
+    return resolver;
+}
+function getDataResolverInstanceValue(resolverProps, options) {
+    var resolver = getDataResolverInstance(resolverProps, options);
+    return resolver === null || resolver === void 0 ? void 0 : resolver.getDataValue();
+}
+var ensureComponentInstance = function (cmp, opt) {
+    var _a, _b;
+    if (cmp instanceof Component)
+        return cmp;
+    var componentType = (_a = cmp === null || cmp === void 0 ? void 0 : cmp.type) !== null && _a !== void 0 ? _a : 'default';
+    var defaultModel = opt.em.Components.getType('default');
+    var type = (_b = opt.em.Components.getType(componentType)) !== null && _b !== void 0 ? _b : defaultModel;
+    var Model = type.model;
+    return new Model(serialize(cmp !== null && cmp !== void 0 ? cmp : {}), opt);
+};
+var isComponentDataOutputType = function (type) {
+    return !!type && [DataCollectionItemType, DataConditionIfTrueType, DataConditionIfFalseType].includes(type);
+};
+function enumToArray(enumObj) {
+    return Object.keys(enumObj)
+        .filter(function (key) { return isNaN(Number(key)); })
+        .map(function (key) { return enumObj[key]; });
+}
+function shouldSyncCollectionSymbol(component) {
+    var componentCollectionMap = component.collectionsStateMap;
+    if (!componentCollectionMap)
+        return false;
+    var parentCollectionIds = Object.keys(componentCollectionMap);
+    if (!parentCollectionIds.length)
+        return false;
+    var mainSymbolComponent = getSymbolMain(component);
+    if (!mainSymbolComponent || mainSymbolComponent === component)
+        return false;
+    var mainSymbolCollectionMap = mainSymbolComponent.collectionsStateMap;
+    var mainSymbolParentIds = Object.keys(mainSymbolCollectionMap);
+    var isSubsetOfOriginalCollections = mainSymbolParentIds.every(function (id) { return parentCollectionIds.includes(id); });
+    return isSubsetOfOriginalCollections;
+}
+function getIdFromCollectionSymbol(component) {
+    var mainSymbolComponent = getSymbolMain(component);
+    return mainSymbolComponent ? mainSymbolComponent.getId() : '';
+}
+function checkAndGetSyncableCollectionItemId(component) {
+    var shouldSync = shouldSyncCollectionSymbol(component);
+    var itemId = shouldSync ? getIdFromCollectionSymbol(component) : null;
+    return { shouldSync: shouldSync, itemId: itemId };
+}
+
+;// CONCATENATED MODULE: ./src/data_sources/model/DataVariable.ts
+var DataVariable_extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var DataVariable_assign = (undefined && undefined.__assign) || function () {
+    DataVariable_assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return DataVariable_assign.apply(this, arguments);
+};
+
+
+var DataVariableType = 'data-variable';
+var DataVariable = /** @class */ (function (_super) {
+    DataVariable_extends(DataVariable, _super);
+    function DataVariable(props, options) {
+        var _this = _super.call(this, props, options) || this;
+        _this.em = options.em;
+        _this.collectionsStateMap = options.collectionsStateMap;
+        return _this;
+    }
+    DataVariable.prototype.defaults = function () {
+        return {
+            type: DataVariableType,
+            defaultValue: '',
+            path: '',
+            collectionId: undefined,
+            variableType: undefined,
+        };
+    };
+    Object.defineProperty(DataVariable.prototype, "path", {
+        get: function () {
+            var _a;
+            return (_a = this.get('path')) !== null && _a !== void 0 ? _a : '';
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(DataVariable.prototype, "defaultValue", {
+        get: function () {
+            var _a;
+            return (_a = this.get('defaultValue')) !== null && _a !== void 0 ? _a : '';
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(DataVariable.prototype, "collectionId", {
+        get: function () {
+            return this.get('collectionId');
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(DataVariable.prototype, "variableType", {
+        get: function () {
+            return this.get('variableType');
+        },
+        enumerable: false,
+        configurable: true
+    });
+    DataVariable.prototype.resolvesFromCollection = function () {
+        return !!this.collectionId;
+    };
+    DataVariable.prototype.updateCollectionsStateMap = function (collectionsStateMap) {
+        this.collectionsStateMap = collectionsStateMap;
+        this.trigger('change');
+    };
+    DataVariable.prototype.getResolverPath = function () {
+        var _a;
+        if (this.resolvesFromCollection()) {
+            var value = this.resolveCollectionVariable();
+            return isDataVariable(value) ? ((_a = value.path) !== null && _a !== void 0 ? _a : '') : false;
+        }
+        return this.path;
+    };
+    DataVariable.prototype.toJSON = function (options) {
+        var defaults = this.defaults();
+        var json = _super.prototype.toJSON.call(this, options);
+        var filteredJson = Object.fromEntries(Object.entries(json).filter(function (_a) {
+            var key = _a[0], value = _a[1];
+            return value !== defaults[key];
+        }));
+        return DataVariable_assign(DataVariable_assign({}, filteredJson), { type: DataVariableType });
+    };
+    DataVariable.prototype.getDataValue = function () {
+        var opts = {
+            em: this.em,
+            collectionsStateMap: this.collectionsStateMap,
+        };
+        return DataVariable.resolveDataResolver({
+            path: this.path,
+            defaultValue: this.defaultValue,
+            collectionId: this.collectionId,
+            variableType: this.variableType,
+        }, opts);
+    };
+    DataVariable.resolveDataSourceVariable = function (props, opts) {
+        var _a, _b;
+        return opts.em.DataSources.getValue((_a = props.path) !== null && _a !== void 0 ? _a : '', (_b = props.defaultValue) !== null && _b !== void 0 ? _b : '');
+    };
+    DataVariable.resolveDataResolver = function (props, opts) {
+        var _a, _b, _c, _d;
+        if (props.collectionId) {
+            var value = DataVariable.resolveCollectionVariable(props, opts);
+            if (!isDataVariable(value))
+                return value;
+            return DataVariable.resolveDataSourceVariable({ path: (_a = value.path) !== null && _a !== void 0 ? _a : '', defaultValue: (_b = props.defaultValue) !== null && _b !== void 0 ? _b : '' }, { em: opts.em });
+        }
+        return DataVariable.resolveDataSourceVariable({ path: (_c = props.path) !== null && _c !== void 0 ? _c : '', defaultValue: (_d = props.defaultValue) !== null && _d !== void 0 ? _d : '' }, { em: opts.em });
+    };
+    DataVariable.prototype.resolveCollectionVariable = function () {
+        var _a = this, em = _a.em, collectionsStateMap = _a.collectionsStateMap;
+        return DataVariable.resolveCollectionVariable(this.attributes, { em: em, collectionsStateMap: collectionsStateMap });
+    };
+    DataVariable.resolveCollectionVariable = function (dataResolverProps, opts) {
+        var _a = dataResolverProps.collectionId, collectionId = _a === void 0 ? '' : _a, variableType = dataResolverProps.variableType, path = dataResolverProps.path, _b = dataResolverProps.defaultValue, defaultValue = _b === void 0 ? '' : _b;
+        var em = opts.em, collectionsStateMap = opts.collectionsStateMap;
+        if (!collectionsStateMap)
+            return defaultValue;
+        var collectionItem = collectionsStateMap[collectionId];
+        if (!collectionItem)
+            return defaultValue;
+        if (!variableType) {
+            em.logError("Missing collection variable type for collection: ".concat(collectionId));
+            return defaultValue;
+        }
+        return variableType === 'currentItem'
+            ? DataVariable.resolveCurrentItem(collectionItem, path, collectionId, em)
+            : collectionItem[variableType];
+    };
+    DataVariable.resolveCurrentItem = function (collectionItem, path, collectionId, em) {
+        var currentItem = collectionItem.currentItem;
+        if (!currentItem) {
+            em.logError("Current item is missing for collection: ".concat(collectionId));
+            return '';
+        }
+        if (currentItem.type === DataVariableType) {
+            var resolvedPath = currentItem.path ? "".concat(currentItem.path, ".").concat(path) : path;
+            return { type: DataVariableType, path: resolvedPath };
+        }
+        if (path && !currentItem[path]) {
+            em.logError("Path not found in current item: ".concat(path, " for collection: ").concat(collectionId));
+            return '';
+        }
+        return path ? currentItem[path] : currentItem;
+    };
+    return DataVariable;
+}(common/* Model */.Kx));
+/* harmony default export */ const model_DataVariable = (DataVariable);
+
+;// CONCATENATED MODULE: ./src/data_sources/model/DataResolverListener.ts
+
+
+
+
+
+var DataResolverListener = /** @class */ (function () {
+    function DataResolverListener(props) {
+        var _this = this;
+        this.listeners = [];
+        this.model = new common/* Model */.Kx();
+        this.onChange = function () {
+            var value = _this.resolver.getDataValue();
+            _this.onUpdate(value);
+        };
+        this.em = props.em;
+        this.resolver = props.resolver;
+        this.onUpdate = props.onUpdate;
+        this.listenToResolver();
+    }
+    DataResolverListener.prototype.createListener = function (obj, event, callback) {
+        if (callback === void 0) { callback = this.onChange; }
+        return { obj: obj, event: event, callback: callback };
+    };
+    DataResolverListener.prototype.listenToResolver = function () {
+        var _a = this, resolver = _a.resolver, model = _a.model;
+        this.removeListeners();
+        var listeners = [];
+        var type = resolver.attributes.type;
+        switch (type) {
+            case DataVariableType:
+                listeners = this.listenToDataVariable(resolver);
+                break;
+            case DataCondition_DataConditionType:
+                listeners = this.listenToConditionalVariable(resolver);
+                break;
+        }
+        listeners.forEach(function (ls) { return model.listenTo(ls.obj, ls.event, ls.callback); });
+        this.listeners = listeners;
+    };
+    DataResolverListener.prototype.listenToConditionalVariable = function (dataVariable) {
+        return [
+            {
+                obj: dataVariable,
+                event: DataConditionOutputChangedEvent,
+                callback: this.onChange,
+            },
+        ];
+    };
+    DataResolverListener.prototype.listenToDataVariable = function (dataVariable) {
+        var _this = this;
+        var em = this.em;
+        var dataListeners = [];
+        dataListeners.push(this.createListener(dataVariable, 'change', function () {
+            _this.listenToResolver();
+            _this.onChange();
+        }));
+        var path = dataVariable.getResolverPath();
+        if (!path)
+            return dataListeners;
+        var normPath = (0,mixins.stringToPath)(path || '').join('.');
+        var _a = em.DataSources.fromPath(path), ds = _a[0], dr = _a[1];
+        if (ds) {
+            dataListeners.push(this.createListener(ds.records, 'add remove reset'));
+        }
+        if (dr) {
+            dataListeners.push(this.createListener(dr, 'change'));
+        }
+        dataListeners.push(this.createListener(em.DataSources.all, 'add remove reset'), this.createListener(em, "".concat(DataSourcesEvents.path, ":").concat(normPath)));
+        return dataListeners;
+    };
+    DataResolverListener.prototype.removeListeners = function () {
+        var _this = this;
+        this.listeners.forEach(function (ls) { return _this.model.stopListening(ls.obj, ls.event, ls.callback); });
+        this.listeners = [];
+    };
+    DataResolverListener.prototype.destroy = function () {
+        this.removeListeners();
+    };
+    return DataResolverListener;
+}());
+/* harmony default export */ const model_DataResolverListener = (DataResolverListener);
+
+;// CONCATENATED MODULE: ./src/domain_abstract/model/StyleableModel.ts
+var StyleableModel_extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var StyleableModel_assign = (undefined && undefined.__assign) || function () {
+    StyleableModel_assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return StyleableModel_assign.apply(this, arguments);
+};
+
+
+
+
+
+
+var parserHtml = model_ParserHtml();
+var getLastStyleValue = function (value) {
+    return (0,index_all.isArray)(value) ? value[value.length - 1] : value;
+};
+var StyleableModel = /** @class */ (function (_super) {
+    StyleableModel_extends(StyleableModel, _super);
+    function StyleableModel(attributes, options) {
+        if (options === void 0) { options = {}; }
+        var _this = _super.call(this, attributes, options) || this;
+        _this.views = [];
+        _this.styleResolverListeners = {};
+        _this.em = options.em;
+        return _this;
+    }
+    /**
+     * Parse style string to an object
+     * @param  {string} str
+     * @returns
+     */
+    StyleableModel.prototype.parseStyle = function (str) {
+        return parserHtml.parseStyle(str);
+    };
+    /**
+     * Trigger style change event with a new object instance
+     * @param {Object} prop
+     * @return {Object}
+     */
+    StyleableModel.prototype.extendStyle = function (prop) {
+        return StyleableModel_assign(StyleableModel_assign({}, this.getStyle('', { skipResolve: true })), prop);
+    };
+    /**
+     * Get style object
+     * @return {Object}
+     */
+    StyleableModel.prototype.getStyle = function (prop, opts) {
+        if (opts === void 0) { opts = {}; }
+        var style = this.get('style') || {};
+        var result = StyleableModel_assign({}, style);
+        if (this.em && !opts.skipResolve) {
+            var resolvedStyle = this.getResolvedStyles(StyleableModel_assign({}, result));
+            // @ts-ignore
+            return prop && (0,index_all.isString)(prop) ? resolvedStyle[prop] : resolvedStyle;
+        }
+        return prop && (0,index_all.isString)(prop) ? result[prop] : result;
+    };
+    /**
+     * Set new style object
+     * @param {Object|string} prop
+     * @param {Object} opts
+     * @return {Object} Applied properties
+     */
+    StyleableModel.prototype.setStyle = function (prop, opts) {
+        var _this = this;
+        if (prop === void 0) { prop = {}; }
+        if (opts === void 0) { opts = {}; }
+        if ((0,index_all.isString)(prop)) {
+            prop = this.parseStyle(prop);
+        }
+        var propOrig = this.getStyle(opts);
+        if (opts.partial || opts.avoidStore) {
+            opts.avoidStore = true;
+            prop.__p = true;
+        }
+        else {
+            delete prop.__p;
+        }
+        var propNew = StyleableModel_assign({}, prop);
+        var newStyle = StyleableModel_assign({}, propNew);
+        (0,index_all.keys)(newStyle).forEach(function (key) {
+            // Remove empty style properties
+            if (newStyle[key] === '') {
+                delete newStyle[key];
+                return;
+            }
+            var styleValue = newStyle[key];
+            if (isDataResolverProps(styleValue)) {
+                var dataResolver = getDataResolverInstance(styleValue, {
+                    em: _this.em,
+                    collectionsStateMap: {},
+                });
+                if (dataResolver) {
+                    newStyle[key] = dataResolver;
+                    _this.listenToDataResolver(dataResolver, key);
+                }
+            }
+        });
+        this.set('style', newStyle, opts);
+        var diff = (0,mixins.shallowDiff)(propOrig, newStyle);
+        // Delete the property used for partial updates
+        delete diff.__p;
+        (0,index_all.keys)(diff).forEach(function (pr) {
+            var em = _this.em;
+            if (opts.noEvent) {
+                return;
+            }
+            _this.trigger("change:style:".concat(pr));
+            if (em) {
+                em.trigger('styleable:change', _this, pr, opts);
+                em.trigger("styleable:change:".concat(pr), _this, pr, opts);
+            }
+        });
+        return newStyle;
+    };
+    StyleableModel.prototype.listenToDataResolver = function (resolver, styleProp) {
+        var _this = this;
+        var resolverListener = this.styleResolverListeners[styleProp];
+        if (resolverListener) {
+            resolverListener.listenToResolver();
+        }
+        else {
+            this.styleResolverListeners[styleProp] = new model_DataResolverListener({
+                em: this.em,
+                resolver: resolver,
+                onUpdate: function () { return _this.updateView(); },
+            });
+        }
+    };
+    StyleableModel.prototype.getView = function (frame) {
+        var _a = this, views = _a.views, em = _a.em;
+        var frm = frame || (em === null || em === void 0 ? void 0 : em.getCurrentFrameModel());
+        return frm ? views.find(function (v) { return v.frameView === frm.view; }) : views[0];
+    };
+    StyleableModel.prototype.setView = function (view) {
+        var views = this.views;
+        !views.includes(view) && views.push(view);
+    };
+    StyleableModel.prototype.removeView = function (view) {
+        var views = this.views;
+        views.splice(views.indexOf(view), 1);
+    };
+    StyleableModel.prototype.updateView = function () {
+        this.views.forEach(function (view) { return view.updateStyles(); });
+    };
+    StyleableModel.prototype.getResolvedStyles = function (style) {
+        var _this = this;
+        var resultStyle = StyleableModel_assign({}, style);
+        (0,index_all.keys)(resultStyle).forEach(function (key) {
+            var styleValue = resultStyle[key];
+            if (typeof styleValue === 'string' || Array.isArray(styleValue)) {
+                return;
+            }
+            if (isDataResolverProps(styleValue)) {
+                resultStyle[key] = getDataResolverInstanceValue(styleValue, {
+                    em: _this.em,
+                    collectionsStateMap: {},
+                });
+            }
+            if (isDataResolver(styleValue)) {
+                resultStyle[key] = styleValue.getDataValue();
+            }
+        });
+        return resultStyle;
+    };
+    /**
+     * Add style property
+     * @param {Object|string} prop
+     * @param {string} value
+     * @example
+     * this.addStyle({color: 'red'});
+     * this.addStyle('color', 'blue');
+     */
+    StyleableModel.prototype.addStyle = function (prop, value, opts) {
+        var _a;
+        if (value === void 0) { value = ''; }
+        if (opts === void 0) { opts = {}; }
+        if (typeof prop == 'string') {
+            prop = (_a = {},
+                _a[prop] = value,
+                _a);
+        }
+        else {
+            opts = value || {};
+        }
+        opts.addStyle = prop;
+        prop = this.extendStyle(prop);
+        this.setStyle(prop, opts);
+    };
+    /**
+     * Remove style property
+     * @param {string} prop
+     */
+    StyleableModel.prototype.removeStyle = function (prop) {
+        var style = this.getStyle();
+        delete style[prop];
+        this.setStyle(style);
+    };
+    /**
+     * Returns string of style properties
+     * @param {Object} [opts={}] Options
+     * @return {String}
+     */
+    StyleableModel.prototype.styleToString = function (opts) {
+        if (opts === void 0) { opts = {}; }
+        var result = [];
+        var style = this.getStyle(opts);
+        var imp = opts.important;
+        var _loop_1 = function (prop) {
+            var important = (0,index_all.isArray)(imp) ? imp.indexOf(prop) >= 0 : imp;
+            var firstChars = prop.substring(0, 2);
+            var isPrivate = firstChars === '__';
+            if (isPrivate)
+                return "continue";
+            var value = style[prop];
+            var values = (0,index_all.isArray)(value) ? value : [value];
+            values.forEach(function (val) {
+                var value = "".concat(val).concat(important ? ' !important' : '');
+                value && result.push("".concat(prop, ":").concat(value, ";"));
+            });
+        };
+        for (var prop in style) {
+            _loop_1(prop);
+        }
+        return result.join('');
+    };
+    StyleableModel.prototype.getSelectors = function () {
+        return (this.get('selectors') || this.get('classes'));
+    };
+    StyleableModel.prototype.getSelectorsString = function (opts) {
+        // @ts-ignore
+        return this.selectorsToString ? this.selectorsToString(opts) : this.getSelectors().getFullString();
+    };
+    return StyleableModel;
+}(common/* Model */.Kx));
+/* harmony default export */ const model_StyleableModel = (StyleableModel);
 
 ;// CONCATENATED MODULE: ./src/dom_components/model/Components.ts
 var Components_extends = (undefined && undefined.__extends) || (function () {
@@ -30221,31 +30478,15 @@ var ComponentResolverWatcher_assign = (undefined && undefined.__assign) || funct
 };
 
 
-
 var ComponentResolverWatcher = /** @class */ (function () {
     function ComponentResolverWatcher(component, updateFn, options) {
         this.component = component;
         this.updateFn = updateFn;
         this.resolverListeners = {};
         this.em = options.em;
-        this.collectionsStateMap = options.collectionsStateMap;
     }
     ComponentResolverWatcher.prototype.bindComponent = function (component) {
         this.component = component;
-    };
-    ComponentResolverWatcher.prototype.updateCollectionStateMap = function (collectionsStateMap) {
-        var _this = this;
-        this.collectionsStateMap = collectionsStateMap;
-        var collectionVariablesKeys = this.getDynamicValuesOfType(DataCollectionVariableType);
-        var collectionVariablesObject = collectionVariablesKeys.reduce(function (acc, key) {
-            acc[key] = null;
-            return acc;
-        }, {});
-        var newVariables = this.getSerializableValues(collectionVariablesObject);
-        var evaluatedValues = this.addDynamicValues(newVariables);
-        Object.keys(evaluatedValues).forEach(function (key) {
-            _this.updateFn(_this.component, key, evaluatedValues[key]);
-        });
     };
     ComponentResolverWatcher.prototype.setDynamicValues = function (values, options) {
         if (options === void 0) { options = {}; }
@@ -30266,6 +30507,30 @@ var ComponentResolverWatcher = /** @class */ (function () {
         }
         return evaluatedValues;
     };
+    ComponentResolverWatcher.prototype.onCollectionsStateMapUpdate = function () {
+        var _this = this;
+        var resolvesFromCollections = this.getValuesResolvingFromCollections();
+        if (!resolvesFromCollections.length)
+            return;
+        resolvesFromCollections.forEach(function (key) {
+            return _this.resolverListeners[key].resolver.updateCollectionsStateMap(_this.collectionsStateMap);
+        });
+        var evaluatedValues = this.addDynamicValues(this.getSerializableValues(Object.fromEntries(resolvesFromCollections.map(function (key) { return [key, null]; }))));
+        Object.entries(evaluatedValues).forEach(function (_a) {
+            var key = _a[0], value = _a[1];
+            return _this.updateFn(_this.component, key, value);
+        });
+    };
+    Object.defineProperty(ComponentResolverWatcher.prototype, "collectionsStateMap", {
+        get: function () {
+            var component = this.component;
+            if (!component)
+                return {};
+            return component.collectionsStateMap;
+        },
+        enumerable: false,
+        configurable: true
+    });
     ComponentResolverWatcher.prototype.updateListeners = function (values) {
         var _this = this;
         var _a = this, em = _a.em, collectionsStateMap = _a.collectionsStateMap;
@@ -30343,11 +30608,10 @@ var ComponentResolverWatcher = /** @class */ (function () {
         }
         return serializableValues;
     };
-    ComponentResolverWatcher.prototype.getDynamicValuesOfType = function (type) {
+    ComponentResolverWatcher.prototype.getValuesResolvingFromCollections = function () {
         var _this = this;
         var keys = Object.keys(this.resolverListeners).filter(function (key) {
-            // @ts-ignore
-            return _this.resolverListeners[key].resolver.get('type') === type;
+            return _this.resolverListeners[key].resolver.resolvesFromCollection();
         });
         return keys;
     };
@@ -30370,7 +30634,6 @@ var ComponentDataResolverWatchers_spreadArray = (undefined && undefined.__spread
 };
 
 
-
 var updateFromWatcher = { fromDataSource: true, avoidStore: true };
 var ComponentDataResolverWatchers = /** @class */ (function () {
     function ComponentDataResolverWatchers(component, options) {
@@ -30390,10 +30653,6 @@ var ComponentDataResolverWatchers = /** @class */ (function () {
         this.propertyWatcher.bindComponent(component);
         this.attributeWatcher.bindComponent(component);
         this.updateSymbolOverride();
-    };
-    ComponentDataResolverWatchers.prototype.updateCollectionStateMap = function (collectionsStateMap) {
-        this.propertyWatcher.updateCollectionStateMap(collectionsStateMap);
-        this.attributeWatcher.updateCollectionStateMap(collectionsStateMap);
     };
     ComponentDataResolverWatchers.prototype.addProps = function (props, options) {
         var _this = this;
@@ -30421,11 +30680,13 @@ var ComponentDataResolverWatchers = /** @class */ (function () {
         this.updateSymbolOverride();
     };
     ComponentDataResolverWatchers.prototype.updateSymbolOverride = function () {
-        if (!this.component || !this.component.get(keyIsCollectionItem))
+        var _a, _b;
+        var isCollectionItem = !!Object.keys((_b = (_a = this.component) === null || _a === void 0 ? void 0 : _a.collectionsStateMap) !== null && _b !== void 0 ? _b : {}).length;
+        if (!this.component || !isCollectionItem)
             return;
-        var keys = this.propertyWatcher.getDynamicValuesOfType(DataCollectionVariableType);
-        var attributesKeys = this.attributeWatcher.getDynamicValuesOfType(DataCollectionVariableType);
-        var combinedKeys = ComponentDataResolverWatchers_spreadArray([keyCollectionsStateMap, 'locked'], keys, true);
+        var keys = this.propertyWatcher.getValuesResolvingFromCollections();
+        var attributesKeys = this.attributeWatcher.getValuesResolvingFromCollections();
+        var combinedKeys = ComponentDataResolverWatchers_spreadArray(['locked', 'layerable'], keys, true);
         var haveOverridenAttributes = Object.keys(attributesKeys).length;
         if (haveOverridenAttributes)
             combinedKeys.push('attributes');
@@ -30434,6 +30695,10 @@ var ComponentDataResolverWatchers = /** @class */ (function () {
             child.setSymbolOverride(combinedKeys, { fromDataSource: true });
         });
         this.component.setSymbolOverride(combinedKeys, { fromDataSource: true });
+    };
+    ComponentDataResolverWatchers.prototype.onCollectionsStateMapUpdate = function () {
+        this.propertyWatcher.onCollectionsStateMapUpdate();
+        this.attributeWatcher.onCollectionsStateMapUpdate();
     };
     ComponentDataResolverWatchers.prototype.getDynamicPropsDefs = function () {
         return this.propertyWatcher.getAllSerializableValues();
@@ -30586,21 +30851,18 @@ var keyUpdateInside = dom_components_types/* ComponentsEvents */.I.updateInside;
  *
  * @module docsjs.Component
  */
-var Component = /** @class */ (function (_super) {
+var Component_Component = /** @class */ (function (_super) {
     Component_extends(Component, _super);
     function Component(props, opt) {
         if (props === void 0) { props = {}; }
         var _this = this;
-        var dataResolverWatchers = new ComponentDataResolverWatchers(undefined, {
-            em: opt.em,
-            collectionsStateMap: props[keyCollectionsStateMap],
-        });
+        var em = opt.em;
+        var dataResolverWatchers = new ComponentDataResolverWatchers(undefined, { em: em });
         _this = _super.call(this, props, Component_assign(Component_assign({}, opt), { dataResolverWatchers: dataResolverWatchers })) || this;
-        _this.collectionStateListeners = [];
+        _this.collectionsStateMap = {};
         dataResolverWatchers.bindComponent(_this);
         _this.dataResolverWatchers = dataResolverWatchers;
-        (0,index_all.bindAll)(_this, '__upSymbProps', '__upSymbCls', '__upSymbComps');
-        var em = opt.em;
+        (0,index_all.bindAll)(_this, '__upSymbProps', '__upSymbCls', '__upSymbComps', 'syncOnComponentChange');
         // Propagate properties from parent if indicated
         var parent = _this.parent();
         var parentAttr = parent === null || parent === void 0 ? void 0 : parent.attributes;
@@ -30825,6 +31087,48 @@ var Component = /** @class */ (function (_super) {
         var evaluatedProps = this.dataResolverWatchers.addProps(attributes, options);
         return _super.prototype.set.call(this, evaluatedProps, options);
     };
+    Component.prototype.onCollectionsStateMapUpdate = function (collectionsStateMap) {
+        this.collectionsStateMap = collectionsStateMap;
+        this.dataResolverWatchers.onCollectionsStateMapUpdate();
+        var cmps = this.components();
+        cmps.forEach(function (cmp) { return cmp.onCollectionsStateMapUpdate(collectionsStateMap); });
+    };
+    Component.prototype.syncComponentsCollectionState = function () {
+        this.stopListening(this.components(), 'add remove reset', this.syncOnComponentChange);
+        this.listenTo(this.components(), 'add remove reset', this.syncOnComponentChange);
+        this.components().forEach(function (cmp) { return cmp.syncComponentsCollectionState(); });
+    };
+    Component.prototype.stopSyncComponentCollectionState = function () {
+        this.stopListening(this.components(), 'add remove reset', this.syncOnComponentChange);
+        this.collectionsStateMap = {};
+        this.components().forEach(function (cmp) { return cmp.stopSyncComponentCollectionState(); });
+    };
+    Component.prototype.syncOnComponentChange = function (model, collection, opts) {
+        var _this = this;
+        if (!this.collectionsStateMap || !Object.keys(this.collectionsStateMap).length)
+            return;
+        var options = opts || collection || {};
+        // Reset (in reset, 'model' is Collection, 'collection' is opts )
+        if (!opts) {
+            var modelsRemoved = options.previousModels || [];
+            modelsRemoved.forEach(function (cmp) { return cmp.stopSyncComponentCollectionState(); });
+            this.components().forEach(function (cmp) {
+                cmp.syncComponentsCollectionState();
+                cmp.onCollectionsStateMapUpdate(_this.collectionsStateMap);
+            });
+        }
+        else if (options.add) {
+            // Add
+            var modelAdded = model;
+            modelAdded.syncComponentsCollectionState();
+            modelAdded.onCollectionsStateMapUpdate(this.collectionsStateMap);
+        }
+        else {
+            // Remove
+            var modelRemoved = model;
+            modelRemoved.stopSyncComponentCollectionState();
+        }
+    };
     Component.prototype.__postAdd = function (opts) {
         if (opts === void 0) { opts = {}; }
         var em = this.em;
@@ -30867,6 +31171,24 @@ var Component = /** @class */ (function (_super) {
         var pros = { style: newStyles };
         em.trigger(event, this, pros);
         styleKeys.forEach(function (key) { return em.trigger("".concat(event, ":").concat(key), _this, pros); });
+        var collectionsStateMap = this.collectionsStateMap;
+        var allParentCollectionIds = Object.keys(collectionsStateMap);
+        if (!allParentCollectionIds.length)
+            return;
+        var isAtInitialPosition = allParentCollectionIds.every(function (key) { return collectionsStateMap[key].currentIndex === collectionsStateMap[key].startIndex; });
+        if (!isAtInitialPosition)
+            return;
+        var componentsToUpdate = getSymbolsToUpdate(this);
+        componentsToUpdate.forEach(function (component) {
+            var componentCollectionsState = component.collectionsStateMap;
+            var componentParentCollectionIds = Object.keys(componentCollectionsState);
+            var isChildOfOriginalCollections = componentParentCollectionIds.every(function (id) {
+                return allParentCollectionIds.includes(id);
+            });
+            if (isChildOfOriginalCollections) {
+                component.addStyle(newStyles);
+            }
+        });
     };
     Component.prototype.__changesUp = function (opts) {
         var _a = this, em = _a.em, frame = _a.frame;
@@ -30898,6 +31220,7 @@ var Component = /** @class */ (function (_super) {
     Component.prototype.__upSymbComps = function (m, c, o) {
         updateSymbolComps(this, m, c, o);
     };
+    Component.prototype.__onDestroy = function () { };
     /**
      * Check component's type
      * @param  {string}  type Component type
@@ -31708,6 +32031,7 @@ var Component = /** @class */ (function (_super) {
      * @private
      * @ts-ignore */
     Component.prototype.clone = function (opt) {
+        var _a;
         if (opt === void 0) { opt = {}; }
         var em = this.em;
         var attr = Component_assign(Component_assign({}, this.attributes), this.dataResolverWatchers.getDynamicPropsDefs());
@@ -31761,8 +32085,9 @@ var Component = /** @class */ (function (_super) {
             cloned.set(keySymbols, 0);
         }
         else if (symbol) {
+            var mainSymbolInstances = (_a = getSymbolInstances(symbol)) !== null && _a !== void 0 ? _a : [];
             // Contains already a reference to a symbol
-            symbol.set(keySymbols, Component_spreadArray(Component_spreadArray([], getSymbolInstances(symbol), true), [cloned], false));
+            symbol.set(keySymbols, Component_spreadArray(Component_spreadArray([], mainSymbolInstances, true), [cloned], false));
             initSymbol(cloned);
         }
         else if (opt.symbol) {
@@ -31965,12 +32290,10 @@ var Component = /** @class */ (function (_super) {
         delete obj.open; // used in Layers
         delete obj._undoexc;
         delete obj.delegate;
-        if (this.get(keyIsCollectionItem)) {
+        if (this.collectionsStateMap && Object.getOwnPropertyNames(this.collectionsStateMap).length > 0) {
             delete obj[keySymbol];
             delete obj[keySymbolOvrd];
             delete obj[keySymbols];
-            delete obj[keyCollectionsStateMap];
-            delete obj[keyIsCollectionItem];
             delete obj.attributes.id;
         }
         if (!opts.fromUndo) {
@@ -32020,6 +32343,10 @@ var Component = /** @class */ (function (_super) {
      */
     Component.prototype.getId = function () {
         var attrs = this.get('attributes') || {};
+        var _a = checkAndGetSyncableCollectionItemId(this), shouldSync = _a.shouldSync, itemId = _a.itemId;
+        if (shouldSync) {
+            attrs.id = itemId;
+        }
         return attrs.id || this.ccid || this.cid;
     };
     /**
@@ -32184,7 +32511,9 @@ var Component = /** @class */ (function (_super) {
         return this;
     };
     Component.prototype.destroy = function (options) {
+        this.stopListening(this.components(), 'add remove reset', this.syncOnComponentChange);
         this.dataResolverWatchers.destroy();
+        this.__onDestroy();
         return _super.prototype.destroy.call(this, options);
     };
     /**
@@ -32419,7 +32748,7 @@ var Component = /** @class */ (function (_super) {
     Component.typeExtends = new Set();
     return Component;
 }(model_StyleableModel));
-/* harmony default export */ const model_Component = (Component);
+/* harmony default export */ const model_Component = (Component_Component);
 
 ;// CONCATENATED MODULE: ./src/dom_components/model/ComponentHead.ts
 var ComponentHead_extends = (undefined && undefined.__extends) || (function () {
@@ -32475,9 +32804,9 @@ var ComponentHead = /** @class */ (function (_super) {
 /* harmony default export */ const model_ComponentHead = (ComponentHead);
 
 // EXTERNAL MODULE: ./src/utils/sorter/types.ts
-var sorter_types = __webpack_require__(2128);
+var sorter_types = __webpack_require__(8433);
 // EXTERNAL MODULE: ./src/utils/sorter/CanvasComponentNode.ts
-var CanvasComponentNode = __webpack_require__(6778);
+var CanvasComponentNode = __webpack_require__(1447);
 ;// CONCATENATED MODULE: ./src/utils/sorter/CanvasNewComponentNode.ts
 var CanvasNewComponentNode_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -33319,10 +33648,20 @@ var FrameView = /** @class */ (function (_super) {
         var view = (((_a = em === null || em === void 0 ? void 0 : em.Components) === null || _a === void 0 ? void 0 : _a.getType('wrapper')) || {}).view;
         if (!view)
             return;
-        this.wrapper = new view({
-            model: root,
-            config: FrameView_assign(FrameView_assign({}, root.config), { em: em, frameView: this }),
-        }).render();
+        if (typeof config.customRenderer === 'function') {
+            this.wrapper = config.customRenderer({
+                editor: em.Editor,
+                frame: model,
+                window: win,
+                frameView: this,
+            });
+        }
+        else {
+            this.wrapper = new view({
+                model: root,
+                config: FrameView_assign(FrameView_assign({}, root.config), { em: em, frameView: this }),
+            }).render();
+        }
         (0,dom/* append */.BC)(body, (_b = this.wrapper) === null || _b === void 0 ? void 0 : _b.el);
         (0,dom/* append */.BC)(body, new view_CssRulesView({
             collection: model.getStyles(),
@@ -33368,7 +33707,7 @@ var FrameView = /** @class */ (function (_super) {
 /* harmony default export */ const view_FrameView = (FrameView);
 
 // EXTERNAL MODULE: ./src/utils/Dragger.ts
-var Dragger = __webpack_require__(5633);
+var Dragger = __webpack_require__(9966);
 ;// CONCATENATED MODULE: ./src/canvas/view/FrameWrapView.ts
 var FrameWrapView_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -37386,10 +37725,11 @@ var ComponentView = /** @class */ (function (_super) {
         this.render();
     };
     ComponentView.prototype._setData = function () {
-        var model = this.model;
+        var _a = this, model = _a.model, el = _a.el;
         var collection = model.components();
         var view = this;
         this.$el.data({ model: model, collection: collection, view: view });
+        (0,mixins.setViewEl)(el, this);
     };
     ComponentView.prototype._createElement = function (tagName) {
         return this.createDoc.createElement(tagName);
@@ -38693,6 +39033,89 @@ var Symbols = /** @class */ (function (_super) {
 }(model_Components));
 /* harmony default export */ const model_Symbols = (Symbols);
 
+;// CONCATENATED MODULE: ./src/data_sources/model/ComponentWithDataResolver.ts
+var ComponentWithDataResolver_extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var ComponentWithDataResolver_assign = (undefined && undefined.__assign) || function () {
+    ComponentWithDataResolver_assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return ComponentWithDataResolver_assign.apply(this, arguments);
+};
+
+var ComponentWithDataResolver = /** @class */ (function (_super) {
+    ComponentWithDataResolver_extends(ComponentWithDataResolver, _super);
+    function ComponentWithDataResolver(props, opt) {
+        var _this = _super.call(this, props, opt) || this;
+        _this.dataResolver = _this.initializeDataResolver(props, opt);
+        _this.listenToPropsChange();
+        return _this;
+    }
+    ComponentWithDataResolver.prototype.initializeDataResolver = function (props, opt) {
+        var _a;
+        var resolverProps = (_a = props.dataResolver) !== null && _a !== void 0 ? _a : {
+            type: props.type,
+        };
+        var resolver = this.createResolverInstance(resolverProps, ComponentWithDataResolver_assign(ComponentWithDataResolver_assign({}, opt), { collectionsStateMap: this.collectionsStateMap }));
+        return resolver;
+    };
+    ComponentWithDataResolver.prototype.getDataResolver = function () {
+        return this.get('dataResolver');
+    };
+    ComponentWithDataResolver.prototype.setDataResolver = function (props) {
+        return this.set('dataResolver', props);
+    };
+    ComponentWithDataResolver.prototype.onCollectionsStateMapUpdate = function (collectionsStateMap) {
+        this.dataResolver.updateCollectionsStateMap(collectionsStateMap);
+        _super.prototype.onCollectionsStateMapUpdate.call(this, collectionsStateMap);
+    };
+    ComponentWithDataResolver.prototype.listenToPropsChange = function () {
+        var _this = this;
+        this.listenTo(this.dataResolver, 'change', (function () {
+            _this.__changesUp({ m: _this });
+        }).bind(this));
+        this.on('change:dataResolver', function () {
+            // @ts-ignore
+            _this.dataResolver.set(_this.get('dataResolver'));
+        });
+    };
+    ComponentWithDataResolver.prototype.removePropsListeners = function () {
+        this.stopListening(this.dataResolver);
+        this.off('change:dataResolver');
+        this.off("change:".concat(this.collectionsStateMap));
+    };
+    ComponentWithDataResolver.prototype.destroy = function (options) {
+        this.removePropsListeners();
+        return _super.prototype.destroy.call(this, options);
+    };
+    ComponentWithDataResolver.prototype.toJSON = function (opts) {
+        var json = _super.prototype.toJSON.call(this, opts);
+        var dataResolver = this.dataResolver.toJSON();
+        delete dataResolver.type;
+        return ComponentWithDataResolver_assign(ComponentWithDataResolver_assign({}, json), { dataResolver: dataResolver });
+    };
+    return ComponentWithDataResolver;
+}(model_Component));
+
+
 ;// CONCATENATED MODULE: ./src/data_sources/model/ComponentDataVariable.ts
 var ComponentDataVariable_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -38725,15 +39148,12 @@ var ComponentDataVariable_assign = (undefined && undefined.__assign) || function
 
 var ComponentDataVariable = /** @class */ (function (_super) {
     ComponentDataVariable_extends(ComponentDataVariable, _super);
-    function ComponentDataVariable(props, opt) {
-        var _this = _super.call(this, props, opt) || this;
-        var type = props.type, path = props.path, defaultValue = props.defaultValue;
-        _this.dataResolver = new model_DataVariable({ type: type, path: path, defaultValue: defaultValue }, opt);
-        return _this;
+    function ComponentDataVariable() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Object.defineProperty(ComponentDataVariable.prototype, "defaults", {
         get: function () {
-            return ComponentDataVariable_assign(ComponentDataVariable_assign({}, _super.prototype.defaults), { type: DataVariableType, path: '', defaultValue: '', droppable: false });
+            return ComponentDataVariable_assign(ComponentDataVariable_assign({}, _super.prototype.defaults), { type: DataVariableType, dataResolver: {}, droppable: false });
         },
         enumerable: false,
         configurable: true
@@ -38741,11 +39161,20 @@ var ComponentDataVariable = /** @class */ (function (_super) {
     ComponentDataVariable.prototype.getPath = function () {
         return this.dataResolver.get('path');
     };
+    ComponentDataVariable.prototype.getCollectionId = function () {
+        return this.dataResolver.get('collectionId');
+    };
+    ComponentDataVariable.prototype.getVariableType = function () {
+        return this.dataResolver.get('variableType');
+    };
     ComponentDataVariable.prototype.getDefaultValue = function () {
         return this.dataResolver.get('defaultValue');
     };
     ComponentDataVariable.prototype.getDataValue = function () {
         return this.dataResolver.getDataValue();
+    };
+    ComponentDataVariable.prototype.resolvesFromCollection = function () {
+        return this.dataResolver.resolvesFromCollection();
     };
     ComponentDataVariable.prototype.getInnerHTML = function () {
         return this.getDataValue();
@@ -38756,11 +39185,27 @@ var ComponentDataVariable = /** @class */ (function (_super) {
     ComponentDataVariable.prototype.setDefaultValue = function (newValue) {
         this.dataResolver.set('defaultValue', newValue);
     };
+    /**
+     * Sets the data source path and resets related properties.
+     * This will set collectionId and variableType to undefined as it's typically
+     * used when changing to a completely different data source.
+     * @param newPath The new path to set as the data source
+     */
+    ComponentDataVariable.prototype.resetDataSourcePath = function (newPath) {
+        this.set('dataResolver', {
+            path: newPath,
+            collectionId: undefined,
+            variableType: undefined,
+        });
+    };
+    ComponentDataVariable.prototype.createResolverInstance = function (props, options) {
+        return new model_DataVariable(props, options);
+    };
     ComponentDataVariable.isComponent = function (el) {
         return (0,mixins.toLowerCase)(el.tagName) === DataVariableType;
     };
     return ComponentDataVariable;
-}(model_Component));
+}(ComponentWithDataResolver));
 /* harmony default export */ const model_ComponentDataVariable = (ComponentDataVariable);
 
 ;// CONCATENATED MODULE: ./src/data_sources/view/ComponentDataVariableView.ts
@@ -38808,77 +39253,6 @@ var ComponentDataVariableView = /** @class */ (function (_super) {
 }(view_ComponentView));
 /* harmony default export */ const view_ComponentDataVariableView = (ComponentDataVariableView);
 
-;// CONCATENATED MODULE: ./src/data_sources/model/conditional_variables/ComponentDataCondition.ts
-var ComponentDataCondition_extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var ComponentDataCondition_assign = (undefined && undefined.__assign) || function () {
-    ComponentDataCondition_assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return ComponentDataCondition_assign.apply(this, arguments);
-};
-
-
-
-var ComponentDataCondition = /** @class */ (function (_super) {
-    ComponentDataCondition_extends(ComponentDataCondition, _super);
-    function ComponentDataCondition(props, opt) {
-        var _this = this;
-        var dataConditionInstance = new DataCondition(props, { em: opt.em });
-        _this = _super.call(this, ComponentDataCondition_assign(ComponentDataCondition_assign({}, props), { type: DataCondition_DataConditionType, components: dataConditionInstance.getDataValue(), droppable: false }), opt) || this;
-        _this.dataResolver = dataConditionInstance;
-        _this.dataResolver.onValueChange = _this.handleConditionChange.bind(_this);
-        return _this;
-    }
-    ComponentDataCondition.prototype.getCondition = function () {
-        return this.dataResolver.getCondition();
-    };
-    ComponentDataCondition.prototype.getIfTrue = function () {
-        return this.dataResolver.getIfTrue();
-    };
-    ComponentDataCondition.prototype.getIfFalse = function () {
-        return this.dataResolver.getIfFalse();
-    };
-    ComponentDataCondition.prototype.handleConditionChange = function () {
-        this.components(this.dataResolver.getDataValue());
-    };
-    ComponentDataCondition.isComponent = function (el) {
-        return (0,mixins.toLowerCase)(el.tagName) === DataCondition_DataConditionType;
-    };
-    ComponentDataCondition.prototype.setCondition = function (newCondition) {
-        this.dataResolver.setCondition(newCondition);
-    };
-    ComponentDataCondition.prototype.setIfTrue = function (newIfTrue) {
-        this.dataResolver.setIfTrue(newIfTrue);
-    };
-    ComponentDataCondition.prototype.setIfFalse = function (newIfFalse) {
-        this.dataResolver.setIfFalse(newIfFalse);
-    };
-    ComponentDataCondition.prototype.toJSON = function () {
-        return this.dataResolver.toJSON();
-    };
-    return ComponentDataCondition;
-}(model_Component));
-/* harmony default export */ const conditional_variables_ComponentDataCondition = (ComponentDataCondition);
-
 ;// CONCATENATED MODULE: ./src/data_sources/view/ComponentDataConditionView.ts
 var ComponentDataConditionView_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -38896,11 +39270,45 @@ var ComponentDataConditionView_extends = (undefined && undefined.__extends) || (
     };
 })();
 
+
 var ComponentDataConditionView = /** @class */ (function (_super) {
     ComponentDataConditionView_extends(ComponentDataConditionView, _super);
     function ComponentDataConditionView() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    ComponentDataConditionView.prototype.initialize = function (opt) {
+        if (opt === void 0) { opt = {}; }
+        _super.prototype.initialize.call(this, opt);
+        this.postRender = this.postRender.bind(this);
+        this.listenTo(this.model.components(), 'reset', this.postRender);
+        this.dataResolverListener = new model_DataResolverListener({
+            em: this.em,
+            resolver: this.model.dataResolver,
+            onUpdate: this.postRender,
+        });
+    };
+    ComponentDataConditionView.prototype.renderDataResolver = function () {
+        var componentTrue = this.model.getIfTrueContent();
+        var componentFalse = this.model.getIfFalseContent();
+        var elTrue = componentTrue === null || componentTrue === void 0 ? void 0 : componentTrue.getEl();
+        var elFalse = componentFalse === null || componentFalse === void 0 ? void 0 : componentFalse.getEl();
+        var isTrue = this.model.isTrue();
+        if (elTrue) {
+            elTrue.style.display = isTrue ? '' : 'none';
+        }
+        if (elFalse) {
+            elFalse.style.display = isTrue ? 'none' : '';
+        }
+    };
+    ComponentDataConditionView.prototype.postRender = function () {
+        this.renderDataResolver();
+        _super.prototype.postRender.call(this);
+    };
+    ComponentDataConditionView.prototype.remove = function () {
+        this.stopListening(this.model.components(), 'reset', this.postRender);
+        this.dataResolverListener.destroy();
+        return _super.prototype.remove.call(this);
+    };
     return ComponentDataConditionView;
 }(view_ComponentView));
 /* harmony default export */ const view_ComponentDataConditionView = (ComponentDataConditionView);
@@ -39370,27 +39778,36 @@ var ComponentDataCollection_assign = (undefined && undefined.__assign) || functi
 
 
 
+var AvoidStoreOptions = { avoidStore: true, partial: true };
 var ComponentDataCollection = /** @class */ (function (_super) {
     ComponentDataCollection_extends(ComponentDataCollection, _super);
     function ComponentDataCollection(props, opt) {
         var _this = this;
-        var collectionDef = props[keyCollectionDefinition];
         if (opt.forCloning) {
             return _this = _super.call(this, props, opt) || this;
         }
         var em = opt.em;
-        var newProps = ComponentDataCollection_assign(ComponentDataCollection_assign({}, props), { components: undefined, droppable: false });
+        var newProps = ComponentDataCollection_assign(ComponentDataCollection_assign({}, props), { droppable: false });
         var cmp = _this = _super.call(this, newProps, opt) || this;
-        if (!collectionDef) {
-            em.logError('missing collection definition');
-            return cmp;
-        }
+        _this.rebuildChildrenFromCollection = _this.rebuildChildrenFromCollection.bind(_this);
+        _this.listenToPropsChange();
         _this.rebuildChildrenFromCollection();
-        (0,index_all.bindAll)(_this, 'rebuildChildrenFromCollection');
-        _this.listenTo(_this, "change:".concat(keyCollectionDefinition), _this.rebuildChildrenFromCollection);
-        _this.listenToDataSource();
         return cmp;
     }
+    Object.defineProperty(ComponentDataCollection.prototype, "defaults", {
+        get: function () {
+            return ComponentDataCollection_assign(ComponentDataCollection_assign({}, _super.prototype.defaults), { droppable: false, dataResolver: {}, type: DataCollectionType, components: [
+                    {
+                        type: DataCollectionItemType,
+                    },
+                ] });
+        },
+        enumerable: false,
+        configurable: true
+    });
+    ComponentDataCollection.prototype.getDataResolver = function () {
+        return this.get('dataResolver');
+    };
     ComponentDataCollection.prototype.getItemsCount = function () {
         var _a, _b;
         var items = this.getDataSourceItems();
@@ -39401,24 +39818,27 @@ var ComponentDataCollection = /** @class */ (function (_super) {
         return Math.max(0, count);
     };
     ComponentDataCollection.prototype.getConfigStartIndex = function () {
-        return this.collectionConfig.startIndex;
+        return this.dataResolver.startIndex;
     };
     ComponentDataCollection.prototype.getConfigEndIndex = function () {
-        return this.collectionConfig.endIndex;
-    };
-    ComponentDataCollection.prototype.getComponentDef = function () {
-        return this.getFirstChildJSON();
+        return this.dataResolver.endIndex;
     };
     ComponentDataCollection.prototype.getDataSource = function () {
-        var _a, _b;
-        return (_b = (_a = this.collectionDef) === null || _a === void 0 ? void 0 : _a.collectionConfig) === null || _b === void 0 ? void 0 : _b.dataSource;
+        var _a;
+        return (_a = this.dataResolver) === null || _a === void 0 ? void 0 : _a.dataSource;
     };
     ComponentDataCollection.prototype.getCollectionId = function () {
-        var _a, _b;
-        return (_b = (_a = this.collectionDef) === null || _a === void 0 ? void 0 : _a.collectionConfig) === null || _b === void 0 ? void 0 : _b.collectionId;
+        var _a;
+        return (_a = this.dataResolver) === null || _a === void 0 ? void 0 : _a.collectionId;
     };
-    ComponentDataCollection.prototype.setComponentDef = function (componentDef) {
-        this.set(keyCollectionDefinition, ComponentDataCollection_assign(ComponentDataCollection_assign({}, this.collectionDef), { componentDef: componentDef }));
+    ComponentDataCollection.prototype.getCollectionItemComponents = function () {
+        return this.firstChild.components();
+    };
+    ComponentDataCollection.prototype.setDataResolver = function (props) {
+        return this.set('dataResolver', props);
+    };
+    ComponentDataCollection.prototype.setCollectionId = function (collectionId) {
+        this.updateCollectionConfig({ collectionId: collectionId });
     };
     ComponentDataCollection.prototype.setStartIndex = function (startIndex) {
         if (startIndex < 0) {
@@ -39430,48 +39850,39 @@ var ComponentDataCollection = /** @class */ (function (_super) {
     ComponentDataCollection.prototype.setEndIndex = function (endIndex) {
         this.updateCollectionConfig({ endIndex: endIndex });
     };
-    ComponentDataCollection.prototype.updateCollectionConfig = function (updates) {
-        this.set(keyCollectionDefinition, ComponentDataCollection_assign(ComponentDataCollection_assign({}, this.collectionDef), { collectionConfig: ComponentDataCollection_assign(ComponentDataCollection_assign({}, this.collectionConfig), updates) }));
-    };
     ComponentDataCollection.prototype.setDataSource = function (dataSource) {
-        this.set(keyCollectionDefinition, ComponentDataCollection_assign(ComponentDataCollection_assign({}, this.collectionDef), { collectionConfig: ComponentDataCollection_assign(ComponentDataCollection_assign({}, this.collectionConfig), { dataSource: dataSource }) }));
+        this.set(keyCollectionDefinition, ComponentDataCollection_assign(ComponentDataCollection_assign({}, this.dataResolver), { dataSource: dataSource }));
+    };
+    ComponentDataCollection.prototype.setCollectionItemComponents = function (content) {
+        this.firstChild.components(content);
+    };
+    Object.defineProperty(ComponentDataCollection.prototype, "firstChild", {
+        get: function () {
+            return this.components().at(0);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    ComponentDataCollection.prototype.updateCollectionConfig = function (updates) {
+        this.set(keyCollectionDefinition, ComponentDataCollection_assign(ComponentDataCollection_assign({}, this.dataResolver), updates));
     };
     ComponentDataCollection.prototype.getDataSourceItems = function () {
-        var _a;
-        return ((_a = this.collectionDef) === null || _a === void 0 ? void 0 : _a.collectionConfig) ? getDataSourceItems(this.collectionConfig.dataSource, this.em) : [];
+        return getDataSourceItems(this.dataResolver.dataSource, this.em);
     };
-    ComponentDataCollection.prototype.getCollectionStateMap = function () {
-        return (this.get(keyCollectionsStateMap) || {});
-    };
-    Object.defineProperty(ComponentDataCollection.prototype, "collectionDef", {
+    Object.defineProperty(ComponentDataCollection.prototype, "dataResolver", {
         get: function () {
             return (this.get(keyCollectionDefinition) || {});
         },
         enumerable: false,
         configurable: true
     });
-    Object.defineProperty(ComponentDataCollection.prototype, "collectionConfig", {
-        get: function () {
-            var _a;
-            return (((_a = this.collectionDef) === null || _a === void 0 ? void 0 : _a.collectionConfig) || {});
-        },
-        enumerable: false,
-        configurable: true
-    });
     Object.defineProperty(ComponentDataCollection.prototype, "collectionDataSource", {
         get: function () {
-            return this.collectionConfig.dataSource;
+            return this.dataResolver.dataSource;
         },
         enumerable: false,
         configurable: true
     });
-    ComponentDataCollection.prototype.getFirstChildJSON = function () {
-        var firstChild = this.components().at(0);
-        var firstChildJSON = firstChild ? (0,mixins.serialize)(firstChild) : this.collectionDef.componentDef;
-        firstChildJSON === null || firstChildJSON === void 0 ? true : delete firstChildJSON.draggable;
-        firstChildJSON === null || firstChildJSON === void 0 ? true : delete firstChildJSON.removable;
-        return firstChildJSON;
-    };
     ComponentDataCollection.prototype.listenToDataSource = function () {
         var _a;
         var em = this.em;
@@ -39480,7 +39891,7 @@ var ComponentDataCollection = /** @class */ (function (_super) {
             return;
         this.dataSourceWatcher = new model_DataResolverListener({
             em: em,
-            resolver: new model_DataVariable({ type: DataVariableType, path: path }, { em: em }),
+            resolver: new model_DataVariable({ type: DataVariableType, path: path }, { em: em, collectionsStateMap: this.collectionsStateMap }),
             onUpdate: this.rebuildChildrenFromCollection,
         });
     };
@@ -39489,100 +39900,149 @@ var ComponentDataCollection = /** @class */ (function (_super) {
     };
     ComponentDataCollection.prototype.getCollectionItems = function () {
         var _a;
-        var _b, _c;
-        var _d = this.collectionDef, componentDef = _d.componentDef, collectionConfig = _d.collectionConfig;
-        var result = validateCollectionConfig(collectionConfig, componentDef, this.em);
+        var firstChild = this.ensureFirstChild();
+        var displayStyle = firstChild.getStyle()['display'];
+        var isDisplayNoneOrMissing = !displayStyle || displayStyle === 'none';
+        var resolvedDisplay = isDisplayNoneOrMissing ? '' : displayStyle;
+        // TODO: Move to component view
+        firstChild.addStyle({ display: 'none' }, AvoidStoreOptions);
+        var components = [firstChild];
+        var result = validateCollectionDef(this.dataResolver, this.em);
         if (!result) {
-            return [];
+            return components;
         }
-        var components = [];
-        var collectionId = collectionConfig.collectionId;
+        var collectionId = this.collectionId;
         var items = this.getDataSourceItems();
-        var startIndex = (_b = this.getConfigStartIndex()) !== null && _b !== void 0 ? _b : 0;
-        var configEndIndex = (_c = this.getConfigEndIndex()) !== null && _c !== void 0 ? _c : Number.MAX_VALUE;
-        var endIndex = Math.min(items.length - 1, configEndIndex);
-        var totalItems = endIndex - startIndex + 1;
-        var parentCollectionStateMap = this.getCollectionStateMap();
-        var symbolMain;
+        var _b = this.resolveCollectionConfig(items), startIndex = _b.startIndex, endIndex = _b.endIndex;
+        var isDuplicatedId = this.hasDuplicateCollectionId();
+        if (isDuplicatedId) {
+            this.em.logError("The collection ID \"".concat(collectionId, "\" already exists in the parent collection state. Overriding it is not allowed."));
+            return components;
+        }
         for (var index = startIndex; index <= endIndex; index++) {
-            var item = items[index];
             var isFirstItem = index === startIndex;
-            var collectionState = {
-                collectionId: collectionId,
-                currentIndex: index,
-                currentItem: item,
-                startIndex: startIndex,
-                endIndex: endIndex,
-                totalItems: totalItems,
-                remainingItems: totalItems - (index + 1),
-            };
-            if (parentCollectionStateMap[collectionId]) {
-                this.em.logError("The collection ID \"".concat(collectionId, "\" already exists in the parent collection state. Overriding it is not allowed."));
-                return [];
-            }
-            var collectionsStateMap = ComponentDataCollection_assign(ComponentDataCollection_assign({}, parentCollectionStateMap), (_a = {}, _a[collectionId] = collectionState, _a));
+            var collectionsStateMap = this.getCollectionsStateMapForItem(items, index);
             if (isFirstItem) {
-                var componentType = (componentDef === null || componentDef === void 0 ? void 0 : componentDef.type) || 'default';
-                var type = this.em.Components.getType(componentType) || this.em.Components.getType('default');
-                var Model = type.model;
-                symbolMain = new Model(ComponentDataCollection_assign(ComponentDataCollection_assign({}, (0,mixins.serialize)(componentDef)), { draggable: false, removable: false }), this.opt);
+                (_a = getSymbolInstances(firstChild)) === null || _a === void 0 ? void 0 : _a.forEach(function (cmp) { return detachSymbolInstance(cmp); });
+                setCollectionStateMapAndPropagate(firstChild, collectionsStateMap);
+                // TODO: Move to component view
+                firstChild.addStyle({ display: resolvedDisplay }, AvoidStoreOptions);
+                continue;
             }
-            var instance = symbolMain.clone({ symbol: true });
-            !isFirstItem && instance.set('locked', true);
-            setCollectionStateMapAndPropagate(collectionsStateMap, collectionId)(instance);
+            var instance = firstChild.clone({ symbol: true, symbolInv: true });
+            instance.set({ locked: true, layerable: false }, AvoidStoreOptions);
+            setCollectionStateMapAndPropagate(instance, collectionsStateMap);
             components.push(instance);
         }
         return components;
     };
+    ComponentDataCollection.prototype.getCollectionsStateMapForItem = function (items, index) {
+        var _a;
+        var _b = this.resolveCollectionConfig(items), startIndex = _b.startIndex, endIndex = _b.endIndex, totalItems = _b.totalItems;
+        var collectionId = this.collectionId;
+        var item = items[index];
+        var parentCollectionStateMap = this.collectionsStateMap;
+        var offset = index - startIndex;
+        var remainingItems = totalItems - (1 + offset);
+        var collectionState = {
+            collectionId: collectionId,
+            currentIndex: index,
+            currentItem: item,
+            startIndex: startIndex,
+            endIndex: endIndex,
+            totalItems: totalItems,
+            remainingItems: remainingItems,
+        };
+        var collectionsStateMap = ComponentDataCollection_assign(ComponentDataCollection_assign({}, parentCollectionStateMap), (_a = {}, _a[collectionId] = collectionState, _a));
+        return collectionsStateMap;
+    };
+    ComponentDataCollection.prototype.hasDuplicateCollectionId = function () {
+        var collectionId = this.collectionId;
+        var parentCollectionStateMap = this.collectionsStateMap;
+        return !!parentCollectionStateMap[collectionId];
+    };
+    ComponentDataCollection.prototype.resolveCollectionConfig = function (items) {
+        var _a, _b;
+        var startIndex = (_a = this.getConfigStartIndex()) !== null && _a !== void 0 ? _a : 0;
+        var configEndIndex = (_b = this.getConfigEndIndex()) !== null && _b !== void 0 ? _b : Number.MAX_VALUE;
+        var endIndex = Math.min(items.length - 1, configEndIndex);
+        var totalItems = endIndex - startIndex + 1;
+        return { startIndex: startIndex, endIndex: endIndex, totalItems: totalItems };
+    };
+    ComponentDataCollection.prototype.ensureFirstChild = function () {
+        var dataConditionItemModel = this.em.Components.getType(DataCollectionItemType).model;
+        return (this.firstChild ||
+            new dataConditionItemModel({
+                type: DataCollectionItemType,
+            }, this.opt));
+    };
+    ComponentDataCollection.prototype.listenToPropsChange = function () {
+        var _this = this;
+        this.on("change:".concat(keyCollectionDefinition), function () {
+            _this.rebuildChildrenFromCollection();
+            _this.listenToDataSource();
+        });
+        this.listenToDataSource();
+    };
+    ComponentDataCollection.prototype.removePropsListeners = function () {
+        var _a;
+        this.off("change:".concat(keyCollectionDefinition));
+        (_a = this.dataSourceWatcher) === null || _a === void 0 ? void 0 : _a.destroy();
+    };
+    ComponentDataCollection.prototype.onCollectionsStateMapUpdate = function (collectionsStateMap) {
+        var _this = this;
+        this.collectionsStateMap = collectionsStateMap;
+        this.dataResolverWatchers.onCollectionsStateMapUpdate();
+        var items = this.getDataSourceItems();
+        var startIndex = this.resolveCollectionConfig(items).startIndex;
+        var cmps = this.components();
+        cmps.forEach(function (cmp, index) {
+            var collectionsStateMap = _this.getCollectionsStateMapForItem(items, startIndex + index);
+            cmp.onCollectionsStateMapUpdate(collectionsStateMap);
+        });
+    };
+    ComponentDataCollection.prototype.stopSyncComponentCollectionState = function () {
+        this.stopListening(this.components(), 'add remove reset', this.syncOnComponentChange);
+        this.onCollectionsStateMapUpdate({});
+    };
+    ComponentDataCollection.prototype.syncOnComponentChange = function (model, collection, opts) {
+        var collectionsStateMap = this.collectionsStateMap;
+        // Avoid assigning wrong collectionsStateMap value to children components
+        this.collectionsStateMap = {};
+        _super.prototype.syncOnComponentChange.call(this, model, collection, opts);
+        this.collectionsStateMap = collectionsStateMap;
+        this.onCollectionsStateMapUpdate(collectionsStateMap);
+    };
+    Object.defineProperty(ComponentDataCollection.prototype, "collectionId", {
+        get: function () {
+            return this.getDataResolver().collectionId;
+        },
+        enumerable: false,
+        configurable: true
+    });
     ComponentDataCollection.isComponent = function (el) {
         return (0,mixins.toLowerCase)(el.tagName) === DataCollectionType;
     };
     ComponentDataCollection.prototype.toJSON = function (opts) {
+        var _a;
         var json = _super.prototype.toJSON.call(this, opts);
-        json[keyCollectionDefinition].componentDef = this.getFirstChildJSON();
-        delete json.components;
         delete json.droppable;
-        return json;
+        delete json[keySymbol];
+        (_a = json.attributes) === null || _a === void 0 ? true : delete _a.id;
+        var firstChild = this.firstChild;
+        return ComponentDataCollection_assign(ComponentDataCollection_assign({}, json), { components: [firstChild] });
+    };
+    ComponentDataCollection.prototype.destroy = function (options) {
+        this.removePropsListeners();
+        return _super.prototype.destroy.call(this, options);
     };
     return ComponentDataCollection;
 }(model_Component));
 /* harmony default export */ const data_collection_ComponentDataCollection = (ComponentDataCollection);
-function setCollectionStateMapAndPropagate(collectionsStateMap, collectionId) {
-    return function (cmp) {
-        setCollectionStateMap(collectionsStateMap)(cmp);
-        var addListener = function (component) {
-            setCollectionStateMapAndPropagate(collectionsStateMap, collectionId)(component);
-        };
-        var listenerKey = "_hasAddListener".concat(collectionId ? "_".concat(collectionId) : '');
-        var cmps = cmp.components();
-        if (!cmp.collectionStateListeners.includes(listenerKey)) {
-            cmp.listenTo(cmps, 'add', addListener);
-            cmp.collectionStateListeners.push(listenerKey);
-            var removeListener = function (component) {
-                var _a;
-                component.stopListening(component.components(), 'add', addListener);
-                component.off("change:".concat(keyCollectionsStateMap), handleCollectionStateMapChange);
-                var index = component.collectionStateListeners.indexOf(listenerKey);
-                if (index !== -1) {
-                    component.collectionStateListeners.splice(index, 1);
-                }
-                var collectionsStateMap = component.get(keyCollectionsStateMap);
-                component.set(keyCollectionsStateMap, ComponentDataCollection_assign(ComponentDataCollection_assign({}, collectionsStateMap), (_a = {}, _a[collectionId] = undefined, _a)));
-            };
-            cmp.listenTo(cmps, 'remove', removeListener);
-        }
-        cmps === null || cmps === void 0 ? void 0 : cmps.toArray().forEach(function (component) {
-            setCollectionStateMapAndPropagate(collectionsStateMap, collectionId)(component);
-        });
-        cmp.on("change:".concat(keyCollectionsStateMap), handleCollectionStateMapChange);
-    };
-}
-function handleCollectionStateMapChange() {
-    var _a;
-    var updatedCollectionsStateMap = this.get(keyCollectionsStateMap);
-    (_a = this.components()) === null || _a === void 0 ? void 0 : _a.toArray().forEach(function (component) {
-        setCollectionStateMap(updatedCollectionsStateMap)(component);
-    });
+function setCollectionStateMapAndPropagate(cmp, collectionsStateMap) {
+    cmp.setSymbolOverride(['locked', 'layerable']);
+    cmp.syncComponentsCollectionState();
+    cmp.onCollectionsStateMapUpdate(collectionsStateMap);
 }
 function logErrorIfMissing(property, propertyPath, em) {
     if (!property) {
@@ -39591,48 +40051,22 @@ function logErrorIfMissing(property, propertyPath, em) {
     }
     return true;
 }
-function validateCollectionConfig(collectionConfig, componentDef, em) {
+function validateCollectionDef(dataResolver, em) {
     var validations = [
-        { property: collectionConfig, propertyPath: 'collectionConfig' },
-        { property: componentDef, propertyPath: 'componentDef' },
-        { property: collectionConfig === null || collectionConfig === void 0 ? void 0 : collectionConfig.collectionId, propertyPath: 'collectionConfig.collectionId' },
-        { property: collectionConfig === null || collectionConfig === void 0 ? void 0 : collectionConfig.dataSource, propertyPath: 'collectionConfig.dataSource' },
+        { property: dataResolver === null || dataResolver === void 0 ? void 0 : dataResolver.collectionId, propertyPath: 'dataResolver.collectionId' },
+        { property: dataResolver === null || dataResolver === void 0 ? void 0 : dataResolver.dataSource, propertyPath: 'dataResolver.dataSource' },
     ];
     for (var _i = 0, validations_1 = validations; _i < validations_1.length; _i++) {
-        var _a = validations_1[_i], property = _a.property, propertyPath = _a.propertyPath;
-        if (!logErrorIfMissing(property, propertyPath, em)) {
+        var propertyPath = validations_1[_i].propertyPath;
+        if (!logErrorIfMissing(dataResolver, propertyPath, em)) {
             return [];
         }
     }
-    var startIndex = collectionConfig === null || collectionConfig === void 0 ? void 0 : collectionConfig.startIndex;
+    var startIndex = dataResolver === null || dataResolver === void 0 ? void 0 : dataResolver.startIndex;
     if (startIndex !== undefined && (startIndex < 0 || !Number.isInteger(startIndex))) {
         em.logError("Invalid startIndex: ".concat(startIndex, ". It must be a non-negative integer."));
     }
     return true;
-}
-function setCollectionStateMap(collectionsStateMap) {
-    return function (cmp) {
-        cmp.set(keyIsCollectionItem, true);
-        var updatedCollectionStateMap = ComponentDataCollection_assign(ComponentDataCollection_assign({}, cmp.get(keyCollectionsStateMap)), collectionsStateMap);
-        cmp.set(keyCollectionsStateMap, updatedCollectionStateMap);
-        cmp.dataResolverWatchers.updateCollectionStateMap(updatedCollectionStateMap);
-        var parentCollectionsId = Object.keys(updatedCollectionStateMap);
-        var isFirstItem = parentCollectionsId.every(function (key) { return updatedCollectionStateMap[key].currentIndex === updatedCollectionStateMap[key].startIndex; });
-        if (isFirstItem) {
-            var __onStyleChange_1 = cmp.__onStyleChange.bind(cmp);
-            cmp.__onStyleChange = function (newStyles, opts) {
-                if (opts === void 0) { opts = {}; }
-                __onStyleChange_1(newStyles);
-                var cmps = getSymbolsToUpdate(cmp);
-                cmps.forEach(function (cmp) {
-                    cmp.addStyle(newStyles, opts);
-                });
-            };
-            cmp.on("change:".concat(keyIsCollectionItem), function () {
-                cmp.__onStyleChange = __onStyleChange_1;
-            });
-        }
-    };
 }
 function getDataSourceItems(dataSource, em) {
     var items = [];
@@ -39646,17 +40080,20 @@ function getDataSourceItems(dataSource, em) {
             break;
         }
         case isDataVariable(dataSource): {
-            var isDataSourceId = dataSource.path.split('.').length === 1;
+            var path = dataSource.path;
+            if (!path)
+                break;
+            var isDataSourceId = path.split('.').length === 1;
             if (isDataSourceId) {
-                var id = dataSource.path;
-                items = listDataSourceVariables(id, em);
+                items = listDataSourceVariables(path, em);
             }
             else {
-                items = em.DataSources.getValue(dataSource.path, []);
+                items = em.DataSources.getValue(path, []);
             }
             break;
         }
         default:
+            break;
     }
     return items;
 }
@@ -39668,112 +40105,6 @@ function listDataSourceVariables(dataSource_id, em) {
         path: dataSource_id + '.' + key,
     }); });
 }
-
-;// CONCATENATED MODULE: ./src/data_sources/model/data_collection/ComponentDataCollectionVariable.ts
-var ComponentDataCollectionVariable_extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var ComponentDataCollectionVariable_assign = (undefined && undefined.__assign) || function () {
-    ComponentDataCollectionVariable_assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return ComponentDataCollectionVariable_assign.apply(this, arguments);
-};
-
-
-
-
-var ComponentDataCollectionVariable = /** @class */ (function (_super) {
-    ComponentDataCollectionVariable_extends(ComponentDataCollectionVariable, _super);
-    function ComponentDataCollectionVariable(props, opt) {
-        var _this = _super.call(this, props, opt) || this;
-        var type = props.type, variableType = props.variableType, path = props.path, collectionId = props.collectionId;
-        _this.dataResolver = new data_collection_DataCollectionVariable({ type: type, variableType: variableType, path: path, collectionId: collectionId }, ComponentDataCollectionVariable_assign(ComponentDataCollectionVariable_assign({}, opt), { collectionsStateMap: _this.get(keyCollectionsStateMap) }));
-        _this.listenTo(_this, "change:".concat(keyCollectionsStateMap), _this.handleCollectionsMapStateUpdate);
-        return _this;
-    }
-    Object.defineProperty(ComponentDataCollectionVariable.prototype, "defaults", {
-        get: function () {
-            // @ts-expect-error
-            var componentDefaults = _super.prototype.defaults;
-            return ComponentDataCollectionVariable_assign(ComponentDataCollectionVariable_assign({}, componentDefaults), { type: DataCollectionVariableType, collectionId: undefined, variableType: undefined, path: undefined, droppable: false });
-        },
-        enumerable: false,
-        configurable: true
-    });
-    ComponentDataCollectionVariable.prototype.handleCollectionsMapStateUpdate = function (m, v, opts) {
-        if (opts === void 0) { opts = {}; }
-        this.dataResolver.updateCollectionsStateMap(v);
-    };
-    ComponentDataCollectionVariable.prototype.getDataValue = function () {
-        return this.dataResolver.getDataValue();
-    };
-    ComponentDataCollectionVariable.prototype.getInnerHTML = function () {
-        return this.getDataValue();
-    };
-    ComponentDataCollectionVariable.isComponent = function (el) {
-        return (0,mixins.toLowerCase)(el.tagName) === DataCollectionVariableType;
-    };
-    return ComponentDataCollectionVariable;
-}(model_Component));
-/* harmony default export */ const data_collection_ComponentDataCollectionVariable = (ComponentDataCollectionVariable);
-
-;// CONCATENATED MODULE: ./src/data_sources/view/ComponentDataCollectionVariableView.ts
-var ComponentDataCollectionVariableView_extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-var ComponentDataCollectionVariableView = /** @class */ (function (_super) {
-    ComponentDataCollectionVariableView_extends(ComponentDataCollectionVariableView, _super);
-    function ComponentDataCollectionVariableView() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    ComponentDataCollectionVariableView.prototype.initialize = function (opt) {
-        if (opt === void 0) { opt = {}; }
-        _super.prototype.initialize.call(this, opt);
-        this.dataResolverListener = new model_DataResolverListener({
-            em: this.em,
-            resolver: this.model.dataResolver,
-            onUpdate: this.postRender.bind(this),
-        });
-    };
-    ComponentDataCollectionVariableView.prototype.postRender = function () {
-        this.el.innerHTML = this.model.getDataValue();
-        _super.prototype.postRender.call(this);
-    };
-    return ComponentDataCollectionVariableView;
-}(view_ComponentView));
-/* harmony default export */ const view_ComponentDataCollectionVariableView = (ComponentDataCollectionVariableView);
 
 ;// CONCATENATED MODULE: ./src/data_sources/view/ComponentDataCollectionView.ts
 var ComponentDataCollectionView_extends = (undefined && undefined.__extends) || (function () {
@@ -39800,6 +40131,154 @@ var ComponentDataCollectionView = /** @class */ (function (_super) {
     return ComponentDataCollectionView;
 }(view_ComponentView));
 /* harmony default export */ const view_ComponentDataCollectionView = (ComponentDataCollectionView);
+
+;// CONCATENATED MODULE: ./src/data_sources/model/conditional_variables/ComponentDataCondition.ts
+var ComponentDataCondition_extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var ComponentDataCondition_assign = (undefined && undefined.__assign) || function () {
+    ComponentDataCondition_assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return ComponentDataCondition_assign.apply(this, arguments);
+};
+
+
+
+
+
+var ComponentDataCondition = /** @class */ (function (_super) {
+    ComponentDataCondition_extends(ComponentDataCondition, _super);
+    function ComponentDataCondition() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(ComponentDataCondition.prototype, "defaults", {
+        get: function () {
+            return ComponentDataCondition_assign(ComponentDataCondition_assign({}, _super.prototype.defaults), { droppable: false, type: DataCondition_DataConditionType, dataResolver: {
+                    condition: {
+                        left: '',
+                        operator: StringOperation.equalsIgnoreCase,
+                        right: '',
+                    },
+                }, components: [
+                    {
+                        type: DataConditionIfTrueType,
+                    },
+                    {
+                        type: DataConditionIfFalseType,
+                    },
+                ] });
+        },
+        enumerable: false,
+        configurable: true
+    });
+    ComponentDataCondition.prototype.isTrue = function () {
+        return this.dataResolver.isTrue();
+    };
+    ComponentDataCondition.prototype.getCondition = function () {
+        return this.dataResolver.getCondition();
+    };
+    ComponentDataCondition.prototype.getIfTrueContent = function () {
+        return this.components().at(0);
+    };
+    ComponentDataCondition.prototype.getIfFalseContent = function () {
+        return this.components().at(1);
+    };
+    ComponentDataCondition.prototype.getOutputContent = function () {
+        return this.isTrue() ? this.getIfTrueContent() : this.getIfFalseContent();
+    };
+    ComponentDataCondition.prototype.setCondition = function (newCondition) {
+        this.dataResolver.setCondition(newCondition);
+    };
+    ComponentDataCondition.prototype.setIfTrueComponents = function (content) {
+        this.setComponentsAtIndex(0, content);
+    };
+    ComponentDataCondition.prototype.setIfFalseComponents = function (content) {
+        this.setComponentsAtIndex(1, content);
+    };
+    ComponentDataCondition.prototype.getInnerHTML = function (opts) {
+        var _a, _b;
+        return (_b = (_a = this.getOutputContent()) === null || _a === void 0 ? void 0 : _a.getInnerHTML(opts)) !== null && _b !== void 0 ? _b : '';
+    };
+    ComponentDataCondition.prototype.createResolverInstance = function (props, options) {
+        return new DataCondition(props, options);
+    };
+    ComponentDataCondition.prototype.setComponentsAtIndex = function (index, newContent) {
+        var component = this.components().at(index);
+        component === null || component === void 0 ? void 0 : component.components(newContent);
+    };
+    ComponentDataCondition.isComponent = function (el) {
+        return (0,mixins.toLowerCase)(el.tagName) === DataCondition_DataConditionType;
+    };
+    return ComponentDataCondition;
+}(ComponentWithDataResolver));
+/* harmony default export */ const conditional_variables_ComponentDataCondition = (ComponentDataCondition);
+
+;// CONCATENATED MODULE: ./src/data_sources/model/conditional_variables/ComponentDataOutput.ts
+var ComponentDataOutput_extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var ComponentDataOutput_assign = (undefined && undefined.__assign) || function () {
+    ComponentDataOutput_assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return ComponentDataOutput_assign.apply(this, arguments);
+};
+
+
+
+var ComponentDataOutput = /** @class */ (function (_super) {
+    ComponentDataOutput_extends(ComponentDataOutput, _super);
+    function ComponentDataOutput() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(ComponentDataOutput.prototype, "defaults", {
+        get: function () {
+            return ComponentDataOutput_assign(ComponentDataOutput_assign({}, _super.prototype.defaults), { removable: false, draggable: false });
+        },
+        enumerable: false,
+        configurable: true
+    });
+    ComponentDataOutput.isComponent = function (el) {
+        return isComponentDataOutputType((0,mixins.toLowerCase)(el.tagName));
+    };
+    return ComponentDataOutput;
+}(model_Component));
+/* harmony default export */ const conditional_variables_ComponentDataOutput = (ComponentDataOutput);
 
 ;// CONCATENATED MODULE: ./src/dom_components/index.ts
 var dom_components_extends = (undefined && undefined.__extends) || (function () {
@@ -39991,9 +40470,19 @@ var ComponentManager = /** @class */ (function (_super) {
         var _this = _super.call(this, em, 'DomComponents', new model_Components(undefined, { em: em }), dom_components_types/* ComponentsEvents */.I, dom_components_config_config()) || this;
         _this.componentTypes = [
             {
-                id: DataCollectionVariableType,
-                model: data_collection_ComponentDataCollectionVariable,
-                view: view_ComponentDataCollectionVariableView,
+                id: DataCollectionItemType,
+                model: conditional_variables_ComponentDataOutput,
+                view: view_ComponentView,
+            },
+            {
+                id: DataConditionIfTrueType,
+                model: conditional_variables_ComponentDataOutput,
+                view: view_ComponentView,
+            },
+            {
+                id: DataConditionIfFalseType,
+                model: conditional_variables_ComponentDataOutput,
+                view: view_ComponentView,
             },
             {
                 id: DataCollectionType,
@@ -42579,28 +43068,27 @@ var block_manager_assign = (undefined && undefined.__assign) || function () {
 var BlockManager = /** @class */ (function (_super) {
     block_manager_extends(BlockManager, _super);
     function BlockManager(em) {
-        var _a;
-        var _this = _super.call(this, em, 'BlockManager', new model_Blocks(((_a = em.config.blockManager) === null || _a === void 0 ? void 0 : _a.blocks) || [], { em: em }), BlocksEvents, block_manager_config_config()) || this;
+        var _this = _super.call(this, em, 'BlockManager', new model_Blocks([], { em: em }), BlocksEvents, block_manager_config_config()) || this;
         _this.events = BlocksEvents;
         _this.Block = model_Block;
         _this.Blocks = model_Blocks;
         _this.Category = ModuleCategory;
         _this.Categories = ModuleCategories;
         _this.storageKey = '';
-        // Global blocks collection
         _this.blocks = _this.all;
         _this.blocksVisible = new model_Blocks(_this.blocks.models, { em: em });
-        _this.categories = new ModuleCategories([], {
-            em: em,
-            events: { update: BlocksEvents.categoryUpdate },
-        });
-        // Setup the sync between the global and public collections
-        _this.blocks.on('add', function (model) { return _this.blocksVisible.add(model); });
-        _this.blocks.on('remove', function (model) { return _this.blocksVisible.remove(model); });
-        _this.blocks.on('reset', function (coll) { return _this.blocksVisible.reset(coll.models); });
+        _this.categories = new ModuleCategories([], { em: em, events: { update: BlocksEvents.categoryUpdate } });
         _this.__onAllEvent = (0,index_all.debounce)(function () { return _this.__trgCustom(); }, 0);
         return _this;
     }
+    BlockManager.prototype.onInit = function () {
+        var _a = this, config = _a.config, blocks = _a.blocks, blocksVisible = _a.blocksVisible;
+        blocks.add(config.blocks || []);
+        // Setup the sync between the global and public collections
+        blocks.on('add', function (model) { return blocksVisible.add(model); });
+        blocks.on('remove', function (model) { return blocksVisible.remove(model); });
+        blocks.on('reset', function (coll) { return blocksVisible.reset(coll.models); });
+    };
     /**
      * Get configuration object
      * @name getConfig
@@ -44036,6 +44524,7 @@ var parser_config_config_config = function () { return ({
         allowUnsafeAttr: false,
         allowUnsafeAttrValue: false,
         keepEmptyTextNodes: false,
+        convertDataGjsAttributesHyphens: false,
     },
 }); };
 /* harmony default export */ const parser_config_config = (parser_config_config_config);
@@ -48814,7 +49303,7 @@ var TraitSelectView = /** @class */ (function (_super) {
 /* harmony default export */ const view_TraitSelectView = (TraitSelectView);
 
 // EXTERNAL MODULE: ./src/domain_abstract/view/DomainViews.ts
-var DomainViews = __webpack_require__(91);
+var DomainViews = __webpack_require__(8242);
 ;// CONCATENATED MODULE: ./src/trait_manager/view/TraitsView.ts
 var TraitsView_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -49203,7 +49692,7 @@ var navigator_config_config_config = function () { return ({
 /* harmony default export */ const navigator_config_config = (navigator_config_config_config);
 
 // EXTERNAL MODULE: ./src/utils/sorter/BaseComponentNode.ts
-var BaseComponentNode = __webpack_require__(3253);
+var BaseComponentNode = __webpack_require__(6756);
 ;// CONCATENATED MODULE: ./src/utils/sorter/LayersComponentNode.ts
 var LayersComponentNode_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -49432,17 +49921,18 @@ var ItemsView = /** @class */ (function (_super) {
 /* harmony default export */ const view_ItemsView = (ItemsView);
 
 // EXTERNAL MODULE: ./src/commands/view/CommandAbstract.ts
-var CommandAbstract = __webpack_require__(5301);
+var CommandAbstract = __webpack_require__(9946);
 ;// CONCATENATED MODULE: ./src/commands/config/config.ts
 var commands_config_config_config = function () { return ({
     stylePrefix: 'com-',
     defaults: {},
     strict: true,
+    defaultOptions: {},
 }); };
 /* harmony default export */ const commands_config_config = (commands_config_config_config);
 
 // EXTERNAL MODULE: ./src/commands/types.ts
-var commands_types = __webpack_require__(8351);
+var commands_types = __webpack_require__(1738);
 ;// CONCATENATED MODULE: ./src/commands/index.ts
 /**
  * You can customize the initial state of the module from the editor initialization, by passing the following [Configuration Object](https://github.com/GrapesJS/grapesjs/blob/master/src/commands/config/config.ts)
@@ -49602,7 +50092,7 @@ var CommandsModule = /** @class */ (function (_super) {
         };
         defaultCommands['tlb-move'] = {
             run: function (ed, s, opts) {
-                var _a;
+                var _a, _b;
                 if (opts === void 0) { opts = {}; }
                 var dragger;
                 var em = ed.getModel();
@@ -49639,7 +50129,7 @@ var CommandsModule = /** @class */ (function (_super) {
                 }
                 else {
                     if (nativeDrag) {
-                        event.dataTransfer.setDragImage((_a = target.view) === null || _a === void 0 ? void 0 : _a.el, 0, 0);
+                        (_a = event === null || event === void 0 ? void 0 : event.dataTransfer) === null || _a === void 0 ? void 0 : _a.setDragImage((_b = target.view) === null || _b === void 0 ? void 0 : _b.el, 0, 0);
                         //sel.set('status', 'freezed');
                     }
                     var cmdMove = ed.Commands.get('move-comp');
@@ -49827,13 +50317,16 @@ var CommandsModule = /** @class */ (function (_super) {
      * @private
      */
     CommandsModule.prototype.runCommand = function (command, options) {
+        var _a, _b;
         if (options === void 0) { options = {}; }
         var result;
         if (command === null || command === void 0 ? void 0 : command.run) {
-            var _a = this, em = _a.em, config = _a.config;
+            var _c = this, em = _c.em, config = _c.config;
             var id = command.id;
             var editor = em.Editor;
             if (!this.isActive(id) || options.force || !config.strict) {
+                var defaultOptionsRunFn = (_b = (_a = config.defaultOptions) === null || _a === void 0 ? void 0 : _a[id]) === null || _b === void 0 ? void 0 : _b.run;
+                (0,index_all.isFunction)(defaultOptionsRunFn) && (options = defaultOptionsRunFn(options));
                 result = editor && command.callRun(editor, options);
             }
         }
@@ -49847,13 +50340,16 @@ var CommandsModule = /** @class */ (function (_super) {
      * @private
      */
     CommandsModule.prototype.stopCommand = function (command, options) {
+        var _a, _b;
         if (options === void 0) { options = {}; }
         var result;
         if (command === null || command === void 0 ? void 0 : command.run) {
-            var _a = this, em = _a.em, config = _a.config;
+            var _c = this, em = _c.em, config = _c.config;
             var id = command.id;
             var editor = em.Editor;
             if (this.isActive(id) || options.force || !config.strict) {
+                var defaultOptionsStopFn = (_b = (_a = config.defaultOptions) === null || _a === void 0 ? void 0 : _a[id]) === null || _b === void 0 ? void 0 : _b.stop;
+                (0,index_all.isFunction)(defaultOptionsStopFn) && (options = defaultOptionsStopFn(options));
                 result = command.callStop(editor, options);
             }
         }
@@ -55395,7 +55891,7 @@ var Layers = /** @class */ (function (_super) {
 Layers.prototype.model = model_Layer;
 
 // EXTERNAL MODULE: ./src/utils/sorter/SortableTreeNode.ts
-var SortableTreeNode = __webpack_require__(3161);
+var SortableTreeNode = __webpack_require__(3178);
 ;// CONCATENATED MODULE: ./src/utils/sorter/LayerNode.ts
 var LayerNode_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -65483,6 +65979,9 @@ var EditorModel = /** @class */ (function (_super) {
         enumerable: false,
         configurable: true
     });
+    EditorModel.prototype.initModules = function () {
+        this.modules.forEach(function (module) { return module.onInit(); });
+    };
     /**
      * Get configurations
      * @param  {string} [prop] Property name
@@ -67489,7 +67988,7 @@ var grapesjs = {
     plugins: plugins,
     usePlugin: usePlugin,
     // @ts-ignore Will be replaced on build
-    version: '0.22.6',
+    version: '0.22.7',
     /**
      * Initialize the editor with passed options
      * @param {Object} config Configuration object
@@ -67515,6 +68014,7 @@ var grapesjs = {
         var initConfig = src_assign(src_assign({ autorender: true, plugins: [], pluginsOpts: {} }, config), { grapesjs: this, el: headless ? undefined : (0,index_all.isElement)(els) ? els : document.querySelector(els) });
         var editor = new src_editor(initConfig, { $: cash_dom["default"] });
         var em = editor.getModel();
+        em.initModules();
         // Load plugins
         initConfig.plugins.forEach(function (pluginId) {
             var plugin = getPlugin(pluginId, plugins);

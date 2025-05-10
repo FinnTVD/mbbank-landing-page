@@ -5,6 +5,7 @@
 import { useEffect, useRef, useState } from "react";
 import grapesjs from "grapesjs";
 import "@/modules/grapesjs/dist/css/grapes.min.css";
+import "@/modules/grapesjs-template-manager/dist/grapesjs-template-manager.min.css";
 
 // Import các plugin miễn phí
 import grapesjsPresetWebpage from "grapesjs-preset-webpage";
@@ -20,11 +21,13 @@ import grapesjsCustomCode from "grapesjs-custom-code";
 import grapesjsTouch from "grapesjs-touch";
 import grapesjsParserPostcss from "grapesjs-parser-postcss";
 import grapesjsPluginCkeditor from "grapesjs-plugin-ckeditor";
-
+import grapesjsTemplateManager from "grapesjs-template-manager";
+// import grapesjsSwiperSlider from "grapesjs-swiper-slider";
+// import grapesjsBlocksBootstrap4 from "grapesjs-blocks-bootstrap4";
 // Import plugin Destack vừa tạo
 import pluginCustom from "./plugin-custom";
-import grapesjsSwiperSlider from "grapesjs-swiper-slider"; // plugin
 import swiperCustom from "@/app/_components/plugins/swiper"; // plugin
+import templatesPlugin from "./templates-plugin";
 
 // Định nghĩa kiểu dữ liệu cho bản lưu
 interface SavedVersion {
@@ -46,7 +49,7 @@ export default function IndexGrapesJS() {
     // Khôi phục danh sách các bản lưu từ localStorage khi component được mount
     const savedData = localStorage.getItem("mbbank-builder-versions");
     // 🛠️ Nếu muốn reset localStorage lần đầu tiên
-    localStorage.removeItem("mbbank-builder-versions");
+    // localStorage.removeItem("mbbank-builder-versions");
     if (savedData) {
       setSavedVersions(JSON.parse(savedData));
     }
@@ -57,11 +60,17 @@ export default function IndexGrapesJS() {
         height: "100vh",
         width: "auto",
         fromElement: true,
-        storageManager: { autoload: false },
+        // pageManager: true,
+        storageManager: {
+          autoload: false, // Thêm dòng này để tránh tự động load từ storage
+          type: "indexeddb",
+        },
         plugins: [
           // plugins custom
           pluginCustom,
           swiperCustom,
+          // grapesjsBlocksBootstrap4,
+          // ["grapesjs-swiper-slider"],
           // grapesjsSwiperSlider,
           // plugins system
           grapesjsPresetWebpage,
@@ -77,13 +86,28 @@ export default function IndexGrapesJS() {
           grapesjsTouch,
           grapesjsParserPostcss,
           grapesjsPluginCkeditor,
+          // grapesjsTemplateManager,
+          templatesPlugin,
         ],
         pluginsOpts: {
           // plugins custom
           pluginCustom: {},
           swiperCustom: {},
+          grapesjsBlocksBootstrap4: {
+            // blocks: {
+            //   // ...
+            // },
+            // blockCategories: {
+            //   // ...
+            // },
+            // labels: {
+            //   // ...
+            // },
+          },
+          // "grapesjs-swiper-slider": {
+          //   // options
+          // },
           // grapesjsSwiperSlider: {},
-
           // plugins system
           grapesjsPresetWebpage: {},
           grapesjsBlocksBasic: {},
@@ -98,6 +122,101 @@ export default function IndexGrapesJS() {
           grapesjsTouch: {},
           grapesjsParserPostcss: {},
           grapesjsPluginCkeditor: {},
+          // grapesjsTemplateManager: {
+          //   // Cấu hình templates
+          //   templates: [
+          //     {
+          //       id: "template1",
+          //       name: "Trang chủ MB Bank",
+          //       category: "Trang chủ",
+          //       thumbnail: "/mbbank/templates/template1.jpg", // Đường dẫn đến ảnh thumbnail
+          //       template: {
+          //         html: `
+          //           <div class="header">
+          //             <div class="logo">
+          //               <img src="/mbbank/Logo_MB_new.png" alt="MB Bank Logo" />
+          //             </div>
+          //             <div class="nav">
+          //               <a href="#">Trang chủ</a>
+          //               <a href="#">Dịch vụ</a>
+          //               <a href="#">Liên hệ</a>
+          //             </div>
+          //           </div>
+          //           <div class="hero">
+          //             <h1>Ngân hàng MB - Đồng hành cùng thành công</h1>
+          //             <p>Giải pháp tài chính toàn diện cho cá nhân và doanh nghiệp</p>
+          //             <button>Tìm hiểu thêm</button>
+          //           </div>
+          //         `,
+          //         css: `
+          //         .header {
+          //           display: flex;
+          //           justify-content: space-between;
+          //           padding: 20px;
+          //           background-color: #fff;
+          //         }
+          //         .logo img {
+          //           height: 40px;
+          //         }
+          //         .nav {
+          //           display: flex;
+          //           gap: 20px;
+          //         }
+          //         .nav a {
+          //           text-decoration: none;
+          //           color: #333;
+          //         }
+          //         .hero {
+          //           text-align: center;
+          //           padding: 100px 20px;
+          //           background-color: #f5f5f5;
+          //         }
+          //         .hero h1 {
+          //           font-size: 36px;
+          //           margin-bottom: 20px;
+          //         }
+          //         .hero p {
+          //           font-size: 18px;
+          //           margin-bottom: 30px;
+          //         }
+          //         .hero button {
+          //           padding: 12px 24px;
+          //           background-color: #1e88e5;
+          //           color: #fff;
+          //           border: none;
+          //           border-radius: 4px;
+          //           cursor: pointer;
+          //         }
+          //       `,
+          //       },
+          //     },
+          //   ],
+
+          //   // Cấu hình lưu trữ
+          //   storage: "local", // 'local', 'remote', hoặc 'indexeddb'
+          //   storageKey: "mbbank-templates", // Key để lưu vào localStorage
+
+          //   // Các tùy chọn khác
+          //   modalTitle: "Chọn mẫu trang MB Bank",
+          //   importBtnText: "Sử dụng mẫu này",
+          //   addBtnText: "Thêm mẫu mới",
+          //   editBtnText: "Chỉnh sửa",
+          //   deleteBtnText: "Xóa",
+
+          //   // Các callback
+          //   onSelect: (template: any) => {
+          //     console.log("Đã chọn template:", template);
+          //   },
+          //   onAdd: (template: any) => {
+          //     console.log("Đã thêm template mới:", template);
+          //   },
+          //   onEdit: (template: any) => {
+          //     console.log("Đã chỉnh sửa template:", template);
+          //   },
+          //   onDelete: (template: any) => {
+          //     console.log("Đã xóa template:", template);
+          //   },
+          // },
         },
       });
 
@@ -106,22 +225,6 @@ export default function IndexGrapesJS() {
       editorInstance.setStyle("");
 
       setEditor(editorInstance);
-
-      // Thêm nút lưu vào thanh công cụ
-      editorInstance.Panels.addButton("options", {
-        id: "save-version",
-        className: "fa fa-floppy-o",
-        command: "show-save-dialog",
-        attributes: { title: "Lưu phiên bản" },
-      });
-
-      // Thêm nút xem danh sách phiên bản đã lưu
-      editorInstance.Panels.addButton("options", {
-        id: "view-versions",
-        className: "fa fa-list",
-        command: "show-versions-list",
-        attributes: { title: "Xem danh sách phiên bản" },
-      });
 
       // Tạo command để hiển thị dialog lưu phiên bản
       editorInstance.Commands.add("show-save-dialog", {
@@ -143,6 +246,39 @@ export default function IndexGrapesJS() {
         stop: function () {
           document.getElementById("versions-list")?.classList.add("hidden");
         },
+      });
+
+      // Running commands from panels
+      const pn = editorInstance.Panels;
+      const panelOpts = pn.addPanel({
+        id: "options",
+      });
+      // Thêm nút template manager vào thanh công cụ
+      panelOpts.get("buttons").add([
+        {
+          attributes: {
+            title: "Chọn mẫu trang",
+          },
+          className: "fa fa-file-o",
+          command: "open-templates", //Open modal
+          id: "open-templates",
+        },
+      ]);
+
+      // Thêm nút lưu vào thanh công cụ
+      pn.addButton("options", {
+        id: "save-version",
+        className: "fa fa-floppy-o",
+        command: "show-save-dialog",
+        attributes: { title: "Lưu phiên bản" },
+      });
+
+      // Thêm nút xem danh sách phiên bản đã lưu
+      pn.addButton("options", {
+        id: "view-versions",
+        className: "fa fa-list",
+        command: "show-versions-list",
+        attributes: { title: "Xem danh sách phiên bản" },
       });
 
       // 🛠️ Thêm logo vào giữa thanh công cụ

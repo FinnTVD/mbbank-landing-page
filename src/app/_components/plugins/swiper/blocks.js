@@ -3,27 +3,20 @@ export default (editor, opts = {}) => {
   const bm = editor.BlockManager;
   const style = `<style>
   .swiper-container {
-    width: 600px;
+    width: 100%;
     height: 300px;
+    position: relative;
+    overflow: hidden; 
   }
   .swiper-slide {
     text-align: center;
     font-size: 18px;
     background: #fff;
-
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
     align-items: center;
+    height:100%;
+
   }
 
   .swiper-slide img {
@@ -36,7 +29,10 @@ export default (editor, opts = {}) => {
   `;
   bm.add(opts.name, {
     label: `
-    <i class="fa fa-arrows-h"></i>
+    <svg viewBox="0 0 24 24">
+      <path d="M22 7.6c0-1-.5-1.6-1.3-1.6H3.4C2.5 6 2 6.7 2 7.6v9.8c0 1 .5 1.6 1.3 1.6h17.4c.8 0 1.3-.6 1.3-1.6V7.6zM21 18H3V7h18v11z" fill-rule="nonzero"></path>
+      <path d="M4 12.5L6 14v-3zM20 12.5L18 14v-3z"></path>
+    </svg>
     <div class="gjs-block-label">
       ${opts.label}
     </div> 

@@ -33,9 +33,13 @@
       "grapesjs-touch": ["/src/modules/grapesjs-touch"],
       "grapesjs-parser-postcss": ["/src/modules/grapesjs-parser-postcss"],
       "grapesjs-plugin-ckeditor": ["/src/modules/grapesjs-plugin-ckeditor"],
+      "grapesjs-templates": ["/src/modules/grapesjs-templates"],
+      "grapesjs-project-manager": ["/src/modules/grapesjs-project-manager"],
+      "grapesjs-template-manager": ["/src/modules/grapesjs-template-manager"],
       "grapesjs-swiper-slider": ["/src/modules/grapesjs-swiper-slider"],
+      "grapesjs-blocks-bootstrap4": ["/src/modules/grapesjs-blocks-bootstrap4"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/_components/templates.js"],
   "exclude": ["node_modules"]
 }

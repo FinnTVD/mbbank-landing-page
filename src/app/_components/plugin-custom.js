@@ -22,23 +22,19 @@ export default (editor, opts = {}) => {
     `,
   });
 
-  // // Thêm block cho Button
-  // bm.add('destack-button', {
-  //   label: 'Custom Button',
-  //   category: 'Destack Components',
-  //   content: `<button class="bg-blue-500 text-white px-4 py-2 rounded">Click Me</button>`,
-  // })
-
-  // // Thêm block cho Card
-  // bm.add('destack-card', {
-  //   label: 'Custom Card',
-  //   category: 'Destack Components',
-  //   content: `
-  //     <div class="shadow-lg p-5 rounded-lg">
-  //       <h2>Card Title</h2>
-  //       <p>Some description</p>
-  //       <button class="bg-green-500 text-white px-3 py-1 rounded">Learn More</button>
-  //     </div>
-  //   `,
-  // })
+  // Thêm block cho Basic
+  bm.add("mb-box", {
+    label: `
+    <div style="display: block; position">
+      <svg viewBox="0 0 24 24">
+        <path fill="currentColor" d="M2 20h20V4H2v16Zm-1 0V4a1 1 0 0 1 1-1h20a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1Z"></path>
+      </svg>
+      <span>Box</span>
+    </div>
+  `,
+    category: "Basic",
+    content: ` 
+      <div style="display: block; height: 300px; position: relative;"></div>
+    `,
+  });
 };

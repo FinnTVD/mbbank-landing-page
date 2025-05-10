@@ -12,4 +12,8 @@ declare module 'grapesjs-custom-code';
 declare module 'grapesjs-touch';
 declare module 'grapesjs-parser-postcss';
 declare module 'grapesjs-plugin-ckeditor';
+declare module 'grapesjs-templates';
+declare module 'grapesjs-project-manager';
+declare module 'grapesjs-template-manager';
 declare module 'grapesjs-swiper-slider';
+declare module 'grapesjs-blocks-bootstrap4';

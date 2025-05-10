@@ -6,7 +6,7 @@ export default grapesjs.plugins.add("swiperComponent", (editor, opts = {}) => {
   let options = {
     label: "Swiper",
     name: "cswiper",
-    category: "Custom",
+    category: "MB Bank Custom",
   };
   for (let name in options) {
     if (!(name in opts)) opts[name] = options[name];
