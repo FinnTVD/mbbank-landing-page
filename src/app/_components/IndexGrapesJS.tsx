@@ -43,6 +43,7 @@ import {
 // Đặt biến cờ ngoài component
 let hasInitialHistory = false;
 let lastAttrChange = { key: "", value: "", time: 0 };
+let isRestoringHistory = false;
 
 export default function IndexGrapesJS() {
   const editorRef = useRef<HTMLDivElement>(null);
@@ -51,6 +52,7 @@ export default function IndexGrapesJS() {
   const [savedVersions, setSavedVersions] = useState<SavedVersion[]>([]);
   const [versionName, setVersionName] = useState("");
   const [editHistory, setEditHistory] = useState<HistoryItem[]>([]);
+  const [currentHistoryId, setCurrentHistoryId] = useState<string | null>(null);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -108,6 +110,30 @@ export default function IndexGrapesJS() {
 
       setEditor(editorInstance);
 
+      // Lấy tất cả các panels
+      const panels = editorInstance.Panels.getPanels();
+
+      // Lặp qua từng panel
+      panels.forEach((panel: any) => {
+        const buttons = panel.get("buttons");
+        // Lặp qua từng button và thêm attribute title
+        const titleMap: Record<string, string> = {
+          "set-device-desktop": "Desktop",
+          "set-device-tablet": "Tablet",
+          "set-device-mobile": "Mobile",
+          undo: "Undo",
+          redo: "Redo",
+          "gjs-open-import-webpage": "Import code",
+          "canvas-clear": "Clear all",
+        };
+        buttons.forEach((button: any) => {
+          const title = titleMap[button.attributes.id];
+          if (title) {
+            button.set("attributes", { title });
+          }
+        });
+      });
+
       // Lắng nghe sự kiện thay đổi của trình soạn thảo
       const captureHistoryState = (actionLabel: string) => {
         // Chỉ cho phép thêm "Trạng thái ban đầu" nếu chưa có trong lịch sử
@@ -136,37 +162,8 @@ export default function IndexGrapesJS() {
           newHistoryItem,
           ...prevHistory.slice(0, 49),
         ]);
+        setCurrentHistoryId(newHistoryItem.id); // Thêm dòng này để cập nhật bản ghi active
       };
-
-      editorInstance.on(
-        "block:drag:stop",
-        (
-          component: { getName: () => any; get: (arg0: string) => any },
-          block: { getLabel: () => any }
-        ) => {
-          captureHistoryState(
-            `Đã thêm khối: ${
-              block.getLabel() || component.getName() || component.get("type")
-            }`
-          );
-        }
-      );
-
-      editorInstance.on(
-        "component:remove",
-        (component: { getName: () => any; get: (arg0: string) => any }) =>
-          captureHistoryState(
-            `Đã xóa: ${component.getName() || component.get("type")}`
-          )
-      );
-
-      editorInstance.on(
-        "component:clone",
-        (component: { getName: () => any; get: (arg0: string) => any }) =>
-          captureHistoryState(
-            `Nhân bản: ${component.getName() || component.get("type")}`
-          )
-      );
 
       let isEditing = false;
       let lastEditComponentId: string | null = null;
@@ -179,6 +176,7 @@ export default function IndexGrapesJS() {
           getName: () => string;
           get: (arg0: string) => any;
         }) => {
+          if (isRestoringHistory) return;
           const el = component.getEl();
           if (!el) return;
 
@@ -210,6 +208,7 @@ export default function IndexGrapesJS() {
       );
 
       editorInstance.on("component:styleUpdate", (model: any, style: any) => {
+        if (isRestoringHistory) return;
         const changedProps = Object.keys(style || {});
         const changedPropsStyle = Object.keys(style?.style || {});
         let propDetails = "";
@@ -230,7 +229,7 @@ export default function IndexGrapesJS() {
       editorInstance.on(
         "component:update:attributes",
         (model: any, attrName: string) => {
-          // if (!attrName) return;
+          if (isRestoringHistory) return;
           const targetName =
             model.getName() || model.get("type") || "Component";
           const attrValue = model.getAttributes()[attrName];
@@ -255,6 +254,41 @@ export default function IndexGrapesJS() {
               )}" cho ${targetName}`
             );
           }
+        }
+      );
+
+      editorInstance.on(
+        "block:drag:stop",
+        (
+          component: { getName: () => any; get: (arg0: string) => any },
+          block: { getLabel: () => any }
+        ) => {
+          if (isRestoringHistory) return;
+          captureHistoryState(
+            `Đã thêm khối: ${
+              block.getLabel() || component.getName() || component.get("type")
+            }`
+          );
+        }
+      );
+
+      editorInstance.on(
+        "component:remove",
+        (component: { getName: () => any; get: (arg0: string) => any }) => {
+          if (isRestoringHistory) return;
+          captureHistoryState(
+            `Đã xóa: ${component.getName() || component.get("type")}`
+          );
+        }
+      );
+
+      editorInstance.on(
+        "component:clone",
+        (component: { getName: () => any; get: (arg0: string) => any }) => {
+          if (isRestoringHistory) return;
+          captureHistoryState(
+            `Nhân bản: ${component.getName() || component.get("type")}`
+          );
         }
       );
 
@@ -404,9 +438,11 @@ export default function IndexGrapesJS() {
 
   const loadHistoryState = (historyItem: HistoryItem) => {
     if (!editor) return;
+    isRestoringHistory = true; // Bắt đầu quá trình phục hồi, tạm dừng ghi lịch sử
     editor.setComponents(historyItem.html);
     editor.setStyle(historyItem.css);
-    // editor.Commands.stop("show-edit-history");
+    setCurrentHistoryId(historyItem.id); // Đánh dấu bản đang active
+    isRestoringHistory = false; // Kết thúc phục hồi, bật lại ghi lịch sử
   };
 
   const removeActivePanel = (id: string) => {
@@ -529,7 +565,11 @@ export default function IndexGrapesJS() {
             {editHistory.map((item) => (
               <li
                 key={item.id}
-                className="py-3 group hover:bg-gray-50 transition-colors"
+                className={`py-3 group hover:bg-gray-50 transition-colors ${
+                  currentHistoryId === item.id
+                    ? "bg-blue-50 border-l-4 border-blue-500"
+                    : ""
+                }`}
               >
                 <div className="flex justify-between items-center">
                   <div>

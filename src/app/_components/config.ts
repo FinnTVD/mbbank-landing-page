@@ -24,20 +24,20 @@ export const panelOptsButtons = [
     command: "show-edit-history",
     attributes: { title: "Xem lịch sử chỉnh sửa" },
   },
-  {
-    id: "core:undo",
-    className: "fa fa-undo",
-    command: (e: { UndoManager: { undo: () => any } }) =>
-      e.UndoManager.undo(),
-    attributes: { title: "Hoàn tác (Ctrl+Z)" },
-  },
-  {
-    id: "core:redo",
-    className: "fa fa-repeat",
-    command: (e: { UndoManager: { redo: () => any } }) =>
-      e.UndoManager.redo(),
-    attributes: { title: "Làm lại (Ctrl+Y)" },
-  },
+  // {
+  //   id: "core:undo",
+  //   className: "fa fa-undo",
+  //   command: (e: { UndoManager: { undo: () => any } }) =>
+  //     e.UndoManager.undo(),
+  //   attributes: { title: "Hoàn tác (Ctrl+Z)" },
+  // },
+  // {
+  //   id: "core:redo",
+  //   className: "fa fa-repeat",
+  //   command: (e: { UndoManager: { redo: () => any } }) =>
+  //     e.UndoManager.redo(),
+  //   attributes: { title: "Làm lại (Ctrl+Y)" },
+  // },
 ]
 
 export interface SavedVersion {
