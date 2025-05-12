@@ -5,7 +5,7 @@ import loadBlocks from "./blocks";
 export default grapesjs.plugins.add("swiperComponent", (editor, opts = {}) => {
   let options = {
     label: "Swiper",
-    name: "cswiper",
+    name: "custom-swiper",
     category: "MB Bank Custom",
   };
   for (let name in options) {

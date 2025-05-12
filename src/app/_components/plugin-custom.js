@@ -5,12 +5,10 @@ export default (editor, opts = {}) => {
 
   // Thêm block cho Hero Section
   bm.add("mb-hero", {
-    label: `
-    <div style="display: flex; align-items: center;flex-direction: column; gap: 10px">
+    label: "Hero Section Custom",
+    media: `
       <img src="https://pay2s.vn/wp-content/uploads/2024/10/thumbnail-logo-MBBank.jpg.webp" 
            style="width: 100px; height: auto; border-radius: 5px" />
-      <span>Hero Section Custom</span>
-    </div>
   `,
     category: "MB Bank Custom",
     content: `
@@ -24,13 +22,11 @@ export default (editor, opts = {}) => {
 
   // Thêm block cho Basic
   bm.add("mb-box", {
-    label: `
-    <div style="display: block; position">
+    label: "Box",
+    media: `
       <svg viewBox="0 0 24 24">
         <path fill="currentColor" d="M2 20h20V4H2v16Zm-1 0V4a1 1 0 0 1 1-1h20a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1Z"></path>
       </svg>
-      <span>Box</span>
-    </div>
   `,
     category: "Basic",
     content: ` 

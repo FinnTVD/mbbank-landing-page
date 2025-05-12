@@ -24,7 +24,9 @@
       "grapesjs-blocks-basic": ["/src/modules/grapesjs-blocks-basic"],
       "grapesjs-plugin-forms": ["/src/modules/grapesjs-plugin-forms"],
       "grapesjs-plugin-export": ["/src/modules/grapesjs-plugin-export"],
-      "grapesjs-component-countdown": ["/src/modules/grapesjs-component-countdown"],
+      "grapesjs-component-countdown": [
+        "/src/modules/grapesjs-component-countdown"
+      ],
       "grapesjs-navbar": ["/src/modules/grapesjs-navbar"],
       "grapesjs-style-bg": ["/src/modules/grapesjs-style-bg"],
       "grapesjs-tabs": ["/src/modules/grapesjs-tabs"],
@@ -38,8 +40,15 @@
       "grapesjs-template-manager": ["/src/modules/grapesjs-template-manager"],
       "grapesjs-swiper-slider": ["/src/modules/grapesjs-swiper-slider"],
       "grapesjs-blocks-bootstrap4": ["/src/modules/grapesjs-blocks-bootstrap4"],
+      "grapesjs-lory-slider": ["/src/modules/grapesjs-lory-slider"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/_components/templates.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/_components/templates.js"
+  ],
   "exclude": ["node_modules"]
 }
