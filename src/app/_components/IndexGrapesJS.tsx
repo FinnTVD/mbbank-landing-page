@@ -25,13 +25,11 @@ import grapesjsCustomCode from "grapesjs-custom-code";
 import grapesjsTouch from "grapesjs-touch";
 import grapesjsParserPostcss from "grapesjs-parser-postcss";
 import grapesjsPluginCkeditor from "grapesjs-plugin-ckeditor";
-import grapesjsPluginFilestack from "grapesjs-plugin-filestack";
-import grapesjsProjectManager from "grapesjs-project-manager";
 
 // PLUGINS CUSTOMS
 import pluginCustom from "./plugin-custom";
 import swiperCustom from "@/app/_components/plugins/swiper"; // plugin
-import templatesPlugin from "./templates-plugin";
+import templatesPlugin from "./templates-plugin"; // Import templatesPlugin
 
 // CONFIG PANEL BUTTONS
 import {
@@ -41,12 +39,11 @@ import {
   panelOptsButtons,
   SavedVersion,
 } from "@/app/_components/config";
-import FileManager from "@/app/_components/plugins/file-manager/FileManager";
+import FileManager from "./plugins/file-manager/FileManager";
 
 // Đặt biến cờ ngoài component
 let hasInitialHistory = false;
 let lastAttrChange = { key: "", value: "", time: 0 };
-let isRestoringHistory = false;
 
 export default function IndexGrapesJS() {
   const editorRef = useRef<HTMLDivElement>(null);
@@ -55,7 +52,8 @@ export default function IndexGrapesJS() {
   const [savedVersions, setSavedVersions] = useState<SavedVersion[]>([]);
   const [versionName, setVersionName] = useState("");
   const [editHistory, setEditHistory] = useState<HistoryItem[]>([]);
-  const [currentHistoryId, setCurrentHistoryId] = useState<string | null>(null);
+  const [saveType, setSaveType] = useState<"page" | "template">("page"); // State cho lựa chọn loại lưu trữ khi lưu
+  const [activeTab, setActiveTab] = useState<"page" | "template">("page"); // State cho tab đang active trong danh sách
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -64,8 +62,16 @@ export default function IndexGrapesJS() {
     const savedData = localStorage.getItem("mbbank-builder-versions");
     if (savedData) {
       try {
-        setSavedVersions(JSON.parse(savedData));
+        // Cần xử lý dữ liệu cũ có thể không có trường 'type'
+        const parsedData: SavedVersion[] = JSON.parse(savedData);
+        setSavedVersions(
+          parsedData.map((item) => ({
+            ...item,
+            type: item.type || "page", // Gán type mặc định nếu không tồn tại
+          }))
+        );
       } catch (e) {
+        console.error("Failed to parse saved versions:", e);
         localStorage.removeItem("mbbank-builder-versions");
       }
     }
@@ -81,13 +87,12 @@ export default function IndexGrapesJS() {
           autoload: false,
           type: "indexeddb",
         },
-        pageManager: true, // Bật quản lý page/project
         undoManager: { trackChanges: true },
         plugins: [
           // customs
           pluginCustom,
           swiperCustom,
-          templatesPlugin,
+          templatesPlugin, // Đảm bảo templatesPlugin được load
           // plugins
           grapesjsPresetWebpage,
           grapesjsBlocksBasic,
@@ -104,7 +109,7 @@ export default function IndexGrapesJS() {
           grapesjsPluginCkeditor,
         ],
         pluginsOpts: {
-          /* ... các cấu hình plugin ... */
+          // Cấu hình cho templatesPlugin nếu cần
         },
       });
 
@@ -114,29 +119,26 @@ export default function IndexGrapesJS() {
 
       setEditor(editorInstance);
 
+      // === Thêm Tooltip cho các button panel có sẵn ===
       // Lấy tất cả các panels
       const panels = editorInstance.Panels.getPanels();
 
       // Lặp qua từng panel
       panels.forEach((panel: any) => {
+        // Lấy tất cả các button trong panel
         const buttons = panel.get("buttons");
+
         // Lặp qua từng button và thêm attribute title
-        const titleMap: Record<string, string> = {
-          "set-device-desktop": "Desktop",
-          "set-device-tablet": "Tablet",
-          "set-device-mobile": "Mobile",
-          undo: "Undo",
-          redo: "Redo",
-          "gjs-open-import-webpage": "Import code",
-          "canvas-clear": "Clear all",
-        };
         buttons.forEach((button: any) => {
-          const title = titleMap[button.attributes.id];
-          if (title) {
-            button.set("attributes", { title });
+          const buttonId = button.get("id");
+          const buttonLabel = button.get("label");
+          // Đặt title dựa trên ID hoặc label của button
+          if (buttonId) {
+            button.set("attributes", { title: `${buttonLabel || buttonId}` });
           }
         });
       });
+      // === Kết thúc thêm Tooltip ===
 
       // Lắng nghe sự kiện thay đổi của trình soạn thảo
       const captureHistoryState = (actionLabel: string) => {
@@ -162,12 +164,42 @@ export default function IndexGrapesJS() {
           html,
           css,
         };
+        // Giới hạn lịch sử không quá 50 mục
         setEditHistory((prevHistory) => [
           newHistoryItem,
           ...prevHistory.slice(0, 49),
         ]);
-        setCurrentHistoryId(newHistoryItem.id); // Thêm dòng này để cập nhật bản ghi active
       };
+
+      editorInstance.on(
+        "block:drag:stop",
+        (
+          component: { getName: () => any; get: (arg0: string) => any },
+          block: { getLabel: () => any }
+        ) => {
+          captureHistoryState(
+            `Đã thêm khối: ${
+              block.getLabel() || component.getName() || component.get("type")
+            }`
+          );
+        }
+      );
+
+      editorInstance.on(
+        "component:remove",
+        (component: { getName: () => any; get: (arg0: string) => any }) =>
+          captureHistoryState(
+            `Đã xóa: ${component.getName() || component.get("type")}`
+          )
+      );
+
+      editorInstance.on(
+        "component:clone",
+        (component: { getName: () => any; get: (arg0: string) => any }) =>
+          captureHistoryState(
+            `Nhân bản: ${component.getName() || component.get("type")}`
+          )
+      );
 
       let isEditing = false;
       let lastEditComponentId: string | null = null;
@@ -180,10 +212,10 @@ export default function IndexGrapesJS() {
           getName: () => string;
           get: (arg0: string) => any;
         }) => {
-          if (isRestoringHistory) return;
           const el = component.getEl();
           if (!el) return;
 
+          // Chọn các phần tử có thể chỉnh sửa nội dung
           const input = el.querySelector(
             'input, textarea, [contenteditable="true"]'
           );
@@ -212,20 +244,20 @@ export default function IndexGrapesJS() {
       );
 
       editorInstance.on("component:styleUpdate", (model: any, style: any) => {
-        if (isRestoringHistory) return;
         const changedProps = Object.keys(style || {});
         const changedPropsStyle = Object.keys(style?.style || {});
         let propDetails = "";
+        // Chỉ hiển thị chi tiết thuộc tính nếu số lượng thay đổi ít
         if (changedProps.length > 0 && changedProps.length <= 3) {
           propDetails = `${changedProps.join(", ")}`;
         }
         const selected = editorInstance.getSelected();
         const targetName = selected
           ? selected.getName() || selected.get("type")
-          : "Đối tượng";
+          : "Đối tượng"; // Tên đối tượng bị ảnh hưởng
         captureHistoryState(
           `${capitalizeFirstLetter(propDetails)}: "${capitalizeFirstLetter(
-            changedPropsStyle?.[0]
+            changedPropsStyle?.[0] // Lấy tên thuộc tính style đầu tiên
           )}" cho ${targetName}`
         );
       });
@@ -233,7 +265,7 @@ export default function IndexGrapesJS() {
       editorInstance.on(
         "component:update:attributes",
         (model: any, attrName: string) => {
-          if (isRestoringHistory) return;
+          // if (!attrName) return; // Bỏ qua nếu không có tên attribute (có thể xảy ra với một số type update)
           const targetName =
             model.getName() || model.get("type") || "Component";
           const attrValue = model.getAttributes()[attrName];
@@ -246,72 +278,59 @@ export default function IndexGrapesJS() {
           ) {
             return;
           }
-          lastAttrChange = { key: attrName, value: attrValue, time: now };
+          lastAttrChange = { key: attrName, value: attrValue, time: now }; // Cập nhật lần thay đổi cuối cùng
           const listKeys = getChangedAttributeKeys(
+            // Lấy danh sách các attribute bị thay đổi
             model?.changed,
             model?._previousAttributes
           );
+          // Chỉ ghi lịch sử nếu có attribute thay đổi
           if (listKeys.length) {
             captureHistoryState(
               `Component settings : "${capitalizeFirstLetter(
-                listKeys[listKeys.length - 1]
+                listKeys[listKeys.length - 1] // Lấy tên attribute cuối cùng thay đổi
               )}" cho ${targetName}`
             );
           }
         }
       );
 
-      editorInstance.on(
-        "block:drag:stop",
-        (
-          component: { getName: () => any; get: (arg0: string) => any },
-          block: { getLabel: () => any }
-        ) => {
-          if (isRestoringHistory) return;
-          captureHistoryState(
-            `Đã thêm khối: ${
-              block.getLabel() || component.getName() || component.get("type")
-            }`
-          );
-        }
-      );
+      // Ghi lại trạng thái ban đầu sau khi editor load hoàn tất và canvas sẵn sàng
+      editorInstance.on("load", () => {
+        setTimeout(() => {
+          if (!hasInitialHistory) {
+            captureHistoryState("Trạng thái ban đầu");
+            hasInitialHistory = true;
+          }
+        }, 100);
 
-      editorInstance.on(
-        "component:drag:end",
-        (component: { parent: any; target: any }) => {
-          if (isRestoringHistory) return;
-          captureHistoryState(
-            `Di chuyển: ${component.target?.attributes?.tagName} trong ${component.parent?.attributes?.tagName}`
-          );
-        }
-      );
-
-      editorInstance.on(
-        "component:remove",
-        (component: { getName: () => any; get: (arg0: string) => any }) => {
-          if (isRestoringHistory) return;
-          captureHistoryState(
-            `Đã xóa: ${component.getName() || component.get("type")}`
-          );
-        }
-      );
-
-      editorInstance.on(
-        "component:clone",
-        (component: { getName: () => any; get: (arg0: string) => any }) => {
-          if (isRestoringHistory) return;
-          captureHistoryState(
-            `Nhân bản: ${component.getName() || component.get("type")}`
-          );
-        }
-      );
-
-      setTimeout(() => {
-        if (!hasInitialHistory) {
-          captureHistoryState("Trạng thái ban đầu");
-          hasInitialHistory = true;
-        }
-      }, 100);
+        // Tải các template đã lưu vào templatesPlugin khi editor sẵn sàng
+        const savedTemplates = savedVersions.filter(
+          (v) => v.type === "template"
+        );
+        // Giả định templatesPlugin có method addTemplate
+        savedTemplates.forEach((template) => {
+          // Check if templatesPlugin and its addTemplate method exist
+          if (
+            editorInstance.TemplatesPlugin &&
+            typeof editorInstance.TemplatesPlugin.addTemplate === "function"
+          ) {
+            editorInstance.TemplatesPlugin.addTemplate({
+              id: template.id, // Sử dụng ID đã lưu
+              name: template.name,
+              html: template.html,
+              css: template.css,
+              thumbnail: template.thumbnail || "", // Bao gồm thumbnail nếu có
+              // Các thuộc tính khác mà templatesPlugin của bạn cần
+            });
+          } else {
+            console.warn(
+              "templatesPlugin or its addTemplate method not found."
+            );
+            // Xử lý hoặc thông báo lỗi nếu plugin không đúng cấu hình
+          }
+        });
+      });
 
       // 🛠️ Thêm nút mở dialog lịch sử
       editorInstance.Commands.add("show-edit-history", {
@@ -331,7 +350,7 @@ export default function IndexGrapesJS() {
         },
       });
 
-      // 🛠️ Thêm nút mở dialog lưu page
+      // 🛠️ Thêm nút mở dialog lưu phiên bản
       editorInstance.Commands.add("show-save-dialog", {
         run: (editorCmd: any, sender: any) => {
           if (sender && typeof (sender as any).set === "function") {
@@ -357,6 +376,9 @@ export default function IndexGrapesJS() {
           }
           const el = document.getElementById("versions-list");
           if (el) el.classList.remove("hidden");
+          // Khi mở dialog danh sách, đảm bảo tab đang active được cập nhật nếu cần
+          // Ví dụ: bạn có thể muốn mặc định mở tab "Page" hoặc tab được sử dụng gần nhất
+          setActiveTab("page"); // Mặc định mở tab "Page"
         },
         stop: (editorCmd: any, sender: any) => {
           if (sender && typeof (sender as any).set === "function") {
@@ -398,6 +420,7 @@ export default function IndexGrapesJS() {
       panelOpts.get("buttons").add(panelOptsButtons);
 
       // 🛠️ Thêm logo vào giữa thanh công cụ
+      // Sử dụng requestAnimationFrame hoặc đợi cho panel render xong nếu setTimeout không đủ
       setTimeout(() => {
         const panelButtons = document.querySelector(
           ".gjs-pn-panels .gjs-pn-buttons"
@@ -416,28 +439,60 @@ export default function IndexGrapesJS() {
             panelButtons.children[Math.floor(panelButtons.children.length / 2)]
           );
         }
-      }, 500);
+      }, 500); // Có thể cần điều chỉnh thời gian timeout
     }
 
     return () => {
       if (editor) {
         editor.destroy();
         setEditor(null);
+        // Reset biến cờ khi component unmount
+        hasInitialHistory = false;
+        lastAttrChange = { key: "", value: "", time: 0 };
       }
     };
-  }, []);
+  }, []); // Dependency array rỗng để chỉ chạy một lần khi mount
 
   const saveCurrentVersion = () => {
     if (!editor || !versionName.trim()) return;
     const html = editor.getHtml();
     const css = editor.getCss();
+
     const newVersion: SavedVersion = {
-      id: Date.now().toString(),
+      id: Date.now().toString(), // ID duy nhất dựa trên timestamp
       name: versionName,
       date: new Date().toLocaleString("vi-VN"),
       html,
       css,
+      type: saveType, // Lưu loại phiên bản
     };
+
+    // Nếu là template, có thể tạo thumbnail và thêm vào templatesPlugin
+    if (saveType === "template") {
+      // Giả định bạn có cách tạo thumbnail từ canvas của editor
+      // Ví dụ đơn giản: Lấy screenshot base64 (cần plugin hoặc hàm hỗ trợ)
+      // newVersion.thumbnail = editor.Canvas.get=
+      // Nếu templatesPlugin có API addTemplate, gọi nó ở đây
+      if (
+        editor?.TemplatesPlugin &&
+        typeof editor.TemplatesPlugin.addTemplate === "function"
+      ) {
+        editor.TemplatesPlugin.addTemplate({
+          id: newVersion.id,
+          name: newVersion.name,
+          html: newVersion.html,
+          css: newVersion.css,
+          thumbnail: "", // Cần implement cách tạo thumbnail
+          // Các thuộc tính khác template của bạn cần
+        });
+      } else {
+        console.warn(
+          "templatesPlugin or its addTemplate method not found when trying to add template."
+        );
+        // Xử lý hoặc thông báo lỗi nếu plugin không đúng cấu hình
+      }
+    }
+
     const updatedVersions = [...savedVersions, newVersion];
     setSavedVersions(updatedVersions);
     localStorage.setItem(
@@ -445,6 +500,7 @@ export default function IndexGrapesJS() {
       JSON.stringify(updatedVersions)
     );
     setVersionName("");
+    setSaveType("page"); // Reset loại lưu trữ về mặc định sau khi lưu
     editor.Commands.stop("show-save-dialog");
     removeActivePanel("save-version");
   };
@@ -456,37 +512,65 @@ export default function IndexGrapesJS() {
     setEditHistory((prev) => [
       {
         id: `load-${Date.now()}`,
-        action: `Đã tải phiên bản: ${version.name}`,
+        action: `Đã tải ${
+          version.type === "page" ? "phiên bản trang" : "template"
+        }: ${version.name}`,
         timestamp: new Date().toLocaleTimeString("vi-VN"),
         html: version.html,
         css: version.css,
       },
-      ...prev.slice(0, 49),
+      ...prev.slice(0, 49), // Giữ lịch sử không quá 50 mục
     ]);
+    // Đóng dialog sau khi tải
+    editor?.Commands.stop("show-versions-list");
+    removeActivePanel("view-versions");
   };
 
   const deleteVersion = (id: string) => {
+    // Tìm phiên bản cần xóa để kiểm tra loại
+    const versionToDelete = savedVersions.find((v) => v.id === id);
+
     const updatedVersions = savedVersions.filter((v) => v.id !== id);
     setSavedVersions(updatedVersions);
     localStorage.setItem(
       "mbbank-builder-versions",
       JSON.stringify(updatedVersions)
     );
+
+    // Nếu là template, cần xóa cả trong templatesPlugin (nếu plugin có API hỗ trợ)
+    if (versionToDelete?.type === "template") {
+      if (
+        editor?.TemplatesPlugin &&
+        typeof editor.TemplatesPlugin.removeTemplate === "function"
+      ) {
+        editor.TemplatesPlugin.removeTemplate(id); // Giả định removeTemplate nhận ID
+      } else {
+        console.warn(
+          "templatesPlugin or its removeTemplate method not found when trying to remove template."
+        );
+        // Xử lý hoặc thông báo lỗi nếu plugin không đúng cấu hình
+      }
+    }
   };
 
   const loadHistoryState = (historyItem: HistoryItem) => {
     if (!editor) return;
-    isRestoringHistory = true; // Bắt đầu quá trình phục hồi, tạm dừng ghi lịch sử
     editor.setComponents(historyItem.html);
     editor.setStyle(historyItem.css);
-    setCurrentHistoryId(historyItem.id); // Đánh dấu bản đang active
-    isRestoringHistory = false; // Kết thúc phục hồi, bật lại ghi lịch sử
+    // Đóng dialog lịch sử sau khi khôi phục
+    editor?.Commands.stop("show-edit-history");
+    removeActivePanel("view-edit-history");
   };
 
   const removeActivePanel = (id: string) => {
     if (typeof window === "undefined" || !editor) return;
     editor.Panels.getButton("options", id)?.set("active", false);
   };
+
+  // Lọc danh sách phiên bản dựa trên tab đang active
+  const filteredVersions = savedVersions.filter(
+    (version) => version.type === activeTab
+  );
 
   return (
     <main className="flex h-screen relative">
@@ -500,6 +584,39 @@ export default function IndexGrapesJS() {
         <h2 className="text-xl font-semibold mb-4 text-gray-700">
           Lưu phiên bản
         </h2>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Chọn loại lưu trữ:
+          </label>
+          <div className="flex gap-4">
+            <label className="inline-flex items-center cursor-pointer">
+              {" "}
+              {/* Thêm cursor-pointer */}
+              <input
+                type="radio"
+                className="form-radio text-blue-600 focus:ring-blue-500" // Thêm style
+                name="saveType"
+                value="page"
+                checked={saveType === "page"}
+                onChange={() => setSaveType("page")}
+              />
+              <span className="ml-2 text-gray-700">Trang (Page)</span>
+            </label>
+            <label className="inline-flex items-center cursor-pointer">
+              {" "}
+              {/* Thêm cursor-pointer */}
+              <input
+                type="radio"
+                className="form-radio text-blue-600 focus:ring-blue-500" // Thêm style
+                name="saveType"
+                value="template"
+                checked={saveType === "template"}
+                onChange={() => setSaveType("template")}
+              />
+              <span className="ml-2 text-gray-700">Mẫu (Template)</span>
+            </label>
+          </div>
+        </div>
         <input
           type="text"
           value={versionName}
@@ -512,6 +629,8 @@ export default function IndexGrapesJS() {
             onClick={() => {
               editor?.Commands.stop("show-save-dialog");
               removeActivePanel("save-version");
+              setVersionName(""); // Reset tên phiên bản khi đóng dialog
+              setSaveType("page"); // Reset loại lưu trữ về mặc định
             }}
             className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition-colors"
           >
@@ -530,50 +649,82 @@ export default function IndexGrapesJS() {
       {/* Danh sách phiên bản đã lưu */}
       <div
         id="versions-list"
-        className="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-xl z-50 w-[500px] max-h-[80vh] overflow-auto border border-gray-300"
+        className="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-xl z-50 w-[500px] max-h-[80vh] flex flex-col border border-gray-300" // Sử dụng flexbox
       >
         <h2 className="text-xl font-semibold mb-4 text-gray-700">
           Phiên bản đã lưu
         </h2>
-        {savedVersions.length === 0 ? (
-          <p className="text-gray-500 italic">
-            Chưa có phiên bản nào được lưu.
-          </p>
-        ) : (
-          <ul className="divide-y divide-gray-200">
-            {savedVersions.map((version) => (
-              <li key={version.id} className="py-3">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <h3 className="font-medium text-gray-800">
-                      {version.name}
-                    </h3>
-                    <p className="text-sm text-gray-500">{version.date}</p>
+        {/* Tab Navigation */}
+        <div className="mb-4 border-b border-gray-200">
+          <nav className="-mb-px flex space-x-8">
+            <button
+              className={`whitespace-nowrap pb-4 px-1 border-b-2 font-medium text-sm outline-none ${
+                activeTab === "page"
+                  ? "border-blue-500 text-blue-600"
+                  : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+              }`}
+              onClick={() => setActiveTab("page")}
+            >
+              Trang ({savedVersions.filter((v) => v.type === "page").length})
+            </button>
+            <button
+              className={`whitespace-nowrap pb-4 px-1 border-b-2 font-medium text-sm outline-none ${
+                activeTab === "template"
+                  ? "border-blue-500 text-blue-600"
+                  : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+              }`}
+              onClick={() => setActiveTab("template")}
+            >
+              Mẫu ({savedVersions.filter((v) => v.type === "template").length})
+            </button>
+          </nav>
+        </div>
+
+        {/* Danh sách phiên bản (được lọc) */}
+        <div className="flex-1 overflow-y-auto">
+          {" "}
+          {/* Sử dụng flex-1 và overflow-y-auto */}
+          {filteredVersions.length === 0 ? (
+            <p className="text-gray-500 italic text-center py-4">
+              {activeTab === "page"
+                ? "Chưa có phiên bản trang nào được lưu."
+                : "Chưa có mẫu nào được lưu."}
+            </p>
+          ) : (
+            <ul className="divide-y divide-gray-200">
+              {filteredVersions.map((version) => (
+                <li key={version.id} className="py-3">
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <h3 className="font-medium text-gray-800">
+                        {version.name}
+                      </h3>
+                      <p className="text-sm text-gray-500">{version.date}</p>
+                    </div>
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => loadVersion(version)}
+                        className="px-3 py-1 bg-blue-500 text-white text-xs rounded hover:bg-blue-600 transition-colors"
+                      >
+                        Tải
+                      </button>
+                      <button
+                        onClick={() => deleteVersion(version.id)}
+                        className="px-3 py-1 bg-red-500 text-white text-xs rounded hover:bg-red-600 transition-colors"
+                      >
+                        Xóa
+                      </button>
+                    </div>
                   </div>
-                  <div className="flex gap-2">
-                    <button
-                      onClick={() => {
-                        editor?.Commands.stop("show-versions-list");
-                        removeActivePanel("view-versions");
-                        loadVersion(version);
-                      }}
-                      className="px-3 py-1 bg-blue-500 text-white text-xs rounded hover:bg-blue-600 transition-colors"
-                    >
-                      Tải
-                    </button>
-                    <button
-                      onClick={() => deleteVersion(version.id)}
-                      className="px-3 py-1 bg-red-500 text-white text-xs rounded hover:bg-red-600 transition-colors"
-                    >
-                      Xóa
-                    </button>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
-        <div className="mt-6 flex justify-end">
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        <div className="mt-6 flex justify-end shrink-0">
+          {" "}
+          {/* Sử dụng shrink-0 để không bị co */}
           <button
             onClick={() => {
               editor?.Commands.stop("show-versions-list");
@@ -595,7 +746,9 @@ export default function IndexGrapesJS() {
           Lịch sử chỉnh sửa
         </h2>
         {editHistory.length === 0 ? (
-          <p className="text-gray-500 italic">
+          <p className="text-gray-500 italic text-center py-4">
+            {" "}
+            {/* Thêm text-center, py-4 */}
             Chưa có thay đổi nào được ghi lại.
           </p>
         ) : (
@@ -603,11 +756,7 @@ export default function IndexGrapesJS() {
             {editHistory.map((item) => (
               <li
                 key={item.id}
-                className={`py-3 group hover:bg-gray-50 transition-colors ${
-                  currentHistoryId === item.id
-                    ? "bg-blue-50 border-l-4 border-blue-500"
-                    : ""
-                }`}
+                className="py-3 group hover:bg-gray-50 transition-colors"
               >
                 <div className="flex justify-between items-center">
                   <div>
@@ -617,11 +766,7 @@ export default function IndexGrapesJS() {
                     <p className="text-xs text-gray-500">{item.timestamp}</p>
                   </div>
                   <button
-                    onClick={() => {
-                      editor.Commands.stop("show-edit-history");
-                      removeActivePanel("view-edit-history");
-                      loadHistoryState(item);
-                    }}
+                    onClick={() => loadHistoryState(item)}
                     className="px-3 py-1 bg-green-500 text-white text-xs rounded hover:bg-green-600 transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100"
                   >
                     Khôi phục
@@ -644,6 +789,7 @@ export default function IndexGrapesJS() {
         </div>
       </div>
 
+      {/* Dialog file manager */}
       <div
         id="file-manager-panel"
         className="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-xl z-50 w-[600px] max-h-[80vh] overflow-auto border border-gray-300"

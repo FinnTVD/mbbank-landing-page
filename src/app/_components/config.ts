@@ -30,20 +30,6 @@ export const panelOptsButtons = [
     command: 'open-file-manager',
     attributes: { title: 'File Manager' }
   }
-  // {
-  //   id: "core:undo",
-  //   className: "fa fa-undo",
-  //   command: (e: { UndoManager: { undo: () => any } }) =>
-  //     e.UndoManager.undo(),
-  //   attributes: { title: "Hoàn tác (Ctrl+Z)" },
-  // },
-  // {
-  //   id: "core:redo",
-  //   className: "fa fa-repeat",
-  //   command: (e: { UndoManager: { redo: () => any } }) =>
-  //     e.UndoManager.redo(),
-  //   attributes: { title: "Làm lại (Ctrl+Y)" },
-  // },
 ]
 
 export interface SavedVersion {
@@ -52,6 +38,8 @@ export interface SavedVersion {
   date: string;
   html: string;
   css: string;
+  type: "page" | "template"; // Thêm trường type
+  thumbnail?: string; // Thêm optional thumbnail
 }
 
 export interface HistoryItem {
