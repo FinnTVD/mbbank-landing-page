@@ -40,7 +40,8 @@
       "grapesjs-template-manager": ["/src/modules/grapesjs-template-manager"],
       "grapesjs-swiper-slider": ["/src/modules/grapesjs-swiper-slider"],
       "grapesjs-blocks-bootstrap4": ["/src/modules/grapesjs-blocks-bootstrap4"],
-      "grapesjs-lory-slider": ["/src/modules/grapesjs-lory-slider"]
+      "grapesjs-lory-slider": ["/src/modules/grapesjs-lory-slider"],
+      "grapesjs-plugin-filestack": ["/src/modules/grapesjs-plugin-filestack"]
     }
   },
   "include": [

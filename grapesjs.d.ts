@@ -18,3 +18,4 @@ declare module 'grapesjs-template-manager';
 declare module 'grapesjs-swiper-slider';
 declare module 'grapesjs-blocks-bootstrap4';
 declare module 'grapesjs-lory-slider';
+declare module 'grapesjs-plugin-filestack';

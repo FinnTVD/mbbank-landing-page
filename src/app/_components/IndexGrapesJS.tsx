@@ -25,6 +25,8 @@ import grapesjsCustomCode from "grapesjs-custom-code";
 import grapesjsTouch from "grapesjs-touch";
 import grapesjsParserPostcss from "grapesjs-parser-postcss";
 import grapesjsPluginCkeditor from "grapesjs-plugin-ckeditor";
+import grapesjsPluginFilestack from "grapesjs-plugin-filestack";
+import grapesjsProjectManager from "grapesjs-project-manager";
 
 // PLUGINS CUSTOMS
 import pluginCustom from "./plugin-custom";
@@ -39,6 +41,7 @@ import {
   panelOptsButtons,
   SavedVersion,
 } from "@/app/_components/config";
+import FileManager from "@/app/_components/plugins/file-manager/FileManager";
 
 // Đặt biến cờ ngoài component
 let hasInitialHistory = false;
@@ -78,6 +81,7 @@ export default function IndexGrapesJS() {
           autoload: false,
           type: "indexeddb",
         },
+        pageManager: true, // Bật quản lý page/project
         undoManager: { trackChanges: true },
         plugins: [
           // customs
@@ -273,6 +277,16 @@ export default function IndexGrapesJS() {
       );
 
       editorInstance.on(
+        "component:drag:end",
+        (component: { parent: any; target: any }) => {
+          if (isRestoringHistory) return;
+          captureHistoryState(
+            `Di chuyển: ${component.target?.attributes?.tagName} trong ${component.parent?.attributes?.tagName}`
+          );
+        }
+      );
+
+      editorInstance.on(
         "component:remove",
         (component: { getName: () => any; get: (arg0: string) => any }) => {
           if (isRestoringHistory) return;
@@ -317,7 +331,7 @@ export default function IndexGrapesJS() {
         },
       });
 
-      // 🛠️ Thêm nút mở dialog lưu phiên bản
+      // 🛠️ Thêm nút mở dialog lưu page
       editorInstance.Commands.add("show-save-dialog", {
         run: (editorCmd: any, sender: any) => {
           if (sender && typeof (sender as any).set === "function") {
@@ -349,6 +363,30 @@ export default function IndexGrapesJS() {
             (sender as any).set("active", false);
           }
           const el = document.getElementById("versions-list");
+          if (el) el.classList.add("hidden");
+        },
+      });
+
+      // 🛠️ Thêm nút mở dialog file manager
+      editorInstance.Commands.add("open-file-manager", {
+        run(
+          editor: any,
+          sender: { set: (arg0: string, arg1: boolean) => void }
+        ) {
+          if (sender && typeof (sender as any).set === "function") {
+            (sender as any).set("active", true);
+          }
+          const el = document.getElementById("file-manager-panel");
+          if (el) el.classList.remove("hidden");
+        },
+        stop(
+          editor: any,
+          sender: { set: (arg0: string, arg1: boolean) => void }
+        ) {
+          if (sender && typeof (sender as any).set === "function") {
+            (sender as any).set("active", false);
+          }
+          const el = document.getElementById("file-manager-panel");
           if (el) el.classList.add("hidden");
         },
       });
@@ -598,6 +636,40 @@ export default function IndexGrapesJS() {
             onClick={() => {
               editor?.Commands.stop("show-edit-history");
               removeActivePanel("view-edit-history");
+            }}
+            className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition-colors"
+          >
+            Đóng
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="file-manager-panel"
+        className="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-xl z-50 w-[600px] max-h-[80vh] overflow-auto border border-gray-300"
+      >
+        <FileManager
+          onFileSelect={(file) => {
+            // Ví dụ: Chèn ảnh vào vùng đang chọn của editor
+            if (editor && file.type === "file") {
+              const selected = editor.getSelected();
+              if (selected && selected.is("image")) {
+                selected.set("src", `${file.name}`);
+              } else {
+                // Hoặc thêm mới một image vào canvas
+                editor.addComponents({
+                  type: "image",
+                  src: `${file.name}`,
+                });
+              }
+            }
+          }}
+        />
+        <div className="mt-6 flex justify-end">
+          <button
+            onClick={() => {
+              editor?.Commands.stop("open-file-manager");
+              removeActivePanel("open-file-manager");
             }}
             className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition-colors"
           >

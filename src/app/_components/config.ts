@@ -24,6 +24,12 @@ export const panelOptsButtons = [
     command: "show-edit-history",
     attributes: { title: "Xem lịch sử chỉnh sửa" },
   },
+  {
+    id: 'open-file-manager',
+    className: 'fa fa-folder-open',
+    command: 'open-file-manager',
+    attributes: { title: 'File Manager' }
+  }
   // {
   //   id: "core:undo",
   //   className: "fa fa-undo",
