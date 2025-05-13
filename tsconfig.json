@@ -34,22 +34,16 @@
       "grapesjs-custom-code": ["/src/modules/grapesjs-custom-code"],
       "grapesjs-touch": ["/src/modules/grapesjs-touch"],
       "grapesjs-parser-postcss": ["/src/modules/grapesjs-parser-postcss"],
-      "grapesjs-plugin-ckeditor": ["/src/modules/grapesjs-plugin-ckeditor"],
-      "grapesjs-templates": ["/src/modules/grapesjs-templates"],
-      "grapesjs-project-manager": ["/src/modules/grapesjs-project-manager"],
-      "grapesjs-template-manager": ["/src/modules/grapesjs-template-manager"],
-      "grapesjs-swiper-slider": ["/src/modules/grapesjs-swiper-slider"],
-      "grapesjs-blocks-bootstrap4": ["/src/modules/grapesjs-blocks-bootstrap4"],
-      "grapesjs-lory-slider": ["/src/modules/grapesjs-lory-slider"],
-      "grapesjs-plugin-filestack": ["/src/modules/grapesjs-plugin-filestack"]
+      "grapesjs-plugin-ckeditor": ["/src/modules/grapesjs-plugin-ckeditor"]
+      // "grapesjs-templates": ["/src/modules/grapesjs-templates"],
+      // "grapesjs-project-manager": ["/src/modules/grapesjs-project-manager"],
+      // "grapesjs-template-manager": ["/src/modules/grapesjs-template-manager"],
+      // "grapesjs-swiper-slider": ["/src/modules/grapesjs-swiper-slider"],
+      // "grapesjs-blocks-bootstrap4": ["/src/modules/grapesjs-blocks-bootstrap4"],
+      // "grapesjs-lory-slider": ["/src/modules/grapesjs-lory-slider"],
+      // "grapesjs-plugin-filestack": ["/src/modules/grapesjs-plugin-filestack"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "src/app/_components/templates.js"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

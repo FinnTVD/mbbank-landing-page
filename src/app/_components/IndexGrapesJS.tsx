@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 
 // STYLE MODULES
 import "@/modules/grapesjs/dist/css/grapes.min.css";
-import "@/modules/grapesjs-template-manager/dist/grapesjs-template-manager.min.css";
+// import "@/modules/grapesjs-template-manager/dist/grapesjs-template-manager.min.css";
 
 // MAIN MODULE
 import grapesjs from "grapesjs";
@@ -40,6 +40,7 @@ import {
   SavedVersion,
 } from "@/app/_components/config";
 import FileManager from "./plugins/file-manager/FileManager";
+import Image from "next/image";
 
 // Đặt biến cờ ngoài component
 let hasInitialHistory = false;
@@ -47,6 +48,7 @@ let lastAttrChange = { key: "", value: "", time: 0 };
 
 export default function IndexGrapesJS() {
   const editorRef = useRef<HTMLDivElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const [editor, setEditor] = useState<any | null>(null);
   const [savedVersions, setSavedVersions] = useState<SavedVersion[]>([]);
@@ -54,6 +56,7 @@ export default function IndexGrapesJS() {
   const [editHistory, setEditHistory] = useState<HistoryItem[]>([]);
   const [saveType, setSaveType] = useState<"page" | "template">("page"); // State cho lựa chọn loại lưu trữ khi lưu
   const [activeTab, setActiveTab] = useState<"page" | "template">("page"); // State cho tab đang active trong danh sách
+  const [thumbnail, setThumbnail] = useState<string>("");
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -278,7 +281,7 @@ export default function IndexGrapesJS() {
           ) {
             return;
           }
-          lastAttrChange = { key: attrName, value: attrValue, time: now }; // Cập nhật lần thay đổi cuối cùng
+          lastAttrChange = { key: attrName, value: attrValue, time: now }; // Cập nhật lần thay đổi cuống
           const listKeys = getChangedAttributeKeys(
             // Lấy danh sách các attribute bị thay đổi
             model?.changed,
@@ -393,13 +396,18 @@ export default function IndexGrapesJS() {
       editorInstance.Commands.add("open-file-manager", {
         run(
           editor: any,
-          sender: { set: (arg0: string, arg1: boolean) => void }
+          sender: { set: (arg0: string, arg1: boolean) => void },
+          options: { purpose?: string } = {}
         ) {
           if (sender && typeof (sender as any).set === "function") {
             (sender as any).set("active", true);
           }
           const el = document.getElementById("file-manager-panel");
-          if (el) el.classList.remove("hidden");
+          if (el) {
+            el.classList.remove("hidden");
+            // Lưu mục đích sử dụng vào window để FileManager component có thể truy cập
+            (window as any).fileManagerPurpose = options.purpose || "default";
+          }
         },
         stop(
           editor: any,
@@ -453,6 +461,24 @@ export default function IndexGrapesJS() {
     };
   }, []); // Dependency array rỗng để chỉ chạy một lần khi mount
 
+  const removeActivePanel = (id: string) => {
+    if (typeof window === "undefined" || !editor) return;
+    editor.Panels.getButton("options", id)?.set("active", false);
+  };
+
+  // Hàm mở file manager cho thumbnail
+  const openFileManagerForThumbnail = () => {
+    if (editor) {
+      (window as any).onFileSelectForThumbnail = (file: { name: string }) => {
+        setThumbnail(file.name); // hoặc file.path nếu có
+        editor?.Commands.stop("open-file-manager");
+        removeActivePanel("open-file-manager");
+      };
+      editor.stopCommand("open-file-manager"); // đảm bảo trạng thái về false
+      editor.runCommand("open-file-manager", { purpose: "thumbnail" });
+    }
+  };
+
   const saveCurrentVersion = () => {
     if (!editor || !versionName.trim()) return;
     const html = editor.getHtml();
@@ -465,14 +491,11 @@ export default function IndexGrapesJS() {
       html,
       css,
       type: saveType, // Lưu loại phiên bản
+      thumbnail: thumbnail, // Luôn lưu thumbnail cho cả page và template
     };
 
-    // Nếu là template, có thể tạo thumbnail và thêm vào templatesPlugin
+    // Nếu là template, thêm vào templatesPlugin nếu có
     if (saveType === "template") {
-      // Giả định bạn có cách tạo thumbnail từ canvas của editor
-      // Ví dụ đơn giản: Lấy screenshot base64 (cần plugin hoặc hàm hỗ trợ)
-      // newVersion.thumbnail = editor.Canvas.get=
-      // Nếu templatesPlugin có API addTemplate, gọi nó ở đây
       if (
         editor?.TemplatesPlugin &&
         typeof editor.TemplatesPlugin.addTemplate === "function"
@@ -482,17 +505,16 @@ export default function IndexGrapesJS() {
           name: newVersion.name,
           html: newVersion.html,
           css: newVersion.css,
-          thumbnail: "", // Cần implement cách tạo thumbnail
-          // Các thuộc tính khác template của bạn cần
+          thumbnail: newVersion.thumbnail || "",
         });
       } else {
         console.warn(
           "templatesPlugin or its addTemplate method not found when trying to add template."
         );
-        // Xử lý hoặc thông báo lỗi nếu plugin không đúng cấu hình
       }
     }
 
+    // Lưu phiên bản vào localStorage (bao gồm cả page và template với thumbnail)
     const updatedVersions = [...savedVersions, newVersion];
     setSavedVersions(updatedVersions);
     localStorage.setItem(
@@ -500,6 +522,7 @@ export default function IndexGrapesJS() {
       JSON.stringify(updatedVersions)
     );
     setVersionName("");
+    setThumbnail(""); // Reset thumbnail sau khi lưu
     setSaveType("page"); // Reset loại lưu trữ về mặc định sau khi lưu
     editor.Commands.stop("show-save-dialog");
     removeActivePanel("save-version");
@@ -562,9 +585,17 @@ export default function IndexGrapesJS() {
     removeActivePanel("view-edit-history");
   };
 
-  const removeActivePanel = (id: string) => {
-    if (typeof window === "undefined" || !editor) return;
-    editor.Panels.getButton("options", id)?.set("active", false);
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const url = URL.createObjectURL(file);
+      setThumbnail(url);
+
+      // Reset input file để xóa tên file hiển thị
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+    }
   };
 
   // Lọc danh sách phiên bản dựa trên tab đang active
@@ -624,6 +655,31 @@ export default function IndexGrapesJS() {
           placeholder="Nhập tên phiên bản..."
           className="w-full p-2 border border-gray-300 rounded mb-4 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
         />
+        {thumbnail && (
+          <div className="w-full h-fit relative pb-3">
+            <Image
+              className="w-full h-auto object-contain rounded-[0.5rem]"
+              src={thumbnail}
+              alt=""
+              width={200}
+              height={150}
+            />
+          </div>
+        )}
+        <input
+          type="file"
+          accept="image/*"
+          ref={fileInputRef}
+          onChange={handleFileChange}
+        />
+        <span className="block my-2">Hoặc</span>
+        <button
+          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors disabled:opacity-50"
+          type="button"
+          onClick={openFileManagerForThumbnail}
+        >
+          File Manager 📁
+        </button>
         <div className="flex justify-end gap-3">
           <button
             onClick={() => {
@@ -682,7 +738,6 @@ export default function IndexGrapesJS() {
 
         {/* Danh sách phiên bản (được lọc) */}
         <div className="flex-1 overflow-y-auto">
-          {" "}
           {/* Sử dụng flex-1 và overflow-y-auto */}
           {filteredVersions.length === 0 ? (
             <p className="text-gray-500 italic text-center py-4">
@@ -695,11 +750,20 @@ export default function IndexGrapesJS() {
               {filteredVersions.map((version) => (
                 <li key={version.id} className="py-3">
                   <div className="flex justify-between items-center">
-                    <div>
-                      <h3 className="font-medium text-gray-800">
-                        {version.name}
-                      </h3>
-                      <p className="text-sm text-gray-500">{version.date}</p>
+                    <div className="flex items-center">
+                      <Image
+                        className="w-[120px] h-auto rounded-[0.5rem]"
+                        src={version.thumbnail || ""}
+                        alt=""
+                        width={400}
+                        height={300}
+                      />
+                      <div className="pl-[1rem]">
+                        <h3 className="font-medium text-gray-800">
+                          {version.name}
+                        </h3>
+                        <p className="text-sm text-gray-500">{version.date}</p>
+                      </div>
                     </div>
                     <div className="flex gap-2">
                       <button
@@ -795,18 +859,34 @@ export default function IndexGrapesJS() {
         className="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-xl z-50 w-[600px] max-h-[80vh] overflow-auto border border-gray-300"
       >
         <FileManager
-          onFileSelect={(file) => {
-            // Ví dụ: Chèn ảnh vào vùng đang chọn của editor
-            if (editor && file.type === "file") {
-              const selected = editor.getSelected();
-              if (selected && selected.is("image")) {
-                selected.set("src", `${file.name}`);
-              } else {
-                // Hoặc thêm mới một image vào canvas
-                editor.addComponents({
-                  type: "image",
-                  src: `${file.name}`,
-                });
+          onFileSelect={(file: any) => {
+            // Kiểm tra mục đích sử dụng của file manager
+            const purpose = (window as any).fileManagerPurpose || "default";
+
+            if (purpose === "thumbnail") {
+              // Nếu mở file manager để chọn thumbnail
+              if (
+                typeof (window as any).onFileSelectForThumbnail === "function"
+              ) {
+                (window as any).onFileSelectForThumbnail(file);
+              }
+            } else {
+              // Xử lý mặc định cho editor
+              if (editor && file.type === "file") {
+                const selected = editor.getSelected();
+                if (selected && selected.is("image")) {
+                  selected.set("src", `${file.name}`);
+                } else {
+                  // Hoặc thêm mới một image vào canvas
+                  editor.addComponents({
+                    type: "image",
+                    src: `${file.name}`,
+                    attributes: {
+                      width: "100%",
+                      height: "auto",
+                    },
+                  });
+                }
               }
             }
           }}
