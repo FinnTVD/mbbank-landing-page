@@ -28,8 +28,9 @@ import grapesjsPluginCkeditor from "grapesjs-plugin-ckeditor";
 
 // PLUGINS CUSTOMS
 import pluginCustom from "./plugin-custom";
-import swiperCustom from "@/app/_components/plugins/swiper"; // plugin
-import templatesPlugin from "./templates-plugin"; // Import templatesPlugin
+import swiperCustom from "@/app/_components/plugins/swiper";
+import templatesPlugin from "./templates-plugin";
+import accordionPlugin from "@/app/_components/plugins/accordion";
 
 // CONFIG PANEL BUTTONS
 import {
@@ -95,7 +96,8 @@ export default function IndexGrapesJS() {
           // customs
           pluginCustom,
           swiperCustom,
-          templatesPlugin, // Đảm bảo templatesPlugin được load
+          templatesPlugin,
+          accordionPlugin,
           // plugins
           grapesjsPresetWebpage,
           grapesjsBlocksBasic,
