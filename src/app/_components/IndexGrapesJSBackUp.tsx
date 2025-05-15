@@ -21,7 +21,7 @@ import grapesjsCustomCode from "grapesjs-custom-code";
 import grapesjsTouch from "grapesjs-touch";
 import grapesjsParserPostcss from "grapesjs-parser-postcss";
 import grapesjsPluginCkeditor from "grapesjs-plugin-ckeditor";
-import grapesjsTemplateManager from "grapesjs-template-manager";
+// import grapesjsTemplateManager from "grapesjs-template-manager";
 // import grapesjsSwiperSlider from "grapesjs-swiper-slider";
 // import grapesjsBlocksBootstrap4 from "grapesjs-blocks-bootstrap4";
 // Import plugin Destack vừa tạo
